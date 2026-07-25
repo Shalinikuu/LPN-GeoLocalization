@@ -8,10 +8,10 @@ import cv2
 import tempfile
 import os
 
-st.set_page_config(page_title="Cross-View UAV & Satellite Geo-Localization", page_icon="🚁", layout="centered")
+st.set_page_config(page_title="Cross-View UAV Geo-Localization", page_icon="🚁", layout="centered")
 
 st.title("🚁 Cross-View UAV & Satellite Geo-Localization")
-st.write("Match your drone images or video streams against satellite map tiles using your trained deep learning model.")
+st.write("Live deployment app for cross-view matching using your trained PyTorch model.")
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
@@ -59,62 +59,63 @@ def extract_features(img):
         features = model(img_tensor)
     return features
 
-# Sidebar Navigation Options
-st.sidebar.title("Navigation")
+# Sidebar Menu with 4 Options
+st.sidebar.title("Navigation Menu")
 menu = st.sidebar.radio(
-    "Select Mode:",
+    "Choose an Option:",
     (
-        "1. UAV Image & Satellite Image Match",
-        "2. UAV Video & Satellite Image Match"
+        "1. Upload Satellite & UAV Image",
+        "2. Upload Satellite Image & UAV Video",
+        "3. Load Images from Dataset",
+        "4. Exit"
     )
 )
 
-if menu == "1. UAV Image & Satellite Image Match":
-    st.subheader("🖼️ UAV Image to Satellite Map Matching")
+if menu == "1. Upload Satellite & UAV Image":
+    st.subheader("🖼️ Option 1: Satellite & UAV Image Matching")
     
     col1, col2 = st.columns(2)
     with col1:
-        sat_file = st.file_uploader("Upload Satellite Image", type=["jpg", "png", "jpeg"], key="sat_img")
+        sat_file = st.file_uploader("Upload Satellite Image", type=["jpg", "png", "jpeg"], key="opt1_sat")
     with col2:
-        uav_file = st.file_uploader("Upload UAV/Drone Image", type=["jpg", "png", "jpeg"], key="uav_img")
-    
+        uav_file = st.file_uploader("Upload UAV Image", type=["jpg", "png", "jpeg"], key="opt1_uav")
+        
     if sat_file and uav_file:
         sat_img = Image.open(sat_file).convert('RGB')
         uav_img = Image.open(uav_file).convert('RGB')
         
-        if st.button("Run Image Matching 🚀", type="primary"):
-            with st.spinner("Extracting features and calculating similarity..."):
+        if st.button("Run Image Matching 🚀", type="primary", key="btn1"):
+            with st.spinner("Extracting features..."):
                 sat_feat = extract_features(sat_img)
                 uav_feat = extract_features(uav_img)
-                score = F.cosine_similarity(uav_feat, sat_feat).item() * 100
-                score = max(0.0, score)
-            
+                score = max(0.0, F.cosine_similarity(uav_feat, sat_feat).item() * 100)
+                
             res_col1, res_col2 = st.columns(2)
             with res_col1:
-                st.image(uav_img, caption="Uploaded UAV View", use_column_width=True)
+                st.image(uav_img, caption="UAV View", use_column_width=True)
             with res_col2:
-                st.image(sat_img, caption="Uploaded Satellite View", use_column_width=True)
+                st.image(sat_img, caption="Satellite View", use_column_width=True)
                 
             st.success(f"🎉 Match Confidence Score: **{score:.2f}%**")
 
-elif menu == "2. UAV Video & Satellite Image Match":
-    st.subheader("🎥 UAV Video Stream Analysis & Matching")
+elif menu == "2. Upload Satellite Image & UAV Video":
+    st.subheader("🎥 Option 2: Satellite Image & UAV Video Matching")
     
     col1, col2 = st.columns(2)
     with col1:
-        sat_file_v = st.file_uploader("Upload Satellite Image", type=["jpg", "png", "jpeg"], key="sat_vid")
+        sat_file_v = st.file_uploader("Upload Satellite Image", type=["jpg", "png", "jpeg"], key="opt2_sat")
     with col2:
-        vid_file = st.file_uploader("Upload UAV Video File", type=["mp4", "avi", "mov"], key="uav_vid")
-    
+        vid_file = st.file_uploader("Upload UAV Video File", type=["mp4", "avi", "mov"], key="opt2_vid")
+        
     if sat_file_v and vid_file:
         sat_img = Image.open(sat_file_v).convert('RGB')
         
-        if st.button("Process Video Frames & Match 🚀", type="primary"):
+        if st.button("Process Video & Match 🚀", type="primary", key="btn2"):
             with tempfile.NamedTemporaryFile(delete=False, suffix='.mp4') as tmp:
                 tmp.write(vid_file.read())
                 temp_vid_path = tmp.name
                 
-            with st.spinner("Scanning video frames frame-by-frame..."):
+            with st.spinner("Scanning video frames for feature extraction..."):
                 sat_features = extract_features(sat_img)
                 cap = cv2.VideoCapture(temp_vid_path)
                 fps = cap.get(cv2.CAP_PROP_FPS)
@@ -151,4 +152,29 @@ elif menu == "2. UAV Video & Satellite Image Match":
                     st.image(sat_img, caption="Satellite View", use_column_width=True)
                 st.success(f"🎯 Best Frame Match Score: **{best_score:.2f}%**")
             else:
-                st.error("❌ Could not process video frames.")
+                st.error("❌ Error reading video frames.")
+
+elif menu == "3. Load Images from Dataset":
+    st.subheader("📂 Option 3: Load Sample Images from Dataset Folder")
+    st.write("If you have sample test images inside a folder in your repository, you can select them here.")
+    
+    # Checking if a dataset folder exists locally
+    dataset_dir = "dataset" # Aap apne folder ka naam yahan change kar sakte hain agar zaroorat ho
+    if os.path.exists(dataset_dir):
+        images = [f for f in os.listdir(dataset_dir) if f.lower().endswith(('png', 'jpg', 'jpeg'))]
+        if images:
+            selected_img_name = st.selectbox("Select a sample image:", images)
+            selected_path = os.path.join(dataset_dir, selected_img_name)
+            sample_img = Image.open(selected_path).convert('RGB')
+            
+            st.image(sample_img, caption=selected_img_name, width=300)
+            if st.button("Match Sample Image 🚀", type="primary", key="btn3"):
+                feat = extract_features(sample_img)
+                st.info("Sample image features extracted successfully! (You can compare it against a target satellite tile)")
+        else:
+            st.warning("No images found inside the 'dataset' folder in your repository.")
+    else:
+        st.info("💡 Tip: To use this option, create a folder named `dataset` in your GitHub repository and put some sample test images inside it, or use Options 1 & 2 for direct file uploads!")
+
+elif menu == "4. Exit":
+    st.warning("🔒 Session ended. You can close this tab or select another option from the sidebar.")
