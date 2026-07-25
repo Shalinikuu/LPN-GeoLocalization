@@ -8,10 +8,10 @@ import cv2
 import tempfile
 import os
 
-st.set_page_config(page_title="Cross-View Matching App", page_icon="🚁", layout="centered")
+st.set_page_config(page_title="Cross-View UAV & Satellite Geo-Localization", page_icon="🚁", layout="centered")
 
-st.title("🚁 Cross-View UAV & Satellite Matcher")
-st.write("Upload your satellite image and drone image or video to check the geo-localization match percentage.")
+st.title("🚁 Cross-View UAV & Satellite Geo-Localization")
+st.write("Match your drone images or video streams against satellite map tiles using your trained deep learning model.")
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
@@ -59,52 +59,62 @@ def extract_features(img):
         features = model(img_tensor)
     return features
 
-menu = st.sidebar.selectbox(
-    "Choose Mode:",
+# Sidebar Navigation Options
+st.sidebar.title("Navigation")
+menu = st.sidebar.radio(
+    "Select Mode:",
     (
-        "1. Upload UAV Image & Satellite Image",
-        "2. Upload UAV Video & Satellite Image",
-        "3. Exit"
+        "1. UAV Image & Satellite Image Match",
+        "2. UAV Video & Satellite Image Match"
     )
 )
 
-if menu == "1. Upload UAV Image & Satellite Image":
-    st.subheader("🖼️ Upload Image & Map")
-    sat_file = st.file_uploader("1️⃣ Upload Satellite Image", type=["jpg", "png", "jpeg"])
-    uav_file = st.file_uploader("2️⃣ Upload UAV Image", type=["jpg", "png", "jpeg"])
+if menu == "1. UAV Image & Satellite Image Match":
+    st.subheader("🖼️ UAV Image to Satellite Map Matching")
+    
+    col1, col2 = st.columns(2)
+    with col1:
+        sat_file = st.file_uploader("Upload Satellite Image", type=["jpg", "png", "jpeg"], key="sat_img")
+    with col2:
+        uav_file = st.file_uploader("Upload UAV/Drone Image", type=["jpg", "png", "jpeg"], key="uav_img")
     
     if sat_file and uav_file:
         sat_img = Image.open(sat_file).convert('RGB')
         uav_img = Image.open(uav_file).convert('RGB')
         
-        if st.button("Run Matching 🚀", type="primary"):
-            sat_feat = extract_features(sat_img)
-            uav_feat = extract_features(uav_img)
-            score = F.cosine_similarity(uav_feat, sat_feat).item() * 100
-            score = max(0.0, score)
+        if st.button("Run Image Matching 🚀", type="primary"):
+            with st.spinner("Extracting features and calculating similarity..."):
+                sat_feat = extract_features(sat_img)
+                uav_feat = extract_features(uav_img)
+                score = F.cosine_similarity(uav_feat, sat_feat).item() * 100
+                score = max(0.0, score)
             
-            col1, col2 = st.columns(2)
-            with col1:
-                st.image(uav_img, caption="UAV View", use_column_width=True)
-            with col2:
-                st.image(sat_img, caption="Satellite View", use_column_width=True)
+            res_col1, res_col2 = st.columns(2)
+            with res_col1:
+                st.image(uav_img, caption="Uploaded UAV View", use_column_width=True)
+            with res_col2:
+                st.image(sat_img, caption="Uploaded Satellite View", use_column_width=True)
                 
             st.success(f"🎉 Match Confidence Score: **{score:.2f}%**")
 
-elif menu == "2. Upload UAV Video & Satellite Image":
-    st.subheader("🎥 Upload Video & Map")
-    sat_file = st.file_uploader("1️⃣ Upload Satellite Image", type=["jpg", "png", "jpeg"])
-    vid_file = st.file_uploader("2️⃣ Upload UAV Video File", type=["mp4", "avi", "mov"])
+elif menu == "2. UAV Video & Satellite Image Match":
+    st.subheader("🎥 UAV Video Stream Analysis & Matching")
     
-    if sat_file and vid_file:
-        sat_img = Image.open(sat_file).convert('RGB')
+    col1, col2 = st.columns(2)
+    with col1:
+        sat_file_v = st.file_uploader("Upload Satellite Image", type=["jpg", "png", "jpeg"], key="sat_vid")
+    with col2:
+        vid_file = st.file_uploader("Upload UAV Video File", type=["mp4", "avi", "mov"], key="uav_vid")
+    
+    if sat_file_v and vid_file:
+        sat_img = Image.open(sat_file_v).convert('RGB')
         
-        if st.button("Process Video & Match 🚀", type="primary"):
+        if st.button("Process Video Frames & Match 🚀", type="primary"):
             with tempfile.NamedTemporaryFile(delete=False, suffix='.mp4') as tmp:
                 tmp.write(vid_file.read())
                 temp_vid_path = tmp.name
                 
-            with st.spinner("Scanning video frames..."):
+            with st.spinner("Scanning video frames frame-by-frame..."):
                 sat_features = extract_features(sat_img)
                 cap = cv2.VideoCapture(temp_vid_path)
                 fps = cap.get(cv2.CAP_PROP_FPS)
@@ -134,12 +144,11 @@ elif menu == "2. Upload UAV Video & Satellite Image":
                 
             if best_frame:
                 best_score = max(0.0, best_score)
-                col1, col2 = st.columns(2)
-                with col1:
+                res_col1, res_col2 = st.columns(2)
+                with res_col1:
                     st.image(best_frame, caption="Best Matching Video Frame", use_column_width=True)
-                with col2:
+                with res_col2:
                     st.image(sat_img, caption="Satellite View", use_column_width=True)
                 st.success(f"🎯 Best Frame Match Score: **{best_score:.2f}%**")
-
-elif menu == "3. Exit":
-    st.warning("App closed.")
+            else:
+                st.error("❌ Could not process video frames.")
