@@ -71,8 +71,8 @@ menu = st.sidebar.radio(
     )
 )
 
-# All image formats allowed: jpg, jpeg, png, webp, bmp, tiff
-all_image_types = ["jpg", "jpeg", "png", "webp", "bmp", "tif", "tiff"]
+# Added 'jfif' along with other formats
+all_image_types = ["jpg", "jpeg", "png", "webp", "bmp", "tif", "tiff", "jfif"]
 
 if menu == "1. Upload Satellite & UAV Image":
     st.subheader("🖼️ Option 1: Satellite & UAV Image Matching")
@@ -113,12 +113,12 @@ elif menu == "2. Upload Satellite Image & UAV Video":
     if sat_file_v and vid_file:
         sat_img = Image.open(sat_file_v).convert('RGB')
         
-        if st.button("Process Video & Match 🚀", type="primary", key="btn2"):
+        if st.button("Process Video Frames & Match 🚀", type="primary", key="btn2"):
             with tempfile.NamedTemporaryFile(delete=False, suffix='.mp4') as tmp:
                 tmp.write(vid_file.read())
                 temp_vid_path = tmp.name
                 
-            with st.spinner("Scanning video frames for feature extraction..."):
+            with st.spinner("Scanning video frames and evaluating features..."):
                 sat_features = extract_features(sat_img)
                 cap = cv2.VideoCapture(temp_vid_path)
                 fps = cap.get(cv2.CAP_PROP_FPS)
@@ -161,7 +161,7 @@ elif menu == "3. Load Images from Dataset":
     st.subheader("📂 Option 3: Load Sample Images from Dataset Folder")
     dataset_dir = "dataset"
     if os.path.exists(dataset_dir):
-        images = [f for f in os.listdir(dataset_dir) if f.lower().endswith(('png', 'jpg', 'jpeg', 'webp', 'bmp', 'tiff'))]
+        images = [f for f in os.listdir(dataset_dir) if f.lower().endswith(('png', 'jpg', 'jpeg', 'webp', 'bmp', 'tiff', 'jfif'))]
         if images:
             selected_img_name = st.selectbox("Select a sample image:", images)
             selected_path = os.path.join(dataset_dir, selected_img_name)
