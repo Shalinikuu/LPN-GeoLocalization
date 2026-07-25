@@ -101,7 +101,7 @@ if menu == "1. Upload Satellite & UAV Image":
             st.success(f"🎉 Match Confidence Score: **{score:.2f}%**")
 
 elif menu == "2. Upload Satellite Image & UAV Video":
-    st.subheader("🎥 Option 2: Satellite Image & UAV Video Matching (All Frames View)")
+    st.subheader("🎥 Option 2: Satellite Image & UAV Video Matching")
     
     col1, col2 = st.columns(2)
     with col1:
@@ -142,9 +142,7 @@ elif menu == "2. Upload Satellite Image & UAV Video":
                 os.unlink(temp_vid_path)
                 
             if extracted_results:
-                # Find best frame
                 best_frame_data = max(extracted_results, key=lambda x: x[1])
-                
                 st.markdown("---")
                 st.markdown("### 🏆 Final Best Match Result")
                 res_col1, res_col2 = st.columns(2)
@@ -156,9 +154,6 @@ elif menu == "2. Upload Satellite Image & UAV Video":
                 
                 st.markdown("---")
                 st.markdown("### 🎞️ All Extracted Video Frames & Scores")
-                st.write("Below are all the frames extracted from the video stream along with their individual match scores:")
-                
-                # Display frames in a grid
                 cols = st.columns(3)
                 for idx, (img, score, f_num) in enumerate(extracted_results):
                     with cols[idx % 3]:
@@ -167,23 +162,24 @@ elif menu == "2. Upload Satellite Image & UAV Video":
                 st.error("❌ Could not extract frames from the video.")
 
 elif menu == "3. Load Images from Dataset":
-    st.subheader("📂 Option 3: Load Sample Images from Dataset Folder")
-    dataset_dir = "dataset"
-    if os.path.exists(dataset_dir):
-        images = [f for f in os.listdir(dataset_dir) if f.lower().endswith(('png', 'jpg', 'jpeg', 'webp', 'bmp', 'tiff', 'jfif'))]
-        if images:
-            selected_img_name = st.selectbox("Select a sample image:", images)
-            selected_path = os.path.join(dataset_dir, selected_img_name)
-            sample_img = Image.open(selected_path).convert('RGB')
-            
-            st.image(sample_img, caption=selected_img_name, width=300)
-            if st.button("Match Sample Image 🚀", type="primary", key="btn3"):
-                feat = extract_features(sample_img)
-                st.info("Sample image features extracted successfully!")
-        else:
-            st.warning("No images found inside the 'dataset' folder.")
-    else:
-        st.info("💡 Create a folder named `dataset` in your GitHub repository to test sample images here.")
+    st.subheader("📂 Option 3: Batch Upload & Test Dataset Images")
+    st.write("Aap apne dataset se multiple images yahan ek sath select karke upload kar sakte hain aur unhe test kar sakte hain:")
+    
+    dataset_files = st.file_uploader("Upload Dataset Images", type=all_image_types, accept_multiple_files=True, key="dataset_batch")
+    
+    if dataset_files:
+        image_names = [file.name for file in dataset_files]
+        selected_name = st.selectbox("Select an image from your uploaded dataset:", image_names)
+        
+        # Find the selected file object
+        selected_file = next(f for f in dataset_files if f.name == selected_name)
+        dataset_img = Image.open(selected_file).convert('RGB')
+        
+        st.image(dataset_img, caption=selected_name, width=350)
+        
+        if st.button("Extract Features & Test 🚀", type="primary", key="btn3"):
+            feat = extract_features(dataset_img)
+            st.success(f"✅ Features successfully extracted for **{selected_name}** using your model!")
 
 elif menu == "4. Exit":
     st.warning("🔒 Session ended. You can close this tab or select another option from the sidebar.")
