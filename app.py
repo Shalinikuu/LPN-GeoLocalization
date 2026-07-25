@@ -71,14 +71,17 @@ menu = st.sidebar.radio(
     )
 )
 
+# All image formats allowed: jpg, jpeg, png, webp, bmp, tiff
+all_image_types = ["jpg", "jpeg", "png", "webp", "bmp", "tif", "tiff"]
+
 if menu == "1. Upload Satellite & UAV Image":
     st.subheader("🖼️ Option 1: Satellite & UAV Image Matching")
     
     col1, col2 = st.columns(2)
     with col1:
-        sat_file = st.file_uploader("Upload Satellite Image", type=["jpg", "png", "jpeg"], key="opt1_sat")
+        sat_file = st.file_uploader("Upload Satellite Image", type=all_image_types, key="opt1_sat")
     with col2:
-        uav_file = st.file_uploader("Upload UAV Image", type=["jpg", "png", "jpeg"], key="opt1_uav")
+        uav_file = st.file_uploader("Upload UAV Image", type=all_image_types, key="opt1_uav")
         
     if sat_file and uav_file:
         sat_img = Image.open(sat_file).convert('RGB')
@@ -103,9 +106,9 @@ elif menu == "2. Upload Satellite Image & UAV Video":
     
     col1, col2 = st.columns(2)
     with col1:
-        sat_file_v = st.file_uploader("Upload Satellite Image", type=["jpg", "png", "jpeg"], key="opt2_sat")
+        sat_file_v = st.file_uploader("Upload Satellite Image", type=all_image_types, key="opt2_sat")
     with col2:
-        vid_file = st.file_uploader("Upload UAV Video File", type=["mp4", "avi", "mov"], key="opt2_vid")
+        vid_file = st.file_uploader("Upload UAV Video File", type=["mp4", "avi", "mov", "mkv"], key="opt2_vid")
         
     if sat_file_v and vid_file:
         sat_img = Image.open(sat_file_v).convert('RGB')
@@ -156,12 +159,9 @@ elif menu == "2. Upload Satellite Image & UAV Video":
 
 elif menu == "3. Load Images from Dataset":
     st.subheader("📂 Option 3: Load Sample Images from Dataset Folder")
-    st.write("If you have sample test images inside a folder in your repository, you can select them here.")
-    
-    # Checking if a dataset folder exists locally
-    dataset_dir = "dataset" # Aap apne folder ka naam yahan change kar sakte hain agar zaroorat ho
+    dataset_dir = "dataset"
     if os.path.exists(dataset_dir):
-        images = [f for f in os.listdir(dataset_dir) if f.lower().endswith(('png', 'jpg', 'jpeg'))]
+        images = [f for f in os.listdir(dataset_dir) if f.lower().endswith(('png', 'jpg', 'jpeg', 'webp', 'bmp', 'tiff'))]
         if images:
             selected_img_name = st.selectbox("Select a sample image:", images)
             selected_path = os.path.join(dataset_dir, selected_img_name)
@@ -170,11 +170,11 @@ elif menu == "3. Load Images from Dataset":
             st.image(sample_img, caption=selected_img_name, width=300)
             if st.button("Match Sample Image 🚀", type="primary", key="btn3"):
                 feat = extract_features(sample_img)
-                st.info("Sample image features extracted successfully! (You can compare it against a target satellite tile)")
+                st.info("Sample image features extracted successfully!")
         else:
-            st.warning("No images found inside the 'dataset' folder in your repository.")
+            st.warning("No images found inside the 'dataset' folder.")
     else:
-        st.info("💡 Tip: To use this option, create a folder named `dataset` in your GitHub repository and put some sample test images inside it, or use Options 1 & 2 for direct file uploads!")
+        st.info("💡 Create a folder named `dataset` in your GitHub repository to test sample images here.")
 
 elif menu == "4. Exit":
     st.warning("🔒 Session ended. You can close this tab or select another option from the sidebar.")
