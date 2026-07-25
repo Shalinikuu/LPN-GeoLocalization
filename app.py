@@ -71,7 +71,6 @@ menu = st.sidebar.radio(
     )
 )
 
-# Added 'jfif' along with other formats
 all_image_types = ["jpg", "jpeg", "png", "webp", "bmp", "tif", "tiff", "jfif"]
 
 if menu == "1. Upload Satellite & UAV Image":
@@ -102,7 +101,7 @@ if menu == "1. Upload Satellite & UAV Image":
             st.success(f"🎉 Match Confidence Score: **{score:.2f}%**")
 
 elif menu == "2. Upload Satellite Image & UAV Video":
-    st.subheader("🎥 Option 2: Satellite Image & UAV Video Matching")
+    st.subheader("🎥 Option 2: Satellite Image & UAV Video Matching (All Frames View)")
     
     col1, col2 = st.columns(2)
     with col1:
@@ -113,20 +112,19 @@ elif menu == "2. Upload Satellite Image & UAV Video":
     if sat_file_v and vid_file:
         sat_img = Image.open(sat_file_v).convert('RGB')
         
-        if st.button("Process Video Frames & Match 🚀", type="primary", key="btn2"):
+        if st.button("Process & Show All Extracted Frames 🚀", type="primary", key="btn2"):
             with tempfile.NamedTemporaryFile(delete=False, suffix='.mp4') as tmp:
                 tmp.write(vid_file.read())
                 temp_vid_path = tmp.name
                 
-            with st.spinner("Scanning video frames and evaluating features..."):
+            with st.spinner("Extracting frames and evaluating features..."):
                 sat_features = extract_features(sat_img)
                 cap = cv2.VideoCapture(temp_vid_path)
                 fps = cap.get(cv2.CAP_PROP_FPS)
                 fps = 30.0 if fps == 0 or fps is None else fps
                 frame_interval = int(fps)
                 
-                best_score = -100.0
-                best_frame = None
+                extracted_results = []
                 frame_count = 0
                 
                 while cap.isOpened():
@@ -137,25 +135,36 @@ elif menu == "2. Upload Satellite Image & UAV Video":
                         frame_rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
                         pil_img = Image.fromarray(frame_rgb)
                         f_feat = extract_features(pil_img)
-                        score = F.cosine_similarity(f_feat, sat_features).item() * 100
-                        
-                        if score > best_score:
-                            best_score = score
-                            best_frame = pil_img
+                        score = max(0.0, F.cosine_similarity(f_feat, sat_features).item() * 100)
+                        extracted_results.append((pil_img, score, frame_count))
                     frame_count += 1
                 cap.release()
                 os.unlink(temp_vid_path)
                 
-            if best_frame:
-                best_score = max(0.0, best_score)
+            if extracted_results:
+                # Find best frame
+                best_frame_data = max(extracted_results, key=lambda x: x[1])
+                
+                st.markdown("---")
+                st.markdown("### 🏆 Final Best Match Result")
                 res_col1, res_col2 = st.columns(2)
                 with res_col1:
-                    st.image(best_frame, caption="Best Matching Video Frame", use_column_width=True)
+                    st.image(best_frame_data[0], caption=f"Best Frame (Sec: {best_frame_data[2]//int(fps)})", use_column_width=True)
                 with res_col2:
                     st.image(sat_img, caption="Satellite View", use_column_width=True)
-                st.success(f"🎯 Best Frame Match Score: **{best_score:.2f}%**")
+                st.success(f"🎯 Highest Match Confidence Score: **{best_frame_data[1]:.2f}%**")
+                
+                st.markdown("---")
+                st.markdown("### 🎞️ All Extracted Video Frames & Scores")
+                st.write("Below are all the frames extracted from the video stream along with their individual match scores:")
+                
+                # Display frames in a grid
+                cols = st.columns(3)
+                for idx, (img, score, f_num) in enumerate(extracted_results):
+                    with cols[idx % 3]:
+                        st.image(img, caption=f"Frame {f_num} | Score: {score:.2f}%", use_column_width=True)
             else:
-                st.error("❌ Error reading video frames.")
+                st.error("❌ Could not extract frames from the video.")
 
 elif menu == "3. Load Images from Dataset":
     st.subheader("📂 Option 3: Load Sample Images from Dataset Folder")
