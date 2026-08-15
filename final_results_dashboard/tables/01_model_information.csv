@@ -1,0 +1,14 @@
+Item,Value
+Model name,AdvancedEdgeGeoLPN_LOCAL_REIMPLEMENTATION
+Result provenance,LOCAL_REIMPLEMENTATION
+Backbone,MobileNetV3-Large .features
+Backbone output channels,960
+Pooling,"AdaptiveAvgPool2d((4,1))"
+Descriptor heads,4 × (960 → 512)
+Final descriptor,2048-D
+Parameters,"4,940,080"
+Input resolution,224 × 224
+Checkpoint,/content/drive/MyDrive/mobilegeo_project/baseline_v1/checkpoint/AdvancedEdgeGeoLPN_LOCAL_REIMPLEMENTATION.pth
+Checkpoint exists,True
+Checkpoint SHA256,adc64177582638690b841c1be390b7d05dfb27f4d2001b3d52fb74455020b807
+TorchScript exists,True

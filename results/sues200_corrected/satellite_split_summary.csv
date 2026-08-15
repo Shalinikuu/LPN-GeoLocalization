@@ -1,0 +1,4 @@
+split,satellite_count,location_count
+test,40,40
+train,120,120
+validation,40,40

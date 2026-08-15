@@ -1,0 +1,234 @@
+{
+  "created_at_utc": "2026-08-09T06:30:04.154513+00:00",
+  "notebook": "06_keyframes_temporal_consensus",
+  "status": "COMPLETE",
+  "validation_checks": {
+    "notebook05_complete": true,
+    "notebook05_validation_passed": true,
+    "model_name_correct": true,
+    "model_provenance_correct": true,
+    "ordered_sequence_eligible": true,
+    "sequence_status_correct": true,
+    "ordered_group_count_12": true,
+    "query_count_2331": true,
+    "adjacent_pair_count_2319": true,
+    "all_adjacent_pairs_step1": true,
+    "zero_sequence_gaps": true,
+    "zero_duplicate_sequences": true,
+    "verified_timestamps_blocked": true,
+    "fps_claim_blocked": true,
+    "fixed_interval_claim_blocked": true,
+    "phase4_saved_rank_metrics_consistent": true,
+    "l1_topk_counts_exact": true,
+    "l1_baseline_tie_aware_reproduced": true,
+    "l1_metric_difference_negligible": true,
+    "l1_rank_difference_within_tie_tolerance": true,
+    "expected_keyframe_strides": true,
+    "keyframe_selected_counts_correct": true,
+    "expected_window_lengths": true,
+    "window_candidate_counts_correct": true,
+    "best_window_by_map_excess_is_5": true,
+    "best_window_by_rank_gain_is_5": true,
+    "window_consensus_interpretation_correct": true,
+    "clean_baseline_near_chance": true,
+    "official_mobilegeo_result_false": true,
+    "crs_unverified": true,
+    "wgs84_claim_blocked": true,
+    "meter_motion_claim_blocked": true,
+    "temporal_velocity_claim_blocked": true,
+    "retrieval_not_verified_pose": true,
+    "adjacency_manifest_2319_rows": true,
+    "adjacency_all_step1": true,
+    "window_manifest_total_rows_correct": true
+  },
+  "all_validation_checks_pass": true,
+  "model": {
+    "name": "AdvancedEdgeGeoLPN_LOCAL_REIMPLEMENTATION",
+    "provenance": "LOCAL_REIMPLEMENTATION",
+    "official_mobilegeo_model": false
+  },
+  "sequence_structure": {
+    "status": "ORDERED_SAMPLE_SEQUENCE_STRUCTURE_SUPPORTED",
+    "provenance": "DATASET_SAMPLE_NAME_ORDERING",
+    "ordered_group_count": 12,
+    "query_count": 2331,
+    "adjacent_pair_count": 2319,
+    "step1_pair_count": 2319,
+    "step1_pair_fraction": 1.0,
+    "gap_pair_count": 0,
+    "duplicate_sequence_count": 0,
+    "verified_timestamp_available": false,
+    "verified_fps_available": false,
+    "verified_fixed_time_interval_available": false
+  },
+  "keyframe_subsampling": {
+    "definition": "DETERMINISTIC_DATASET_ORDER_SUBSAMPLING",
+    "gallery_policy": "FULL_2331_ITEM_GALLERY_RETAINED_PER_SCALE",
+    "strides": {
+      "1": {
+        "selected_queries": 2331,
+        "processing_fraction": 1.0,
+        "macro_mAP": 0.0039378652873408
+      },
+      "2": {
+        "selected_queries": 1167,
+        "processing_fraction": 0.5006435006435006,
+        "macro_mAP": 0.0039062236417122
+      },
+      "5": {
+        "selected_queries": 468,
+        "processing_fraction": 0.2007722007722007,
+        "macro_mAP": 0.0038460484617077
+      },
+      "10": {
+        "selected_queries": 234,
+        "processing_fraction": 0.1003861003861003,
+        "macro_mAP": 0.0036102301637373
+      }
+    },
+    "actual_subsampled_inference_timing_measured": false,
+    "retrieval_metrics_status": "DESCRIPTIVE_ONLY_CLEAN_BASELINE_NEAR_CHANCE"
+  },
+  "ordered_window_consensus": {
+    "aggregation": "ARITHMETIC_MEAN_THEN_L2_NORMALIZE",
+    "window_lengths": [
+      1,
+      3,
+      5,
+      9
+    ],
+    "candidate_window_counts": {
+      "1": 2331,
+      "3": 2307,
+      "5": 2283,
+      "9": 2235
+    },
+    "l1_baseline_reproduced_tie_aware": true,
+    "l1_max_metric_absolute_difference": 6.830608838964691e-10,
+    "l1_max_equivalent_total_rank_sum_difference": 1.9999999994408881,
+    "best_tested_multi_sample_window_by_map_excess": 5,
+    "best_tested_multi_sample_window_by_normalized_rank_gain": 5,
+    "window_1": {
+      "macro_R@1": 0.0005005005005005,
+      "macro_R@5": 0.0021092521092521,
+      "macro_R@10": 0.0041827541827541,
+      "macro_mAP": 0.0039378651563024,
+      "macro_normalized_rank_gain": 0.0669094600425072
+    },
+    "window_3": {
+      "macro_R@1": 0.0003973414246496,
+      "macro_R@5": 0.0024924143909839,
+      "macro_R@10": 0.0048403409911862,
+      "macro_mAP": 0.0040631387625608,
+      "macro_normalized_rank_gain": 0.0784186180977161
+    },
+    "window_5": {
+      "macro_R@1": 0.0006570302233902,
+      "macro_R@5": 0.0024456124981749,
+      "macro_R@10": 0.0044532048474229,
+      "macro_mAP": 0.0041531140061487,
+      "macro_normalized_rank_gain": 0.0805093638163621
+    },
+    "window_9": {
+      "macro_R@1": 0.0005219985085756,
+      "macro_R@5": 0.0020507084265473,
+      "macro_R@10": 0.0042878448918717,
+      "macro_mAP": 0.0040178315574041,
+      "macro_normalized_rank_gain": 0.0770874432621201
+    },
+    "interpretation": "ORDERED_WINDOW_AGGREGATION_DESCRIPTIVELY_IMPROVES_RETRIEVAL_SIGNAL_RELATIVE_TO_SINGLE_SAMPLE_BASELINE",
+    "interpretation_scope": "DESCRIPTIVE_ORDERED_SEQUENCE_RETRIEVAL_SIGNAL",
+    "verified_temporal_consensus_claim": false,
+    "retrieval_is_verified_uav_pose": false
+  },
+  "reporting_constraints": {
+    "clean_single_sample_retrieval_status": "NEAR_CHANCE",
+    "official_mobilegeo_result": false,
+    "crs_status": "UNVERIFIED",
+    "wgs84_claim_allowed": false,
+    "meter_level_motion_or_error_claim_allowed": false,
+    "verified_timestamp_claim_allowed": false,
+    "fps_claim_allowed": false,
+    "fixed_time_interval_claim_allowed": false,
+    "verified_temporal_velocity_claim_allowed": false,
+    "nominal_level_verified_as_agl_or_msl": false,
+    "jetson_latency_claim_allowed_from_colab": false
+  },
+  "artifact_hashes": {
+    "notebook05_completion": {
+      "path": "/content/drive/MyDrive/mobilegeo_project/results/robustness_and_rejection/final/notebook05_completion_manifest.json",
+      "bytes": 13781,
+      "sha256": "3c8a79fb08642257f6305686a89d729156c94caf1998286fac8371af5712962c"
+    },
+    "sequence_protocol": {
+      "path": "/content/drive/MyDrive/mobilegeo_project/results/keyframes_temporal_consensus/protocol/notebook06_sequence_protocol.json",
+      "bytes": 1548,
+      "sha256": "fb19b047ba5c1980c6b614f998176d2b0705c4f50487e044776ec896f74eaaa9"
+    },
+    "sequence_eligibility_audit": {
+      "path": "/content/drive/MyDrive/mobilegeo_project/results/keyframes_temporal_consensus/audit/notebook06_sequence_eligibility_audit.json",
+      "bytes": 675,
+      "sha256": "eb1659f790c65dada12788c205e597c6bfacf5d045fe131205ad70c273c0ba2c"
+    },
+    "keyframe_window_audit": {
+      "path": "/content/drive/MyDrive/mobilegeo_project/results/keyframes_temporal_consensus/audit/notebook06_keyframe_window_consensus_audit.json",
+      "bytes": 3060,
+      "sha256": "03e61b241223648bc03d1f088a80b5a711fb920f3fc9c25fd27176d35d377694"
+    },
+    "l1_patch_audit": {
+      "path": "/content/drive/MyDrive/mobilegeo_project/results/keyframes_temporal_consensus/audit/notebook06_l1_reproduction_patch_audit.json",
+      "bytes": 1082,
+      "sha256": "9dc9ca1c5462829297e649703175ec15c5cb9987a10c907a780d8c97efa09c75"
+    },
+    "phase4_rank_validation": {
+      "path": "/content/drive/MyDrive/mobilegeo_project/results/keyframes_temporal_consensus/audit/vps_phase4_saved_rank_metric_validation.csv",
+      "bytes": 1223,
+      "sha256": "1e2c02fb6678789a7410c582b1556c3a537a0cc1ee5d022e1871b06caf1f6032"
+    },
+    "l1_tie_aware_comparison": {
+      "path": "/content/drive/MyDrive/mobilegeo_project/results/keyframes_temporal_consensus/audit/vps_window_l1_tie_aware_baseline_reproduction.csv",
+      "bytes": 2018,
+      "sha256": "12e5cdf709116086988313132410284c69d7e815fc0c759c90a4287b7e470ff4"
+    },
+    "ordered_query_manifest": {
+      "path": "/content/drive/MyDrive/mobilegeo_project/results/keyframes_temporal_consensus/manifests/vps_ordered_query_manifest.csv",
+      "bytes": 1100101,
+      "sha256": "45ad305e46bd85a9e4cf8513d7c630d0ecb1fd035f452dbdeeecae1c3b0e638f"
+    },
+    "ordered_query_adjacency": {
+      "path": "/content/drive/MyDrive/mobilegeo_project/results/keyframes_temporal_consensus/manifests/vps_ordered_query_adjacency.csv",
+      "bytes": 388147,
+      "sha256": "adebe0ec929c60881c5de8d05ed463da37de859c1c7c3ea72871d760f1ba29ab"
+    },
+    "ordered_window_manifest": {
+      "path": "/content/drive/MyDrive/mobilegeo_project/results/keyframes_temporal_consensus/manifests/vps_ordered_window_manifest.csv",
+      "bytes": 1227903,
+      "sha256": "a925230a27fe86cc31cba462a96cd6ddd949bc67da89e182f22bf05b03647112"
+    },
+    "ordered_group_summary": {
+      "path": "/content/drive/MyDrive/mobilegeo_project/results/keyframes_temporal_consensus/reports/vps_ordered_group_summary.csv",
+      "bytes": 1748,
+      "sha256": "7b5e38dc578252bb6453a2b9401a941cef7e324710ff39c5aa557fb85f151071"
+    },
+    "keyframe_by_scale": {
+      "path": "/content/drive/MyDrive/mobilegeo_project/results/keyframes_temporal_consensus/reports/vps_keyframe_subsampling_by_scale.csv",
+      "bytes": 11175,
+      "sha256": "5c064daff825050f5c3aeb0654c32c173f3951a4e8c0efb9d05fbcbd97b2ac16"
+    },
+    "keyframe_macro": {
+      "path": "/content/drive/MyDrive/mobilegeo_project/results/keyframes_temporal_consensus/reports/vps_keyframe_subsampling_macro.csv",
+      "bytes": 986,
+      "sha256": "288e1b73ff30844d49a0402099f1eefcbd4228e10283a9bc4472744f1f32da20"
+    },
+    "window_by_scale": {
+      "path": "/content/drive/MyDrive/mobilegeo_project/results/keyframes_temporal_consensus/reports/vps_ordered_window_retrieval_by_scale.csv",
+      "bytes": 23081,
+      "sha256": "0205bc6d79ca738888f2b6c8dab912765b525e06eddb6e68de51daa3503a61c7"
+    },
+    "window_macro": {
+      "path": "/content/drive/MyDrive/mobilegeo_project/results/keyframes_temporal_consensus/reports/vps_ordered_window_retrieval_macro.csv",
+      "bytes": 1322,
+      "sha256": "2c56db2667b95a0847dd24aef5a3cfbf854b267e0c2503f44cdeca1a827323ac"
+    }
+  }
+}

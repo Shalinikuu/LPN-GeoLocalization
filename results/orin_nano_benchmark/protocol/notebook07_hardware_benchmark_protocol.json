@@ -1,0 +1,79 @@
+{
+  "created_at_utc": "2026-08-09T06:30:13.133528+00:00",
+  "notebook": "07_orin_nano_benchmark",
+  "model": "AdvancedEdgeGeoLPN_LOCAL_REIMPLEMENTATION",
+  "model_provenance": "LOCAL_REIMPLEMENTATION",
+  "official_mobilegeo_model": false,
+  "benchmark_mode": "REFERENCE_HOST_PREPARATION_ONLY_NO_ORIN_NANO_LATENCY_CLAIM",
+  "actual_orin_nano_runtime": false,
+  "orin_nano_latency_claim_allowed": false,
+  "colab_reference_only": true,
+  "runtime": {
+    "platform": "Linux-6.6.122+-x86_64-with-glibc2.35",
+    "machine": "x86_64",
+    "processor": "x86_64",
+    "python_version": "3.12.13",
+    "torch_version": "2.11.0+cpu",
+    "cuda_available": false,
+    "cuda_version": null,
+    "cudnn_version": null,
+    "cuda_device_count": 0,
+    "cuda_device_name": null,
+    "cuda_total_memory_bytes": null,
+    "cuda_compute_capability": null
+  },
+  "jetson_detection": {
+    "device_tree_model_strings": [],
+    "nv_tegra_release": null,
+    "tegrastats_path": null,
+    "jetson_platform_detected": false,
+    "orin_family_detected": false,
+    "orin_nano_identity_detected": false,
+    "nvidia_smi": {
+      "returncode": null,
+      "stdout": "",
+      "stderr": "FileNotFoundError(2, 'No such file or directory')"
+    },
+    "uname": {
+      "returncode": 0,
+      "stdout": "Linux a87fe99cb0f6 6.6.122+ #1 SMP Thu Apr 30 18:17:14 UTC 2026 x86_64 x86_64 x86_64 GNU/Linux",
+      "stderr": ""
+    }
+  },
+  "allowed_next_actions": [
+    "exact_model_load_validation",
+    "model_parameter_count",
+    "model_file_size",
+    "torchscript_export",
+    "onnx_export_if_supported",
+    "deployment_input_output_validation",
+    "colab_reference_timing_clearly_labeled_non_orin",
+    "generate_orin_execution_package"
+  ],
+  "disallowed_claims": [
+    "COLAB_T4_LATENCY_AS_ORIN_NANO_LATENCY",
+    "COLAB_T4_THROUGHPUT_AS_ORIN_NANO_THROUGHPUT",
+    "COLAB_T4_MEMORY_AS_ORIN_NANO_MEMORY",
+    "JETSON_POWER_CLAIM_WITHOUT_ACTUAL_JETSON_MEASUREMENT",
+    "OFFICIAL_MOBILEGEO_DEPLOYMENT_RESULT"
+  ],
+  "reporting_constraints": {
+    "colab_timing_is_jetson_timing": false,
+    "official_mobilegeo_result": false,
+    "crs_status": "UNVERIFIED",
+    "retrieval_is_verified_uav_pose": false,
+    "nominal_level_verified_as_agl_or_msl": false
+  },
+  "reference_host_metadata": {
+    "machine_readable_gpu_recovered": false,
+    "machine_readable_gpu": null,
+    "console_reported_gpu": "Tesla T4",
+    "console_reported_compute_capability": "7.5",
+    "console_reported_machine": "x86_64",
+    "console_reported_platform": "Linux-6.6.122+-x86_64-with-glibc2.35",
+    "console_metadata_provenance": "USER_PROVIDED_NOTEBOOK07_CELL1_CONSOLE_OUTPUT",
+    "console_metadata_machine_verified_in_current_runtime": false,
+    "actual_orin_nano_runtime": false,
+    "orin_nano_performance_claim_allowed": false
+  }
+}

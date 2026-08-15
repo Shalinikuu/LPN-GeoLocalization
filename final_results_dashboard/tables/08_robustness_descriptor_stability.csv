@@ -1,0 +1,11 @@
+Condition,Mean descriptor cosine,Top1 identity stability (%)
+blur_mild,0.65661,13.51
+blur_strong,0.38188,5.49
+brightness_mild,0.6741,17.53
+brightness_strong,0.24927,2.29
+contrast_mild,0.89828,36.76
+contrast_strong,0.75286,14.07
+jpeg_mild,0.94382,47.58
+jpeg_strong,0.82038,22.84
+noise_mild,0.94025,45.65
+noise_strong,0.75943,17.82

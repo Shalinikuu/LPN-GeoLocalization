@@ -1,0 +1,81 @@
+{
+  "created_at_utc": "2026-08-08T19:40:05.180774+00:00",
+  "gps_info_file_count": 5,
+  "labels_file_count": 5,
+  "latitude_keys_found": [],
+  "longitude_keys_found": [],
+  "altitude_keys_found": [],
+  "orientation_keys_found": [],
+  "explicit_lat_lon_pair_found": false,
+  "existing_manifest_records": [
+    {
+      "path": "/content/drive/MyDrive/mobilegeo_final/data/frame_manifest.csv",
+      "type": "csv",
+      "columns": [
+        "frame_id",
+        "path",
+        "split",
+        "timestamp_s",
+        "positive_tile_ids",
+        "class_id",
+        "altitude",
+        "source_view"
+      ]
+    },
+    {
+      "path": "/content/drive/MyDrive/mobilegeo_final/data/tile_manifest.csv",
+      "type": "csv",
+      "columns": [
+        "tile_id",
+        "path",
+        "split",
+        "class_id",
+        "source_view",
+        "sha256"
+      ]
+    },
+    {
+      "path": "/content/drive/MyDrive/mobilegeo_final/data/video_metadata.json",
+      "type": "json",
+      "flattened_keys": [
+        "video_path",
+        "video_name",
+        "size_mb",
+        "fps",
+        "frame_count",
+        "width",
+        "height",
+        "duration_seconds",
+        "duration_minutes"
+      ]
+    },
+    {
+      "path": "/content/drive/MyDrive/mobilegeo_final/cache/advanced_edge_geo_lpn_test_query_metadata.csv",
+      "type": "csv",
+      "columns": [
+        "frame_id",
+        "path",
+        "split",
+        "timestamp_s",
+        "positive_tile_ids",
+        "class_id",
+        "altitude",
+        "source_view"
+      ]
+    },
+    {
+      "path": "/content/drive/MyDrive/mobilegeo_final/satellite_embeddings/advanced_edge_geo_lpn_tile_metadata.csv",
+      "type": "csv",
+      "columns": [
+        "tile_id",
+        "path",
+        "split",
+        "class_id",
+        "source_view",
+        "sha256"
+      ]
+    }
+  ],
+  "status": "GPS_INFO_PRESENT_BUT_SCHEMA_REQUIRES_INTERPRETATION",
+  "restriction": "Numeric range matching alone must not be treated as verified latitude/longitude."
+}

@@ -1,0 +1,46 @@
+project:
+  name: GPS-Denied UAV Visual Positioning System
+  root: /content/drive/MyDrive/mobilegeo_project
+  random_seed: 42
+
+baseline:
+  model_name: AdvancedEdgeGeoLPN_LOCAL_REIMPLEMENTATION
+  provenance_label: LOCAL_REIMPLEMENTATION
+  descriptor_dimension: 2048
+  status: SMOKE_TEST_BASELINE
+
+paths:
+  notebooks: /content/drive/MyDrive/mobilegeo_project/notebooks
+  source: /content/drive/MyDrive/mobilegeo_project/src
+  manifests: /content/drive/MyDrive/mobilegeo_project/manifests
+  rankings: /content/drive/MyDrive/mobilegeo_project/rankings
+  reports: /content/drive/MyDrive/mobilegeo_project/reports
+  checkpoints: /content/drive/MyDrive/mobilegeo_project/checkpoints
+  results: /content/drive/MyDrive/mobilegeo_project/results
+  cache: /content/drive/MyDrive/mobilegeo_project/cache
+  indexes: /content/drive/MyDrive/mobilegeo_project/indexes
+
+sues200:
+  altitude_reference: UNKNOWN
+  nominal_heights:
+    - 150
+    - 200
+    - 250
+    - 300
+  top_k:
+    - 1
+    - 5
+    - 10
+  require_zero_location_overlap: true
+
+retrieval:
+  search_mode: GLOBAL_RECOVERY
+  accepted_statuses:
+    - ACCEPTED_FOR_VERIFICATION
+    - AMBIGUOUS
+    - OUT_OF_MAP
+    - INVALID_INPUT
+    - SYSTEM_ERROR
+
+provenance:
+  official_mobilegeo_status: UNRESOLVED_PENDING_RELEASE_AUDIT

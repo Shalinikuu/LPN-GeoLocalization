@@ -1,0 +1,12 @@
+Item,Status
+Checkpoint strict load,PASS
+TorchScript export,Complete
+TorchScript numerical equivalence,PASS
+Deployment ZIP,Complete
+Actual Jetson Orin Nano detected,False
+Actual Orin benchmark performed,False
+Actual Orin latency available,False
+Actual Orin throughput available,False
+Actual Orin memory measurement available,False
+TensorRT engine built on T4,False
+ONNX export available in reference-host run,False

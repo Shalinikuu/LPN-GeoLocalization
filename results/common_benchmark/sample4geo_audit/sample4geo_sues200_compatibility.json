@@ -1,0 +1,60 @@
+{
+  "created_at_utc": "2026-08-06T20:05:59.827343+00:00",
+  "method": "Sample4Geo",
+  "repository": "Skyy93/Sample4Geo",
+  "official_repository_code": true,
+  "official_sues200_pipeline_found": false,
+  "official_configuration": {
+    "model_name": "convnext_base.fb_in22k_ft_in1k_384",
+    "image_size": 384,
+    "configured_dataset": "U1652-D2S",
+    "checkpoint_relative_path": "pretrained/university/convnext_base.fb_in22k_ft_in1k_384/weights_e1_0.9515.pth",
+    "expected_checkpoint_path": "/content/drive/MyDrive/mobilegeo_project/repositories/Sample4Geo/pretrained/university/convnext_base.fb_in22k_ft_in1k_384/weights_e1_0.9515.pth",
+    "checkpoint_already_available": false
+  },
+  "dataset_evidence": {
+    "University-1652": [
+      "README.md",
+      "eval_university.py",
+      "sample4geo/dataset/university.py",
+      "train_university.py"
+    ],
+    "SUES-200": [],
+    "CVUSA": [
+      "README.md",
+      "calc_distance_cvusa.py",
+      "eval_cvact.py",
+      "eval_cvusa.py",
+      "sample4geo/dataset/cvusa.py",
+      "train_cvact.py",
+      "train_cvusa.py"
+    ],
+    "CVACT": [
+      "README.md",
+      "calc_distance_cvact.py",
+      "eval_cvact.py",
+      "eval_cvusa.py",
+      "sample4geo/dataset/cvact.py",
+      "train_cvact.py",
+      "train_cvusa.py"
+    ],
+    "VIGOR": [
+      "README.md",
+      "calc_distance_vigor.py",
+      "eval_vigor_cross.py",
+      "eval_vigor_same.py",
+      "sample4geo/dataset/vigor.py",
+      "train_vigor.py"
+    ]
+  },
+  "common_benchmark_status": "ZERO_SHOT_TRANSFER_REQUIRED",
+  "planned_provenance_label": "OFFICIAL_SAMPLE4GEO_CHECKPOINT_ZERO_SHOT_TRANSFER_TO_PROJECT_SUES200_SPLIT",
+  "comparison_protocol": "PROJECT_DEFINED_LOCATION_DISJOINT_60_20_20",
+  "reporting_restrictions": [
+    "Do not describe zero-shot SUES-200 evaluation as an official Sample4Geo SUES-200 result.",
+    "Use the exact same 8,000 queries and 40 gallery images as the local baseline.",
+    "Record the official checkpoint hash.",
+    "Do not report retrieval as verified UAV pose."
+  ],
+  "next_action": "Download the official University-1652 Sample4Geo checkpoint."
+}

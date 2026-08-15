@@ -1,0 +1,9 @@
+{
+  "created_at_utc": "2026-08-08T19:20:32.342571+00:00",
+  "phase": "PHASE_4_GEOREFERENCED_PROJECT_BENCHMARK",
+  "objective": "Discover verified image-to-geographic-coordinate metadata for meter-level localization evaluation.",
+  "coordinate_policy": "Do not infer latitude or longitude from SUES-200 location IDs.",
+  "height_policy": "NOMINAL_DATASET_FOLDER_LABEL_NOT_VERIFIED_AS_AGL_OR_MSL",
+  "pose_policy": "Image retrieval is not equivalent to verified geographic UAV pose.",
+  "status": "GEOREFERENCE_METADATA_DISCOVERY"
+}

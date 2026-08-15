@@ -1,0 +1,44 @@
+{
+  "created_at_utc": "2026-08-06T20:42:29.267903+00:00",
+  "benchmark": "COMMON_SUES200_LOCATION_DISJOINT_BENCHMARK",
+  "protocol": "PROJECT_DEFINED_LOCATION_DISJOINT_60_20_20",
+  "query_count": 8000,
+  "gallery_count": 40,
+  "overall_comparison": {
+    "local_recall_at_1_percent": 94.575,
+    "sample4geo_recall_at_1_percent": 85.9,
+    "recall_at_1_difference": 8.674999999999997,
+    "local_recall_at_5_percent": 99.9875,
+    "sample4geo_recall_at_5_percent": 98.7375,
+    "recall_at_5_difference": 1.25,
+    "local_recall_at_10_percent": 100.0,
+    "sample4geo_recall_at_10_percent": 99.775,
+    "recall_at_10_difference": 0.22499999999999432,
+    "local_map_percent": 96.92541666666666,
+    "sample4geo_map_percent": 91.78651903651904,
+    "map_difference": 5.138897630147625,
+    "local_mean_positive_rank": 1.082125,
+    "sample4geo_mean_positive_rank": 1.27375
+  },
+  "paired_outcomes": {
+    "both_correct": 6671,
+    "local_only_correct": 895,
+    "sample4geo_only_correct": 201,
+    "both_wrong": 233,
+    "discordant_count": 1096
+  },
+  "mcnemar_test": {
+    "exact_two_sided_p_value": 6.077425559161068e-105,
+    "continuity_corrected_chi_square": 438.18339416058393
+  },
+  "provenance": {
+    "local": "LOCAL_REIMPLEMENTATION",
+    "sample4geo": "OFFICIAL_SAMPLE4GEO_CHECKPOINT_ZERO_SHOT_TRANSFER_FROM_UNIVERSITY1652"
+  },
+  "files": {
+    "common_metrics": "/content/drive/MyDrive/mobilegeo_project/results/common_benchmark/reports/common_benchmark_metrics.csv",
+    "paired_results": "/content/drive/MyDrive/mobilegeo_project/results/common_benchmark/rankings/local_vs_sample4geo_paired_query_results.csv",
+    "paired_summary": "/content/drive/MyDrive/mobilegeo_project/results/common_benchmark/reports/local_vs_sample4geo_pairwise_summary.csv",
+    "height_comparison": "/content/drive/MyDrive/mobilegeo_project/results/common_benchmark/reports/local_vs_sample4geo_height_comparison.csv"
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "created_at_utc": "2026-08-09T06:31:16.616423+00:00",
+  "package_zip": "/content/drive/MyDrive/mobilegeo_project/results/orin_nano_benchmark/final/orin_nano_deployment_benchmark_package.zip",
+  "package_sha256": "d62c1aff79890a45569ac5464ec8a91ba0b317f3eb45212d23b22eb3b5862a2f",
+  "package_bytes": 18310980,
+  "files": {
+    "AdvancedEdgeGeoLPN_LOCAL_REIMPLEMENTATION_torchscript.pt": {
+      "bytes": 19763195,
+      "sha256": "b2de023d5aa71ef2013840b22945d1629b9739eb419feccd49b35c726004a02f"
+    },
+    "model_definition.py": {
+      "bytes": 1113,
+      "sha256": "e8afe951443b1cdd1d7adcc7bc5c52e981c678840634174a5ac4ec1af253b7bc"
+    },
+    "benchmark_orin_nano.py": {
+      "bytes": 12028,
+      "sha256": "9069f9337cdcf6ad2e183bf281368db9be73fefa5e2c74c01944cc262b824e65"
+    },
+    "probe_orin_environment.py": {
+      "bytes": 2392,
+      "sha256": "b85b4426ce92c440d4c962e56a2240464934bfbe530e7b33e8628707124cf116"
+    },
+    "deployment_model_manifest.json": {
+      "bytes": 2020,
+      "sha256": "125a0e0455bf0da9385250809ae05020ce2cdf295a243282b10f46ff88f75e50"
+    },
+    "README.md": {
+      "bytes": 1705,
+      "sha256": "146da8503a2a1df8952af943643a193530ec13d14cf5590b6a543538dd458baa"
+    }
+  },
+  "benchmark_execution_status": "NOT_RUN_ON_ACTUAL_ORIN_NANO_YET",
+  "valid_orin_nano_performance_result_available": false
+}

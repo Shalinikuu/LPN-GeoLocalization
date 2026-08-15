@@ -1,0 +1,3 @@
+DATASET_ROOT=/content/drive/MyDrive/SUES-200-512x512_extracted/SUES-200-512x512
+DRONE_ROOT=/content/drive/MyDrive/SUES-200-512x512_extracted/SUES-200-512x512/drone_view_512
+SATELLITE_ROOT=/content/drive/MyDrive/SUES-200-512x512_extracted/SUES-200-512x512/satellite-view

@@ -1,0 +1,22 @@
+{
+  "created_at": "2026-08-06T12:14:43.306628",
+  "python_version": "3.12.13 (main, Mar  4 2026, 09:23:07) [GCC 11.4.0]",
+  "platform": "Linux-6.6.122+-x86_64-with-glibc2.35",
+  "machine": "x86_64",
+  "processor": "x86_64",
+  "packages": {
+    "torch": "2.11.0+cpu",
+    "torchvision": "0.26.0+cpu",
+    "numpy": "2.0.2",
+    "pandas": "2.2.2",
+    "opencv-python": "5.0.0.93",
+    "Pillow": "11.3.0",
+    "scikit-learn": "1.6.1",
+    "scipy": "1.16.3",
+    "matplotlib": "3.10.0",
+    "PyYAML": "6.0.3",
+    "faiss-cpu": null,
+    "onnx": null,
+    "onnxruntime": null
+  }
+}

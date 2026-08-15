@@ -1,0 +1,90 @@
+{
+  "created_at_utc": "2026-08-06T20:54:35.816926+00:00",
+  "method": "UltraVPR",
+  "repository_commit": "e8456de13661e7d7584396c9ac3610ec020d0aaf",
+  "checkpoint_path": "/content/drive/MyDrive/mobilegeo_project/checkpoints/ultravpr/model_best.pth.tar",
+  "checkpoint_sha256": "7fb2f95721ac3bdbbfe86b2b217b34af0bbbf243e70e6bcf72ec738738db64f4",
+  "checkpoint_container_keys": [
+    "epoch",
+    "state_dict",
+    "recalls",
+    "best_score",
+    "optimizer",
+    "parallel"
+  ],
+  "state_dict_source": "checkpoint['state_dict']",
+  "state_dict_tensor_entries": 483,
+  "checkpoint_prefix_levels": {
+    "level_1": {
+      "backbone": 479,
+      "aggregator": 3,
+      "upscale": 1
+    },
+    "level_2": {
+      "backbone.gpool": 2,
+      "backbone.conv1": 3,
+      "backbone.bn1": 6,
+      "backbone.layer1": 90,
+      "backbone.layer2": 117,
+      "backbone.layer3": 171,
+      "backbone.layer4": 90,
+      "aggregator.gem": 1,
+      "aggregator.fc": 2,
+      "upscale.centroids": 1
+    },
+    "level_3": {
+      "backbone.gpool.in_indices_8": 1,
+      "backbone.gpool.out_indices_8": 1,
+      "backbone.conv1.weights": 1,
+      "backbone.conv1.filter": 1,
+      "backbone.conv1._basisexpansion": 1,
+      "backbone.bn1.indices_8": 1,
+      "backbone.bn1.batch_norm_[8]": 5,
+      "backbone.layer1.0": 36,
+      "backbone.layer1.1": 27,
+      "backbone.layer1.2": 27,
+      "backbone.layer2.0": 36,
+      "backbone.layer2.1": 27,
+      "backbone.layer2.2": 27,
+      "backbone.layer2.3": 27,
+      "backbone.layer3.0": 36,
+      "backbone.layer3.1": 27,
+      "backbone.layer3.2": 27,
+      "backbone.layer3.3": 27,
+      "backbone.layer3.4": 27,
+      "backbone.layer3.5": 27,
+      "backbone.layer4.0": 36,
+      "backbone.layer4.1": 27,
+      "backbone.layer4.2": 27,
+      "aggregator.gem.p": 1,
+      "aggregator.fc.weight": 1,
+      "aggregator.fc.bias": 1,
+      "upscale.centroids": 1
+    }
+  },
+  "model_construction_definitions": [
+    {
+      "script": "eval_VPAir.py",
+      "name": "load_model",
+      "line_start": 109,
+      "line_end": 119,
+      "source": "def load_model(ckpt_path):\n    model = ultravpr()\n\n    if(ckpt_path != \"\"):\n        state_dict = torch.load(ckpt_path, map_location='cpu')\n        model.load_state_dict(state_dict['state_dict'], strict=False)\n        # model.load_state_dict(state_dict, strict=False)\n        print(f\"Loaded model from {ckpt_path} Successfully!\")\n    model.eval()\n   \n    return model"
+    },
+    {
+      "script": "eval_UAV-VisLoc.py",
+      "name": "load_model",
+      "line_start": 153,
+      "line_end": 163,
+      "source": "def load_model(ckpt_path):\n    model = ultravpr()\n    \n    if(ckpt_path != \"\"):\n        state_dict = torch.load(ckpt_path, map_location='cpu')\n        model.load_state_dict(state_dict['state_dict'], strict=False)\n        # model.load_state_dict(state_dict, strict=False)\n        print(f\"Loaded model from {ckpt_path} Successfully!\")\n    model.eval()\n   \n    return model"
+    }
+  ],
+  "sues200_pipeline_found": false,
+  "planned_evaluation": "OFFICIAL_ULTRAVPR_CHECKPOINT_ZERO_SHOT_TRANSFER_TO_PROJECT_DEFINED_SUES200_SPLIT",
+  "next_action": "Construct the model using the exact repository function and validate checkpoint loading and descriptor output.",
+  "files": {
+    "definitions_csv": "/content/drive/MyDrive/mobilegeo_project/results/common_benchmark/ultravpr_audit/ultravpr_function_class_definitions.csv",
+    "source_evidence_csv": "/content/drive/MyDrive/mobilegeo_project/results/common_benchmark/ultravpr_audit/ultravpr_architecture_source_evidence.csv",
+    "imports_csv": "/content/drive/MyDrive/mobilegeo_project/results/common_benchmark/ultravpr_audit/ultravpr_model_script_imports.csv",
+    "source_matches_csv": "/content/drive/MyDrive/mobilegeo_project/results/common_benchmark/ultravpr_audit/ultravpr_checkpoint_source_matches.csv"
+  }
+}

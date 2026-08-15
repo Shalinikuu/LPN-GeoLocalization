@@ -1,0 +1,1 @@
+/content/drive/MyDrive/mobilegeo_project/repositories/Sample4Geo/pretrained/university/convnext_base.fb_in22k_ft_in1k_384/weights_e1_0.9515.pth

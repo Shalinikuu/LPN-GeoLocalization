@@ -1,0 +1,3 @@
+score,clean_total_trials,clean_total_top1_successes,baseline_top1_correctness,top1_correctness_at_10pct_coverage,top1_success_count_at_10pct,top1_correctness_at_1pct_coverage,top1_success_count_at_1pct,claim_status
+top1_similarity_from_top5,27972,14,0.0005005005005005005,0.0,0,0.0,0,DESCRIPTIVE_ONLY_14_CLEAN_TOP1_SUCCESSES
+top1_top2_margin,27972,14,0.0005005005005005005,0.0003575259206292456,1,0.0,0,DESCRIPTIVE_ONLY_14_CLEAN_TOP1_SUCCESSES

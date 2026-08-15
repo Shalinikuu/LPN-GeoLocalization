@@ -1,0 +1,7 @@
+Metric,Result
+R@1,94.58%
+R@5,99.99%
+R@10,100.00%
+mAP,96.93%
+Mean positive rank,1.082
+Top-1 failures,434

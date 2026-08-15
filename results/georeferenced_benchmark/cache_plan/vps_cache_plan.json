@@ -1,0 +1,23 @@
+{
+  "created_at_utc": "2026-08-08T20:05:10.439036+00:00",
+  "core_query_count": 2331,
+  "core_gallery_record_count": 27972,
+  "unique_query_members": 2331,
+  "unique_gallery_members": 27972,
+  "unique_required_members_total": 30303,
+  "query_cache_raw_gb": 0.09533691592514515,
+  "gallery_all_scales_raw_gb": 3.9570178259164095,
+  "full_cache_raw_gb": 4.052354741841555,
+  "largest_single_scale_raw_gb": 0.3583992337808013,
+  "query_plus_largest_scale_raw_gb": 0.45373614970594645,
+  "local_disk": {
+    "total_gb": 112.6365966796875,
+    "used_gb": 53.790435791015625,
+    "free_gb": 58.830535888671875
+  },
+  "safety_reserve_gb": 15.0,
+  "full_cache_safe": true,
+  "scale_streaming_safe": true,
+  "recommended_strategy": "FULL_LOCAL_CACHE",
+  "note": "No images were extracted by this cell."
+}

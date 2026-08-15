@@ -1,0 +1,46 @@
+{
+  "created_at_utc": "2026-08-06T20:46:18.707743+00:00",
+  "method": "UltraVPR",
+  "repository": "cbbhuxx/UltraVPR",
+  "repository_url": "https://github.com/cbbhuxx/UltraVPR.git",
+  "remote_url": "https://github.com/cbbhuxx/UltraVPR.git",
+  "local_path": "/content/drive/MyDrive/mobilegeo_project/repositories/UltraVPR",
+  "branch": "main",
+  "commit_hash": "e8456de13661e7d7584396c9ac3610ec020d0aaf",
+  "short_commit": "e8456de",
+  "commit_date": "2025-12-17T11:18:19+08:00",
+  "commit_subject": "Update README.md",
+  "python_source_file_count": 15,
+  "configuration_file_count": 0,
+  "checkpoint_files_inside_repository": [],
+  "checkpoint_found_inside_repository": false,
+  "deployment_model_files": [],
+  "deployment_model_found_inside_repository": false,
+  "evaluation_files": [
+    "eval_UAV-VisLoc.py",
+    "eval_VPAir.py"
+  ],
+  "export_files": [
+    "export_ultravpr.py"
+  ],
+  "evaluation_scripts_found": true,
+  "export_scripts_found": true,
+  "weights_reference_found": true,
+  "onnx_reference_found": true,
+  "license_files": [
+    "LICENSE"
+  ],
+  "license_found": true,
+  "readme_files": [
+    "README.md",
+    "models/backbones/README.md"
+  ],
+  "environment_files": [
+    "requirements.txt"
+  ],
+  "sues200_reference_found": false,
+  "common_benchmark_status": "OFFICIAL_CHECKPOINT_DISCOVERY_REQUIRED_THEN_ZERO_SHOT_TRANSFER",
+  "planned_provenance_label": "OFFICIAL_ULTRAVPR_CHECKPOINT_ZERO_SHOT_TRANSFER_TO_PROJECT_SUES200_SPLIT",
+  "common_benchmark_ready": false,
+  "next_action": "Resolve the official UltraVPR checkpoint download URL and inspect model loading, input preprocessing and descriptor output."
+}

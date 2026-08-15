@@ -1,0 +1,43 @@
+{
+  "benchmark_name": "COMMON_SUES200_LOCATION_DISJOINT_BENCHMARK",
+  "protocol": "PROJECT_DEFINED_LOCATION_DISJOINT_60_20_20",
+  "query_count": 8000,
+  "gallery_count": 40,
+  "test_location_count": 40,
+  "nominal_heights": [
+    150,
+    200,
+    250,
+    300
+  ],
+  "required_metrics": [
+    "Recall@1",
+    "Recall@5",
+    "Recall@10",
+    "mAP"
+  ],
+  "candidate_methods": {
+    "AdvancedEdgeGeoLPN_LOCAL_REIMPLEMENTATION": {
+      "status": "COMPLETED",
+      "provenance": "LOCAL_REIMPLEMENTATION"
+    },
+    "Sample4Geo": {
+      "status": "PENDING_RELEASE_AUDIT",
+      "provenance": "UNRESOLVED"
+    },
+    "UltraVPR": {
+      "status": "PENDING_RELEASE_AUDIT",
+      "provenance": "UNRESOLVED"
+    },
+    "MobileGeo": {
+      "status": "PRECOMPUTED_FEATURES_ONLY_NOT_DIRECTLY_COMPARABLE_YET",
+      "provenance": "PUBLISHED_PRECOMPUTED_FEATURE_EVALUATION"
+    }
+  },
+  "comparison_rule": "A method enters the common accuracy table only after descriptors are generated from the exact same 8,000 test queries and 40 test gallery images.",
+  "reporting_restrictions": [
+    "Do not compare MobileGeo published MAT metrics directly with the project-defined split.",
+    "Do not label local model results as official MobileGeo.",
+    "Do not report retrieval as verified UAV pose."
+  ]
+}

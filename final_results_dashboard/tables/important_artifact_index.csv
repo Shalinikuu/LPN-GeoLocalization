@@ -1,0 +1,8 @@
+Artifact,Exists,Path
+Model checkpoint,True,/content/drive/MyDrive/mobilegeo_project/baseline_v1/checkpoint/AdvancedEdgeGeoLPN_LOCAL_REIMPLEMENTATION.pth
+Notebook 04 VPS report,True,/content/drive/MyDrive/mobilegeo_project/results/georeferenced_benchmark/final/notebook04_final_report.md
+Notebook 05 robustness report,True,/content/drive/MyDrive/mobilegeo_project/results/robustness_and_rejection/final/notebook05_final_report.md
+Notebook 06 keyframe report,True,/content/drive/MyDrive/mobilegeo_project/results/keyframes_temporal_consensus/final/notebook06_final_report.md
+Notebook 07 deployment report,True,/content/drive/MyDrive/mobilegeo_project/results/orin_nano_benchmark/final/notebook07_final_report.md
+TorchScript model,True,/content/drive/MyDrive/mobilegeo_project/results/orin_nano_benchmark/orin_nano_package/AdvancedEdgeGeoLPN_LOCAL_REIMPLEMENTATION_torchscript.pt
+Jetson deployment ZIP,True,/content/drive/MyDrive/mobilegeo_project/results/orin_nano_benchmark/final/orin_nano_deployment_benchmark_package.zip

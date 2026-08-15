@@ -1,0 +1,13 @@
+split,nominal_height,image_count,location_count
+test,150,2000,40
+test,200,2000,40
+test,250,2000,40
+test,300,2000,40
+train,150,6000,120
+train,200,6000,120
+train,250,6000,120
+train,300,6000,120
+validation,150,2000,40
+validation,200,2000,40
+validation,250,2000,40
+validation,300,2000,40

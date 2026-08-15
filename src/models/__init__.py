@@ -1,0 +1,1 @@
+"""MobileGeo project package."""

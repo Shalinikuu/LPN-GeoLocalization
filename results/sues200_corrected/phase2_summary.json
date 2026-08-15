@@ -1,0 +1,23 @@
+{
+  "completed_at_utc": "2026-08-06T19:57:19.469389+00:00",
+  "phase": "PHASE_2_CORRECTED_SUES200_LOCATION_DISJOINT_BENCHMARK",
+  "phase_complete": true,
+  "model_name": "AdvancedEdgeGeoLPN_LOCAL_REIMPLEMENTATION",
+  "provenance_label": "LOCAL_REIMPLEMENTATION",
+  "protocol": "PROJECT_DEFINED_LOCATION_DISJOINT_60_20_20",
+  "official_mobilegeo_result": false,
+  "official_sues200_protocol": false,
+  "overall_metrics": {
+    "recall_at_1_percent": 94.575,
+    "recall_at_5_percent": 99.9875,
+    "recall_at_10_percent": 100.0,
+    "mean_average_precision_percent": 96.92541666666666
+  },
+  "top1_correct_queries": 7566,
+  "top1_failure_queries": 434,
+  "maximum_positive_rank": 6,
+  "recommended_experimental_margin_threshold": 0.05,
+  "threshold_coverage_percent": 90.7875,
+  "threshold_accepted_accuracy_percent": 99.3253476524852,
+  "next_phase": "PHASE_3_COMMON_RETRIEVAL_BENCHMARK"
+}

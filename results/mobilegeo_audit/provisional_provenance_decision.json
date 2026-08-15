@@ -1,0 +1,27 @@
+{
+  "created_at_utc": "2026-08-06T17:53:32.676592+00:00",
+  "repository": "SkyEyeLoc/MobileGeo",
+  "repository_claims_official_implementation": true,
+  "repository_checkpoint_found": false,
+  "official_mobilegeo_weight_link_validated": false,
+  "raw_image_inference_script_found": false,
+  "complete_query_gallery_pipeline_found": false,
+  "project_training_pipeline_found": false,
+  "released_mat_evaluator_found": true,
+  "released_mat_download_link_found": true,
+  "released_mat_asset_verified": false,
+  "license_file_found": false,
+  "important_findings": [
+    "Tools/evaluate_norm.py evaluates precomputed .mat features.",
+    "The evaluator expects query_f, query_label, gallery_f and gallery_label.",
+    "No trained MobileGeo checkpoint was found inside the cloned repository.",
+    "Backbone checkpoint URLs are generic ConvNeXt pretraining weights, not MobileGeo weights.",
+    "The README MobileGeo weight link is empty.",
+    "No complete raw-image preprocessing and query/gallery inference workflow was found.",
+    "No repository license file was found.",
+    "README.md~ contains older PFED text and must not be treated as the current MobileGeo release."
+  ],
+  "provisional_provenance_status": "PUBLISHED_PRECOMPUTED_FEATURE_EVALUATION_PENDING_ASSET_VERIFICATION",
+  "official_checkpoint_reproduction_supported": false,
+  "next_action": "Download and validate the released .mat feature files."
+}

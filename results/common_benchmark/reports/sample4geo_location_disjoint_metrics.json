@@ -1,0 +1,100 @@
+{
+  "created_at_utc": "2026-08-06T20:34:08.345010+00:00",
+  "method": "Sample4Geo",
+  "model_name": "convnext_base.fb_in22k_ft_in1k_384",
+  "checkpoint_training_dataset": "University-1652",
+  "checkpoint_provenance": "OFFICIAL_SAMPLE4GEO_CHECKPOINT",
+  "evaluation_provenance_label": "OFFICIAL_SAMPLE4GEO_CHECKPOINT_ZERO_SHOT_TRANSFER_TO_PROJECT_SUES200_SPLIT",
+  "official_sample4geo_sues200_result": false,
+  "benchmark_protocol": "PROJECT_DEFINED_LOCATION_DISJOINT_60_20_20",
+  "query_count": 8000,
+  "gallery_count": 40,
+  "descriptor_dimension": 1024,
+  "similarity": "COSINE_SIMILARITY_ON_L2_NORMALIZED_DESCRIPTORS",
+  "ranking": "EXACT_FULL_GALLERY_SORT",
+  "positive_definition": "ONE_MATCHING_SATELLITE_TILE_PER_QUERY",
+  "overall_metrics": {
+    "query_count": 8000,
+    "recall_at_1_percent": 85.9,
+    "recall_at_5_percent": 98.7375,
+    "recall_at_10_percent": 99.775,
+    "mean_average_precision_percent": 91.78651903651904,
+    "mean_positive_rank": 1.27375,
+    "median_positive_rank": 1.0,
+    "p95_positive_rank": 2.0,
+    "maximum_positive_rank": 15,
+    "mean_top1_top2_margin": 0.1082001781463623,
+    "median_top1_top2_margin": 0.10379454493522644
+  },
+  "per_height_metrics": {
+    "150": {
+      "query_count": 2000,
+      "recall_at_1_percent": 78.55,
+      "recall_at_5_percent": 96.5,
+      "recall_at_10_percent": 99.1,
+      "mean_average_precision_percent": 86.60702852702853,
+      "mean_positive_rank": 1.5635,
+      "median_positive_rank": 1.0,
+      "p95_positive_rank": 4.0,
+      "maximum_positive_rank": 15,
+      "mean_top1_top2_margin": 0.08172411189973354,
+      "median_top1_top2_margin": 0.07002924382686615
+    },
+    "200": {
+      "query_count": 2000,
+      "recall_at_1_percent": 85.85000000000001,
+      "recall_at_5_percent": 99.05000000000001,
+      "recall_at_10_percent": 100.0,
+      "mean_average_precision_percent": 91.74634920634921,
+      "mean_positive_rank": 1.2515,
+      "median_positive_rank": 1.0,
+      "p95_positive_rank": 2.0499999999999545,
+      "maximum_positive_rank": 10,
+      "mean_top1_top2_margin": 0.10271915146708488,
+      "median_top1_top2_margin": 0.09902891516685486
+    },
+    "250": {
+      "query_count": 2000,
+      "recall_at_1_percent": 88.35,
+      "recall_at_5_percent": 99.45,
+      "recall_at_10_percent": 100.0,
+      "mean_average_precision_percent": 93.54222222222222,
+      "mean_positive_rank": 1.176,
+      "median_positive_rank": 1.0,
+      "p95_positive_rank": 2.0,
+      "maximum_positive_rank": 9,
+      "mean_top1_top2_margin": 0.1175062721222639,
+      "median_top1_top2_margin": 0.11764052510261536
+    },
+    "300": {
+      "query_count": 2000,
+      "recall_at_1_percent": 90.85,
+      "recall_at_5_percent": 99.95,
+      "recall_at_10_percent": 100.0,
+      "mean_average_precision_percent": 95.25047619047619,
+      "mean_positive_rank": 1.104,
+      "median_positive_rank": 1.0,
+      "p95_positive_rank": 2.0,
+      "maximum_positive_rank": 7,
+      "mean_top1_top2_margin": 0.13085117709636687,
+      "median_top1_top2_margin": 0.12700870633125305
+    }
+  },
+  "search_timing": {
+    "total_seconds": 0.05604144999961136,
+    "milliseconds_per_query": 0.00700518124995142,
+    "scope": "SIMILARITY_MATRIX_AND_FULL_SORT_ONLY",
+    "descriptor_extraction_excluded": true
+  },
+  "files": {
+    "metrics_csv": "/content/drive/MyDrive/mobilegeo_project/results/common_benchmark/reports/sample4geo_location_disjoint_metrics.csv",
+    "query_results_csv": "/content/drive/MyDrive/mobilegeo_project/results/common_benchmark/rankings/sample4geo_query_results.csv",
+    "complete_rankings_csv": "/content/drive/MyDrive/mobilegeo_project/results/common_benchmark/rankings/sample4geo_complete_rankings.csv",
+    "per_location_metrics_csv": "/content/drive/MyDrive/mobilegeo_project/results/common_benchmark/reports/sample4geo_per_location_metrics.csv"
+  },
+  "reporting_restrictions": [
+    "Do not describe this as an official Sample4Geo SUES-200 result.",
+    "This is zero-shot transfer from a University-1652 checkpoint.",
+    "Do not interpret retrieval as verified geographic UAV pose."
+  ]
+}

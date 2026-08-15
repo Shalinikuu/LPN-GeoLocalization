@@ -1,0 +1,11 @@
+Artifact,Exists,Size,Path
+Local model checkpoint,True,19.05 MB,/content/drive/MyDrive/mobilegeo_project/baseline_v1/checkpoint/AdvancedEdgeGeoLPN_LOCAL_REIMPLEMENTATION.pth
+TorchScript deployment model,True,18.85 MB,/content/drive/MyDrive/mobilegeo_project/results/orin_nano_benchmark/orin_nano_package/AdvancedEdgeGeoLPN_LOCAL_REIMPLEMENTATION_torchscript.pt
+Orin deployment package,True,17.46 MB,/content/drive/MyDrive/mobilegeo_project/results/orin_nano_benchmark/final/orin_nano_deployment_benchmark_package.zip
+Notebook 04 final report,True,1.71 KB,/content/drive/MyDrive/mobilegeo_project/results/georeferenced_benchmark/final/notebook04_final_report.md
+Notebook 05 final report,True,2.28 KB,/content/drive/MyDrive/mobilegeo_project/results/robustness_and_rejection/final/notebook05_final_report.md
+Notebook 06 final report,True,1.92 KB,/content/drive/MyDrive/mobilegeo_project/results/keyframes_temporal_consensus/final/notebook06_final_report.md
+Notebook 07 final report,True,2.87 KB,/content/drive/MyDrive/mobilegeo_project/results/orin_nano_benchmark/final/notebook07_final_report.md
+Notebook 07 completion manifest,True,4.38 KB,/content/drive/MyDrive/mobilegeo_project/results/orin_nano_benchmark/final/notebook07_completion_manifest.json
+Notebook 07 evidence ZIP,True,15.95 KB,/content/drive/MyDrive/mobilegeo_project/results/orin_nano_benchmark/final/notebook07_reference_host_evidence.zip
+Legacy complete output ZIP,True,21.92 MB,/content/drive/MyDrive/mobilegeo_final/mg9_final_delivery/mobilegeo_complete_outputs.zip

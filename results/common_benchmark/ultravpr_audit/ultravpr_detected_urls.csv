@@ -1,0 +1,21 @@
+relative_path,line_number,url,line_text
+README.md,3,https://ieeexplore.ieee.org/document/11091472,"<h3 align=""center""><a href=""https://ieeexplore.ieee.org/document/11091472"" target='_blank'>UltraVPR: Unsupervised Lightweight Rotation-Invariant Aerial Visual Place Recognition</a> </h3>"
+README.md,11,https://github.com/cbbhuxx/UltraVPR/blob/main/img/example0.jpg,![image](https://github.com/cbbhuxx/UltraVPR/blob/main/img/example0.jpg)
+README.md,34,https://pan.baidu.com/s/1ips8bresAVJqgzxVBQ86xg?pwd=5kf8,You can download the **training data** from [Baidu Netdisk](https://pan.baidu.com/s/1ips8bresAVJqgzxVBQ86xg?pwd=5kf8) or [Tsinghua Cloud](https://cloud.tsinghua.edu.cn/d/68c3a4ed24cc40f1a7da/?p=%2Ftraining_data&mode=list).
+README.md,34,https://cloud.tsinghua.edu.cn/d/68c3a4ed24cc40f1a7da/?p=%2Ftraining_data&mode=list,You can download the **training data** from [Baidu Netdisk](https://pan.baidu.com/s/1ips8bresAVJqgzxVBQ86xg?pwd=5kf8) or [Tsinghua Cloud](https://cloud.tsinghua.edu.cn/d/68c3a4ed24cc40f1a7da/?p=%2Ftraining_data&mode=list).
+README.md,37,https://github.com/AerVisLoc/vpair?tab=readme-ov-file,"[VPAir](https://github.com/AerVisLoc/vpair?tab=readme-ov-file),"
+README.md,38,https://pan.baidu.com/s/1oF09pLUwQZB5lr1Rq6L0-g?pwd=kau2,UAV-VisLoc (eval): [Baidu Netdisk](https://pan.baidu.com/s/1oF09pLUwQZB5lr1Rq6L0-g?pwd=kau2) or [Tsinghua cloud](https://cloud.tsinghua.edu.cn/d/2721a1f83cdf4718a52f/)
+README.md,38,https://cloud.tsinghua.edu.cn/d/2721a1f83cdf4718a52f/,UAV-VisLoc (eval): [Baidu Netdisk](https://pan.baidu.com/s/1oF09pLUwQZB5lr1Rq6L0-g?pwd=kau2) or [Tsinghua cloud](https://cloud.tsinghua.edu.cn/d/2721a1f83cdf4718a52f/)
+README.md,41,https://github.com/IntelliSensing/UAV-VisLoc,[UAV-VisLoc](https://github.com/IntelliSensing/UAV-VisLoc)
+README.md,47,https://pan.baidu.com/s/1epVFLysy0WqGh0xUlpTEAA?pwd=1qdf,**UltraVPR's weights**: [Baidu Netdisk](https://pan.baidu.com/s/1epVFLysy0WqGh0xUlpTEAA?pwd=1qdf) or [Tsinghua cloud](https://cloud.tsinghua.edu.cn/d/ea66ca1bbb334132bcd1/)
+README.md,47,https://cloud.tsinghua.edu.cn/d/ea66ca1bbb334132bcd1/,**UltraVPR's weights**: [Baidu Netdisk](https://pan.baidu.com/s/1epVFLysy0WqGh0xUlpTEAA?pwd=1qdf) or [Tsinghua cloud](https://cloud.tsinghua.edu.cn/d/ea66ca1bbb334132bcd1/)
+README.md,52,https://pan.baidu.com/s/13dSCLUrmOH6QhkvlFlJyTg?pwd=ghvf,**E2ResNet's weights**: [Baidu Netdisk](https://pan.baidu.com/s/13dSCLUrmOH6QhkvlFlJyTg?pwd=ghvf) or [Tsinghua cloud](https://cloud.tsinghua.edu.cn/d/8b2b0ba8dcc44dab9908/)
+README.md,52,https://cloud.tsinghua.edu.cn/d/8b2b0ba8dcc44dab9908/,**E2ResNet's weights**: [Baidu Netdisk](https://pan.baidu.com/s/13dSCLUrmOH6QhkvlFlJyTg?pwd=ghvf) or [Tsinghua cloud](https://cloud.tsinghua.edu.cn/d/8b2b0ba8dcc44dab9908/)
+README.md,55,https://github.com/cbbhuxx/UltraVPR/blob/main/models/backbones/README.md,([Specific training parameters](https://github.com/cbbhuxx/UltraVPR/blob/main/models/backbones/README.md))
+README.md,82,https://github.com/Nanne/pytorch-NetVlad,- [NetVlad](https://github.com/Nanne/pytorch-NetVlad)
+README.md,83,https://github.com/csuhan/ReDet,- [ReDet](https://github.com/csuhan/ReDet)
+README.md,84,https://github.com/gmberton/CosPlace.git,- [CosPlace](https://github.com/gmberton/CosPlace.git)
+README.md,87,https://ieeexplore.ieee.org/document/11091472,"When using code within this repository, please refer the following [paper](https://ieeexplore.ieee.org/document/11091472) in your publications:"
+models/aggregators/se2gem.py,8,https://github.com/filipradenovic/cnnimageretrieval-pytorch,"""""""Implementation of GeM as in https://github.com/filipradenovic/cnnimageretrieval-pytorch"
+models/aggregators/se2gem.py,20,https://github.com/gmberton/CosPlace/blob/main/model/network.py,CosPlace aggregation layer as implemented in https://github.com/gmberton/CosPlace/blob/main/model/network.py
+models/backbones/e2resnet.py,3,https://github.com/csuhan/ReDet.git,Implementation of ReResNet as in https://github.com/csuhan/ReDet.git

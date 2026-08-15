@@ -1,0 +1,398 @@
+category,relative_path,line_number,line_text
+inference_reference,README.md,3,"In this repository we present our ICCV accepted work: ""Sample4Geo: Hard Negative Sampling For Cross-View Geo-Localisation"" and provide training and inference code."
+download_link,README.md,6,[Paper](https://arxiv.org/abs/2303.11851)
+checkpoint_reference,README.md,8,[Weights](https://drive.google.com/drive/folders/1PMuUqvDnCb216D8_ZDDJzDD3FxeH5BoA?usp=drive_link)
+download_link,README.md,8,[Weights](https://drive.google.com/drive/folders/1PMuUqvDnCb216D8_ZDDJzDD3FxeH5BoA?usp=drive_link)
+university1652_reference,README.md,13,"> Cross-View Geo-Localisation is still a challenging task where additional modules, specific pre-processing or zooming strategies are necessary to determine accurate positions of images. Since different views have different geometries, pre-processing like polar transformation helps to merge them. However, this results in distorted images which then have to be rectified. Adding hard negatives to the training batch could improve the overall performance but with the default loss functions in geo-localisation it is difficult to include them. In this article, we present a simplified but effective architecture based on contrastive learning with symmetric InfoNCE loss that outperforms current state-of-the-art results. Our framework consists of a narrow training pipeline that eliminates the need of using aggregation modules, avoids further pre-processing steps and even increases the generalisation capability of the model to unknown regions. We introduce two types of sampling strategies for hard negatives. The first explicitly exploits geographically neighboring locations to provide a good starting point. The second leverages the visual similarity between the image embeddings in order to mine hard negative samples. Our work shows excellent performance on common cross-view datasets like CVUSA, CVACT, University-1652 and VIGOR. A comparison between cross-area and same-area settings demonstrate the good generalisation capability of our model."
+inference_reference,README.md,16,For training and testing the provided code download the datasets and extract them as shown in the folder structure. Before training the dataset depending calc\_distance script has to be executed to generate the distances based on the GPS locations.
+checkpoint_reference,README.md,17,Afterwards for each dataset a unique train script can be executed. The pre-trained weights should be extracted into the folder pretrained to run the eval scripts.
+inference_reference,README.md,17,Afterwards for each dataset a unique train script can be executed. The pre-trained weights should be extracted into the folder pretrained to run the eval scripts.
+inference_reference,eval_cvact.py,6,"from sample4geo.dataset.cvact import CVACTDatasetEval, CVACTDatasetTest"
+inference_reference,eval_cvact.py,8,from sample4geo.evaluate.cvusa_and_cvact import evaluate
+inference_reference,eval_cvact.py,21,# Evaluation
+checkpoint_reference,eval_cvact.py,30,# Checkpoint to start from
+checkpoint_reference,eval_cvact.py,31,checkpoint_start = 'pretrained/cvact/convnext_base.fb_in22k_ft_in1k_384/weights_e36_90.8149.pth'
+checkpoint_reference,eval_cvact.py,72,# load pretrained Checkpoint
+checkpoint_reference,eval_cvact.py,73,if config.checkpoint_start is not None:
+checkpoint_reference,eval_cvact.py,74,"print(""Start from:"", config.checkpoint_start)"
+checkpoint_reference,eval_cvact.py,75,model_state_dict = torch.load(config.checkpoint_start)
+inference_reference,eval_cvact.py,96,# Eval
+inference_reference,eval_cvact.py,108,"reference_dataset_val = CVACTDatasetEval(data_folder=config.data_folder ,"
+inference_reference,eval_cvact.py,122,# Query Ground Images Test
+inference_reference,eval_cvact.py,123,"query_dataset_val = CVACTDatasetEval(data_folder=config.data_folder ,"
+inference_reference,eval_cvact.py,143,"r1_test = evaluate(config=config,"
+inference_reference,eval_cvact.py,152,# Test                                                                        #
+inference_reference,eval_cvact.py,156,"reference_dataset_test = CVACTDatasetTest(data_folder=config.data_folder ,"
+inference_reference,eval_cvact.py,160,"reference_dataloader_test = DataLoader(reference_dataset_test,"
+inference_reference,eval_cvact.py,168,# Query Ground Images Test
+inference_reference,eval_cvact.py,169,"query_dataset_test = CVACTDatasetTest(data_folder=config.data_folder ,"
+inference_reference,eval_cvact.py,174,"query_dataloader_test = DataLoader(query_dataset_test,"
+inference_reference,eval_cvact.py,181,"print(""Reference Images Test:"", len(reference_dataset_test))"
+inference_reference,eval_cvact.py,182,"print(""Query Images Test:"", len(query_dataset_test))"
+inference_reference,eval_cvact.py,185,"print(""\n{}[{}]{}"".format(30*""-"", ""CVACT_TEST"", 30*""-""))"
+inference_reference,eval_cvact.py,188,"r1_test = evaluate(config=config,"
+inference_reference,eval_cvact.py,190,"reference_dataloader=reference_dataloader_test,"
+inference_reference,eval_cvact.py,191,"query_dataloader=query_dataloader_test,"
+inference_reference,eval_cvusa.py,6,from sample4geo.dataset.cvusa import CVUSADatasetEval
+inference_reference,eval_cvusa.py,8,from sample4geo.evaluate.cvusa_and_cvact import evaluate
+inference_reference,eval_cvusa.py,21,# Evaluation
+checkpoint_reference,eval_cvusa.py,30,# Checkpoint to start from
+checkpoint_reference,eval_cvusa.py,31,checkpoint_start = 'pretrained/cvusa/convnext_base.fb_in22k_ft_in1k_384/weights_e40_98.6830.pth'
+checkpoint_reference,eval_cvusa.py,72,# load pretrained Checkpoint
+checkpoint_reference,eval_cvusa.py,73,if config.checkpoint_start is not None:
+checkpoint_reference,eval_cvusa.py,74,"print(""Start from:"", config.checkpoint_start)"
+checkpoint_reference,eval_cvusa.py,75,model_state_dict = torch.load(config.checkpoint_start)
+inference_reference,eval_cvusa.py,97,# Eval
+inference_reference,eval_cvusa.py,106,"reference_dataset_test = CVUSADatasetEval(data_folder=config.data_folder ,"
+inference_reference,eval_cvusa.py,107,"split=""test"","
+inference_reference,eval_cvusa.py,112,"reference_dataloader_test = DataLoader(reference_dataset_test,"
+inference_reference,eval_cvusa.py,120,# Query Ground Images Test
+inference_reference,eval_cvusa.py,121,"query_dataset_test = CVUSADatasetEval(data_folder=config.data_folder ,"
+inference_reference,eval_cvusa.py,122,"split=""test"","
+inference_reference,eval_cvusa.py,127,"query_dataloader_test = DataLoader(query_dataset_test,"
+inference_reference,eval_cvusa.py,134,"print(""Reference Images Test:"", len(reference_dataset_test))"
+inference_reference,eval_cvusa.py,135,"print(""Query Images Test:"", len(query_dataset_test))"
+inference_reference,eval_cvusa.py,138,# Evaluate                                                                    #
+inference_reference,eval_cvusa.py,143,"r1_test = evaluate(config=config,"
+inference_reference,eval_cvusa.py,145,"reference_dataloader=reference_dataloader_test,"
+inference_reference,eval_cvusa.py,146,"query_dataloader=query_dataloader_test,"
+inference_reference,eval_university.py,6,"from sample4geo.dataset.university import U1652DatasetEval, get_transforms"
+inference_reference,eval_university.py,7,from sample4geo.evaluate.university import evaluate
+inference_reference,eval_university.py,20,# Evaluation
+inference_reference,eval_university.py,25,eval_gallery_n: int = -1             # -1 for all or int
+checkpoint_reference,eval_university.py,31,# Checkpoint to start from
+checkpoint_reference,eval_university.py,32,checkpoint_start = 'pretrained/university/convnext_base.fb_in22k_ft_in1k_384/weights_e1_0.9515.pth'
+inference_reference,eval_university.py,50,config.query_folder_test = './data/U1652/test/query_drone'
+inference_reference,eval_university.py,51,config.gallery_folder_test = './data/U1652/test/gallery_satellite'
+inference_reference,eval_university.py,55,config.query_folder_test = './data/U1652/test/query_satellite'
+inference_reference,eval_university.py,56,config.gallery_folder_test = './data/U1652/test/gallery_drone'
+checkpoint_reference,eval_university.py,79,# load pretrained Checkpoint
+checkpoint_reference,eval_university.py,80,if config.checkpoint_start is not None:
+checkpoint_reference,eval_university.py,81,"print(""Start from:"", config.checkpoint_start)"
+checkpoint_reference,eval_university.py,82,model_state_dict = torch.load(config.checkpoint_start)
+inference_reference,eval_university.py,108,"query_dataset_test = U1652DatasetEval(data_folder=config.query_folder_test,"
+inference_reference,eval_university.py,113,"query_dataloader_test = DataLoader(query_dataset_test,"
+inference_reference,eval_university.py,119,# Query Ground Images Test
+inference_reference,eval_university.py,120,"gallery_dataset_test = U1652DatasetEval(data_folder=config.gallery_folder_test,"
+inference_reference,eval_university.py,123,"sample_ids=query_dataset_test.get_sample_ids(),"
+inference_reference,eval_university.py,124,"gallery_n=config.eval_gallery_n,"
+inference_reference,eval_university.py,127,"gallery_dataloader_test = DataLoader(gallery_dataset_test,"
+inference_reference,eval_university.py,133,"print(""Query Images Test:"", len(query_dataset_test))"
+inference_reference,eval_university.py,134,"print(""Gallery Images Test:"", len(gallery_dataset_test))"
+university1652_reference,eval_university.py,137,"print(""\n{}[{}]{}"".format(30*""-"", ""University-1652"", 30*""-""))"
+inference_reference,eval_university.py,139,"r1_test = evaluate(config=config,"
+inference_reference,eval_university.py,141,"query_loader=query_dataloader_test,"
+inference_reference,eval_university.py,142,"gallery_loader=gallery_dataloader_test,"
+inference_reference,eval_vigor_cross.py,6,from sample4geo.dataset.vigor import VigorDatasetEval
+inference_reference,eval_vigor_cross.py,8,from sample4geo.evaluate.vigor import evaluate
+inference_reference,eval_vigor_cross.py,21,# Evaluation
+checkpoint_reference,eval_vigor_cross.py,32,# Checkpoint to start from
+checkpoint_reference,eval_vigor_cross.py,33,checkpoint_start = 'pretrained/vigor_cross/convnext_base.fb_in22k_ft_in1k_384/weights_e40_0.6109.pth'
+checkpoint_reference,eval_vigor_cross.py,74,# load pretrained Checkpoint
+checkpoint_reference,eval_vigor_cross.py,75,if config.checkpoint_start is not None:
+checkpoint_reference,eval_vigor_cross.py,76,"print(""Start from:"", config.checkpoint_start)"
+checkpoint_reference,eval_vigor_cross.py,77,model_state_dict = torch.load(config.checkpoint_start)
+inference_reference,eval_vigor_cross.py,98,# Eval
+inference_reference,eval_vigor_cross.py,106,# Reference Satellite Images Test
+inference_reference,eval_vigor_cross.py,107,"reference_dataset_test = VigorDatasetEval(data_folder=config.data_folder ,"
+inference_reference,eval_vigor_cross.py,108,"split=""test"","
+inference_reference,eval_vigor_cross.py,114,"reference_dataloader_test = DataLoader(reference_dataset_test,"
+inference_reference,eval_vigor_cross.py,122,# Query Ground Images Test
+inference_reference,eval_vigor_cross.py,123,"query_dataset_test = VigorDatasetEval(data_folder=config.data_folder ,"
+inference_reference,eval_vigor_cross.py,124,"split=""test"","
+inference_reference,eval_vigor_cross.py,130,"query_dataloader_test = DataLoader(query_dataset_test,"
+inference_reference,eval_vigor_cross.py,137,"print(""Query Images Test:"", len(query_dataset_test))"
+inference_reference,eval_vigor_cross.py,138,"print(""Reference Images Test:"", len(reference_dataset_test))"
+inference_reference,eval_vigor_cross.py,141,# Evaluate                                                                    #
+inference_reference,eval_vigor_cross.py,146,"r1_test = evaluate(config=config,"
+inference_reference,eval_vigor_cross.py,148,"reference_dataloader=reference_dataloader_test,"
+inference_reference,eval_vigor_cross.py,149,"query_dataloader=query_dataloader_test,"
+inference_reference,eval_vigor_same.py,6,from sample4geo.dataset.vigor import VigorDatasetEval
+inference_reference,eval_vigor_same.py,8,from sample4geo.evaluate.vigor import evaluate
+inference_reference,eval_vigor_same.py,21,# Evaluation
+checkpoint_reference,eval_vigor_same.py,32,# Checkpoint to start from
+checkpoint_reference,eval_vigor_same.py,33,checkpoint_start = 'pretrained/vigor_same/convnext_base.fb_in22k_ft_in1k_384/weights_e40_0.7786.pth'
+checkpoint_reference,eval_vigor_same.py,74,# Load pretrained Checkpoint
+checkpoint_reference,eval_vigor_same.py,75,if config.checkpoint_start is not None:
+checkpoint_reference,eval_vigor_same.py,76,"print(""Start from:"", config.checkpoint_start)"
+checkpoint_reference,eval_vigor_same.py,77,model_state_dict = torch.load(config.checkpoint_start)
+inference_reference,eval_vigor_same.py,98,# Eval
+inference_reference,eval_vigor_same.py,106,# Reference Satellite Images Test
+inference_reference,eval_vigor_same.py,107,"reference_dataset_test = VigorDatasetEval(data_folder=config.data_folder ,"
+inference_reference,eval_vigor_same.py,108,"split=""test"","
+inference_reference,eval_vigor_same.py,114,"reference_dataloader_test = DataLoader(reference_dataset_test,"
+inference_reference,eval_vigor_same.py,122,# Query Ground Images Test
+inference_reference,eval_vigor_same.py,123,"query_dataset_test = VigorDatasetEval(data_folder=config.data_folder ,"
+inference_reference,eval_vigor_same.py,124,"split=""test"","
+inference_reference,eval_vigor_same.py,130,"query_dataloader_test = DataLoader(query_dataset_test,"
+inference_reference,eval_vigor_same.py,137,"print(""Query Images Test:"", len(query_dataset_test))"
+inference_reference,eval_vigor_same.py,138,"print(""Reference Images Test:"", len(reference_dataset_test))"
+inference_reference,eval_vigor_same.py,142,# Evaluate                                                                    #
+inference_reference,eval_vigor_same.py,147,"r1_test = evaluate(config=config,"
+inference_reference,eval_vigor_same.py,149,"reference_dataloader=reference_dataloader_test,"
+inference_reference,eval_vigor_same.py,150,"query_dataloader=query_dataloader_test,"
+inference_reference,sample4geo/dataset/cvact.py,230,class CVACTDatasetEval(Dataset):
+inference_reference,sample4geo/dataset/cvact.py,309,class CVACTDatasetTest(Dataset):
+inference_reference,sample4geo/dataset/cvact.py,323,files_sat = glob(f'{self.data_folder}/ANU_data_test/satview_polish/*_satView_polish.jpg')
+inference_reference,sample4geo/dataset/cvact.py,324,files_ground = glob(f'{self.data_folder}/ANU_data_test/streetview/*_grdView.jpg')
+inference_reference,sample4geo/dataset/cvact.py,338,test_ids = set(sat_ids).intersection(set(ground_ids))
+inference_reference,sample4geo/dataset/cvact.py,340,self.test_ids = list(test_ids)
+inference_reference,sample4geo/dataset/cvact.py,341,self.test_ids.sort()
+inference_reference,sample4geo/dataset/cvact.py,345,"for i, idx in enumerate(self.test_ids):"
+inference_reference,sample4geo/dataset/cvact.py,351,idx = self.test_ids[index]
+inference_reference,sample4geo/dataset/cvact.py,354,path = f'{self.data_folder}/ANU_data_test/satview_polish/{idx}_satView_polish.jpg'
+inference_reference,sample4geo/dataset/cvact.py,356,path = f'{self.data_folder}/ANU_data_test/streetview/{idx}_grdView.jpg'
+inference_reference,sample4geo/dataset/cvact.py,370,return len(self.test_ids)
+inference_reference,sample4geo/dataset/cvusa.py,214,class CVUSADatasetEval(Dataset):
+inference_reference,sample4geo/dataset/university.py,169,class U1652DatasetEval(Dataset):
+inference_reference,sample4geo/dataset/vigor.py,48,# idx for complete train and test independent of mode = train or test
+inference_reference,sample4geo/dataset/vigor.py,54,# ground dependent on mode 'train' or 'test'
+inference_reference,sample4geo/dataset/vigor.py,78,# idx for split train or test dependent on mode = train or test
+inference_reference,sample4geo/dataset/vigor.py,271,class VigorDatasetEval(Dataset):
+inference_reference,sample4geo/dataset/vigor.py,306,# idx for complete train and test independent of mode = train or test
+inference_reference,sample4geo/dataset/vigor.py,312,# ground dependent on mode 'train' or 'test'
+inference_reference,sample4geo/dataset/vigor.py,342,# idx for split train or test dependent on mode = train or test
+inference_reference,sample4geo/evaluate/cvusa_and_cvact.py,7,from ..trainer import predict
+inference_reference,sample4geo/evaluate/cvusa_and_cvact.py,10,"def evaluate(config,"
+inference_reference,sample4geo/evaluate/cvusa_and_cvact.py,19,"print(""\nExtract Features:"")"
+inference_reference,sample4geo/evaluate/cvusa_and_cvact.py,20,"reference_features, reference_labels = predict(config, model, reference_dataloader)"
+inference_reference,sample4geo/evaluate/cvusa_and_cvact.py,21,"query_features, query_labels = predict(config, model, query_dataloader)"
+inference_reference,sample4geo/evaluate/cvusa_and_cvact.py,43,"print(""\nExtract Features:"")"
+inference_reference,sample4geo/evaluate/cvusa_and_cvact.py,44,"reference_features, reference_labels = predict(config, model, reference_dataloader)"
+inference_reference,sample4geo/evaluate/cvusa_and_cvact.py,45,"query_features, query_labels = predict(config, model, query_dataloader)"
+inference_reference,sample4geo/evaluate/university.py,5,from ..trainer import predict
+inference_reference,sample4geo/evaluate/university.py,8,"def evaluate(config,"
+inference_reference,sample4geo/evaluate/university.py,17,"print(""Extract Features:"")"
+inference_reference,sample4geo/evaluate/university.py,18,"img_features_query, ids_query = predict(config, model, query_loader)"
+inference_reference,sample4geo/evaluate/university.py,19,"img_features_gallery, ids_gallery = predict(config, model, gallery_loader)"
+inference_reference,sample4geo/evaluate/university.py,28,"ap_tmp, CMC_tmp = eval_query(img_features_query[i], ql[i], img_features_gallery, gl)"
+inference_reference,sample4geo/evaluate/university.py,61,"def eval_query(qf,ql,gf,gl):"
+inference_reference,sample4geo/evaluate/university.py,67,# predict index
+inference_reference,sample4geo/evaluate/vigor.py,7,from ..trainer import predict
+inference_reference,sample4geo/evaluate/vigor.py,10,"def evaluate(config,"
+inference_reference,sample4geo/evaluate/vigor.py,19,"print(""\nExtract Features:"")"
+inference_reference,sample4geo/evaluate/vigor.py,20,"reference_features, reference_labels = predict(config, model, reference_dataloader)"
+inference_reference,sample4geo/evaluate/vigor.py,21,"query_features, query_labels = predict(config, model, query_dataloader)"
+inference_reference,sample4geo/evaluate/vigor.py,43,"print(""\nExtract Features:"")"
+inference_reference,sample4geo/evaluate/vigor.py,44,"reference_features, reference_labels = predict(config, model, reference_dataloader)"
+inference_reference,sample4geo/evaluate/vigor.py,45,"query_features, query_labels = predict(config, model, query_dataloader)"
+checkpoint_reference,sample4geo/model.py,32,"def set_grad_checkpointing(self, enable=True):"
+checkpoint_reference,sample4geo/model.py,33,self.model.set_grad_checkpointing(enable)
+checkpoint_reference,sample4geo/trainer.py,54,# Update model parameters (weights)
+checkpoint_reference,sample4geo/trainer.py,86,# Update model parameters (weights)
+inference_reference,sample4geo/trainer.py,113,"def predict(train_config, model, dataloader):"
+inference_reference,sample4geo/trainer.py,115,model.eval()
+inference_reference,train_cvact.py,13,"from sample4geo.dataset.cvact import CVACTDatasetTrain, CVACTDatasetEval, CVACTDatasetTest"
+inference_reference,train_cvact.py,17,"from sample4geo.evaluate.cvusa_and_cvact import evaluate, calc_sim"
+inference_reference,train_cvact.py,48,# Eval
+inference_reference,train_cvact.py,49,batch_size_eval: int = 128
+inference_reference,train_cvact.py,50,eval_every_n_epoch: int = 4        # eval every n Epoch
+checkpoint_reference,train_cvact.py,56,grad_checkpointing: bool = False   # Gradient Checkpointing
+checkpoint_reference,train_cvact.py,74,# Savepath for model checkpoints
+inference_reference,train_cvact.py,77,# Eval before training
+checkpoint_reference,train_cvact.py,80,# Checkpoint to start from
+checkpoint_reference,train_cvact.py,81,checkpoint_start = None
+checkpoint_reference,train_cvact.py,143,# Activate gradient checkpointing
+checkpoint_reference,train_cvact.py,144,if config.grad_checkpointing:
+checkpoint_reference,train_cvact.py,145,model.set_grad_checkpointing(True)
+checkpoint_reference,train_cvact.py,147,# Load pretrained Checkpoint
+checkpoint_reference,train_cvact.py,148,if config.checkpoint_start is not None:
+checkpoint_reference,train_cvact.py,149,"print(""Start from:"", config.checkpoint_start)"
+checkpoint_reference,train_cvact.py,150,model_state_dict = torch.load(config.checkpoint_start)
+inference_reference,train_cvact.py,196,# Eval
+inference_reference,train_cvact.py,205,"reference_dataset_val = CVACTDatasetEval(data_folder=config.data_folder ,"
+inference_reference,train_cvact.py,212,"batch_size=config.batch_size_eval,"
+inference_reference,train_cvact.py,219,# Query Ground Images Test
+inference_reference,train_cvact.py,220,"query_dataset_val = CVACTDatasetEval(data_folder=config.data_folder ,"
+inference_reference,train_cvact.py,227,"batch_size=config.batch_size_eval,"
+inference_reference,train_cvact.py,253,"query_dataset_train = CVACTDatasetEval(data_folder=config.data_folder ,"
+inference_reference,train_cvact.py,260,"batch_size=config.batch_size_eval,"
+inference_reference,train_cvact.py,266,"reference_dataset_train = CVACTDatasetEval(data_folder=config.data_folder ,"
+inference_reference,train_cvact.py,273,"batch_size=config.batch_size_eval,"
+checkpoint_reference,train_cvact.py,307,"""weight_decay"": 0.01,"
+checkpoint_reference,train_cvact.py,311,"""weight_decay"": 0.0,"
+inference_reference,train_cvact.py,359,"r1_test = evaluate(config=config,"
+inference_reference,train_cvact.py,408,# evaluate
+inference_reference,train_cvact.py,409,if (epoch % config.eval_every_n_epoch == 0 and epoch != 0) or epoch == config.epochs:
+inference_reference,train_cvact.py,411,"print(""\n{}[{}]{}"".format(30*""-"", ""Evaluate"", 30*""-""))"
+inference_reference,train_cvact.py,413,"r1_test = evaluate(config=config,"
+inference_reference,train_cvact.py,430,if r1_test > best_score:
+inference_reference,train_cvact.py,432,best_score = r1_test
+checkpoint_reference,train_cvact.py,435,"torch.save(model.module.state_dict(), '{}/weights_e{}_{:.4f}.pth'.format(model_path, epoch, r1_test))"
+inference_reference,train_cvact.py,435,"torch.save(model.module.state_dict(), '{}/weights_e{}_{:.4f}.pth'.format(model_path, epoch, r1_test))"
+checkpoint_reference,train_cvact.py,437,"torch.save(model.state_dict(), '{}/weights_e{}_{:.4f}.pth'.format(model_path, epoch, r1_test))"
+inference_reference,train_cvact.py,437,"torch.save(model.state_dict(), '{}/weights_e{}_{:.4f}.pth'.format(model_path, epoch, r1_test))"
+checkpoint_reference,train_cvact.py,446,"torch.save(model.module.state_dict(), '{}/weights_end.pth'.format(model_path))"
+checkpoint_reference,train_cvact.py,448,"torch.save(model.state_dict(), '{}/weights_end.pth'.format(model_path))"
+inference_reference,train_cvact.py,452,# Test                                                                        #
+inference_reference,train_cvact.py,456,"reference_dataset_test = CVACTDatasetTest(data_folder=config.data_folder ,"
+inference_reference,train_cvact.py,460,"reference_dataloader_test = DataLoader(reference_dataset_test,"
+inference_reference,train_cvact.py,461,"batch_size=config.batch_size_eval,"
+inference_reference,train_cvact.py,468,# Query Ground Images Test
+inference_reference,train_cvact.py,469,"query_dataset_test = CVACTDatasetTest(data_folder=config.data_folder ,"
+inference_reference,train_cvact.py,474,"query_dataloader_test = DataLoader(query_dataset_test,"
+inference_reference,train_cvact.py,475,"batch_size=config.batch_size_eval,"
+inference_reference,train_cvact.py,481,"print(""Reference Images Test:"", len(reference_dataset_test))"
+inference_reference,train_cvact.py,482,"print(""Query Images Test:"", len(query_dataset_test))"
+inference_reference,train_cvact.py,485,"print(""\n{}[{}]{}"".format(30*""-"", ""Test"", 30*""-""))"
+inference_reference,train_cvact.py,488,"r1_test = evaluate(config=config,"
+inference_reference,train_cvact.py,490,"reference_dataloader=reference_dataloader_test,"
+inference_reference,train_cvact.py,491,"query_dataloader=query_dataloader_test,"
+inference_reference,train_cvusa.py,13,"from sample4geo.dataset.cvusa import CVUSADatasetEval, CVUSADatasetTrain"
+inference_reference,train_cvusa.py,17,"from sample4geo.evaluate.cvusa_and_cvact import evaluate, calc_sim"
+inference_reference,train_cvusa.py,48,# Eval
+inference_reference,train_cvusa.py,49,batch_size_eval: int = 128
+inference_reference,train_cvusa.py,50,eval_every_n_epoch: int = 4        # eval every n Epoch
+checkpoint_reference,train_cvusa.py,56,grad_checkpointing: bool = False   # Gradient Checkpointing
+checkpoint_reference,train_cvusa.py,74,# Savepath for model checkpoints
+inference_reference,train_cvusa.py,77,# Eval before training
+checkpoint_reference,train_cvusa.py,80,# Checkpoint to start from
+checkpoint_reference,train_cvusa.py,81,checkpoint_start = None
+checkpoint_reference,train_cvusa.py,144,# Activate gradient checkpointing
+checkpoint_reference,train_cvusa.py,145,if config.grad_checkpointing:
+checkpoint_reference,train_cvusa.py,146,model.set_grad_checkpointing(True)
+checkpoint_reference,train_cvusa.py,148,# Load pretrained Checkpoint
+checkpoint_reference,train_cvusa.py,149,if config.checkpoint_start is not None:
+checkpoint_reference,train_cvusa.py,150,"print(""Start from:"", config.checkpoint_start)"
+checkpoint_reference,train_cvusa.py,151,model_state_dict = torch.load(config.checkpoint_start)
+inference_reference,train_cvusa.py,197,# Eval
+inference_reference,train_cvusa.py,206,"reference_dataset_test = CVUSADatasetEval(data_folder=config.data_folder ,"
+inference_reference,train_cvusa.py,207,"split=""test"","
+inference_reference,train_cvusa.py,212,"reference_dataloader_test = DataLoader(reference_dataset_test,"
+inference_reference,train_cvusa.py,213,"batch_size=config.batch_size_eval,"
+inference_reference,train_cvusa.py,220,# Query Ground Images Test
+inference_reference,train_cvusa.py,221,"query_dataset_test = CVUSADatasetEval(data_folder=config.data_folder ,"
+inference_reference,train_cvusa.py,222,"split=""test"","
+inference_reference,train_cvusa.py,227,"query_dataloader_test = DataLoader(query_dataset_test,"
+inference_reference,train_cvusa.py,228,"batch_size=config.batch_size_eval,"
+inference_reference,train_cvusa.py,234,"print(""Reference Images Test:"", len(reference_dataset_test))"
+inference_reference,train_cvusa.py,235,"print(""Query Images Test:"", len(query_dataset_test))"
+inference_reference,train_cvusa.py,254,"query_dataset_train = CVUSADatasetEval(data_folder=config.data_folder ,"
+inference_reference,train_cvusa.py,261,"batch_size=config.batch_size_eval,"
+inference_reference,train_cvusa.py,267,"reference_dataset_train = CVUSADatasetEval(data_folder=config.data_folder ,"
+inference_reference,train_cvusa.py,274,"batch_size=config.batch_size_eval,"
+checkpoint_reference,train_cvusa.py,308,"""weight_decay"": 0.01,"
+checkpoint_reference,train_cvusa.py,312,"""weight_decay"": 0.0,"
+inference_reference,train_cvusa.py,360,"r1_test = evaluate(config=config,"
+inference_reference,train_cvusa.py,362,"reference_dataloader=reference_dataloader_test,"
+inference_reference,train_cvusa.py,363,"query_dataloader=query_dataloader_test,"
+inference_reference,train_cvusa.py,409,# evaluate
+inference_reference,train_cvusa.py,410,if (epoch % config.eval_every_n_epoch == 0 and epoch != 0) or epoch == config.epochs:
+inference_reference,train_cvusa.py,412,"print(""\n{}[{}]{}"".format(30*""-"", ""Evaluate"", 30*""-""))"
+inference_reference,train_cvusa.py,414,"r1_test = evaluate(config=config,"
+inference_reference,train_cvusa.py,416,"reference_dataloader=reference_dataloader_test,"
+inference_reference,train_cvusa.py,417,"query_dataloader=query_dataloader_test,"
+inference_reference,train_cvusa.py,431,if r1_test > best_score:
+inference_reference,train_cvusa.py,433,best_score = r1_test
+checkpoint_reference,train_cvusa.py,436,"torch.save(model.module.state_dict(), '{}/weights_e{}_{:.4f}.pth'.format(model_path, epoch, r1_test))"
+inference_reference,train_cvusa.py,436,"torch.save(model.module.state_dict(), '{}/weights_e{}_{:.4f}.pth'.format(model_path, epoch, r1_test))"
+checkpoint_reference,train_cvusa.py,438,"torch.save(model.state_dict(), '{}/weights_e{}_{:.4f}.pth'.format(model_path, epoch, r1_test))"
+inference_reference,train_cvusa.py,438,"torch.save(model.state_dict(), '{}/weights_e{}_{:.4f}.pth'.format(model_path, epoch, r1_test))"
+checkpoint_reference,train_cvusa.py,447,"torch.save(model.module.state_dict(), '{}/weights_end.pth'.format(model_path))"
+checkpoint_reference,train_cvusa.py,449,"torch.save(model.state_dict(), '{}/weights_end.pth'.format(model_path))"
+inference_reference,train_university.py,12,"from sample4geo.dataset.university import U1652DatasetEval, U1652DatasetTrain, get_transforms"
+inference_reference,train_university.py,15,from sample4geo.evaluate.university import evaluate
+inference_reference,train_university.py,38,# Eval
+inference_reference,train_university.py,39,batch_size_eval: int = 128
+inference_reference,train_university.py,40,eval_every_n_epoch: int = 1          # eval every n Epoch
+inference_reference,train_university.py,42,eval_gallery_n: int = -1             # -1 for all or int
+checkpoint_reference,train_university.py,47,grad_checkpointing: bool = False     # Gradient Checkpointing
+checkpoint_reference,train_university.py,65,# Savepath for model checkpoints
+inference_reference,train_university.py,68,# Eval before training
+checkpoint_reference,train_university.py,71,# Checkpoint to start from
+checkpoint_reference,train_university.py,72,checkpoint_start = None
+inference_reference,train_university.py,96,config.query_folder_test = './data/U1652/test/query_drone'
+inference_reference,train_university.py,97,config.gallery_folder_test = './data/U1652/test/gallery_satellite'
+inference_reference,train_university.py,101,config.query_folder_test = './data/U1652/test/query_satellite'
+inference_reference,train_university.py,102,config.gallery_folder_test = './data/U1652/test/gallery_drone'
+checkpoint_reference,train_university.py,139,# Activate gradient checkpointing
+checkpoint_reference,train_university.py,140,if config.grad_checkpointing:
+checkpoint_reference,train_university.py,141,model.set_grad_checkpointing(True)
+checkpoint_reference,train_university.py,143,# Load pretrained Checkpoint
+checkpoint_reference,train_university.py,144,if config.checkpoint_start is not None:
+checkpoint_reference,train_university.py,145,"print(""Start from:"", config.checkpoint_start)"
+checkpoint_reference,train_university.py,146,model_state_dict = torch.load(config.checkpoint_start)
+inference_reference,train_university.py,186,"query_dataset_test = U1652DatasetEval(data_folder=config.query_folder_test,"
+inference_reference,train_university.py,191,"query_dataloader_test = DataLoader(query_dataset_test,"
+inference_reference,train_university.py,192,"batch_size=config.batch_size_eval,"
+inference_reference,train_university.py,197,# Query Ground Images Test
+inference_reference,train_university.py,198,"gallery_dataset_test = U1652DatasetEval(data_folder=config.gallery_folder_test,"
+inference_reference,train_university.py,201,"sample_ids=query_dataset_test.get_sample_ids(),"
+inference_reference,train_university.py,202,"gallery_n=config.eval_gallery_n,"
+inference_reference,train_university.py,205,"gallery_dataloader_test = DataLoader(gallery_dataset_test,"
+inference_reference,train_university.py,206,"batch_size=config.batch_size_eval,"
+inference_reference,train_university.py,211,"print(""Query Images Test:"", len(query_dataset_test))"
+inference_reference,train_university.py,212,"print(""Gallery Images Test:"", len(gallery_dataset_test))"
+checkpoint_reference,train_university.py,238,"""weight_decay"": 0.01,"
+checkpoint_reference,train_university.py,242,"""weight_decay"": 0.0,"
+inference_reference,train_university.py,289,"r1_test = evaluate(config=config,"
+inference_reference,train_university.py,291,"query_loader=query_dataloader_test,"
+inference_reference,train_university.py,292,"gallery_loader=gallery_dataloader_test,"
+inference_reference,train_university.py,327,# evaluate
+inference_reference,train_university.py,328,if (epoch % config.eval_every_n_epoch == 0 and epoch != 0) or epoch == config.epochs:
+inference_reference,train_university.py,330,"print(""\n{}[{}]{}"".format(30*""-"", ""Evaluate"", 30*""-""))"
+inference_reference,train_university.py,332,"r1_test = evaluate(config=config,"
+inference_reference,train_university.py,334,"query_loader=query_dataloader_test,"
+inference_reference,train_university.py,335,"gallery_loader=gallery_dataloader_test,"
+inference_reference,train_university.py,340,if r1_test > best_score:
+inference_reference,train_university.py,342,best_score = r1_test
+checkpoint_reference,train_university.py,345,"torch.save(model.module.state_dict(), '{}/weights_e{}_{:.4f}.pth'.format(model_path, epoch, r1_test))"
+inference_reference,train_university.py,345,"torch.save(model.module.state_dict(), '{}/weights_e{}_{:.4f}.pth'.format(model_path, epoch, r1_test))"
+checkpoint_reference,train_university.py,347,"torch.save(model.state_dict(), '{}/weights_e{}_{:.4f}.pth'.format(model_path, epoch, r1_test))"
+inference_reference,train_university.py,347,"torch.save(model.state_dict(), '{}/weights_e{}_{:.4f}.pth'.format(model_path, epoch, r1_test))"
+checkpoint_reference,train_university.py,354,"torch.save(model.module.state_dict(), '{}/weights_end.pth'.format(model_path))"
+checkpoint_reference,train_university.py,356,"torch.save(model.state_dict(), '{}/weights_end.pth'.format(model_path))"
+inference_reference,train_vigor.py,13,"from sample4geo.dataset.vigor import VigorDatasetEval, VigorDatasetTrain"
+inference_reference,train_vigor.py,17,"from sample4geo.evaluate.vigor import evaluate, calc_sim"
+inference_reference,train_vigor.py,48,# Eval
+inference_reference,train_vigor.py,49,batch_size_eval: int = 128
+inference_reference,train_vigor.py,50,eval_every_n_epoch: int = 4      # eval every n Epoch
+checkpoint_reference,train_vigor.py,56,grad_checkpointing: bool = False # Gradient Checkpointing
+checkpoint_reference,train_vigor.py,76,# Savepath for model checkpoints
+inference_reference,train_vigor.py,79,# Eval before training
+checkpoint_reference,train_vigor.py,82,# Checkpoint to start from
+checkpoint_reference,train_vigor.py,83,checkpoint_start = None
+checkpoint_reference,train_vigor.py,146,# Activate gradient checkpointing
+checkpoint_reference,train_vigor.py,147,if config.grad_checkpointing:
+checkpoint_reference,train_vigor.py,148,model.set_grad_checkpointing(True)
+checkpoint_reference,train_vigor.py,150,# Load pretrained Checkpoint
+checkpoint_reference,train_vigor.py,151,if config.checkpoint_start is not None:
+checkpoint_reference,train_vigor.py,152,"print(""Start from:"", config.checkpoint_start)"
+checkpoint_reference,train_vigor.py,153,model_state_dict = torch.load(config.checkpoint_start)
+inference_reference,train_vigor.py,200,# Eval
+inference_reference,train_vigor.py,208,# Reference Satellite Images Test
+inference_reference,train_vigor.py,209,"reference_dataset_test = VigorDatasetEval(data_folder=config.data_folder ,"
+inference_reference,train_vigor.py,210,"split=""test"","
+inference_reference,train_vigor.py,216,"reference_dataloader_test = DataLoader(reference_dataset_test,"
+inference_reference,train_vigor.py,217,"batch_size=config.batch_size_eval,"
+inference_reference,train_vigor.py,224,# Query Ground Images Test
+inference_reference,train_vigor.py,225,"query_dataset_test = VigorDatasetEval(data_folder=config.data_folder ,"
+inference_reference,train_vigor.py,226,"split=""test"","
+inference_reference,train_vigor.py,232,"query_dataloader_test = DataLoader(query_dataset_test,"
+inference_reference,train_vigor.py,233,"batch_size=config.batch_size_eval,"
+inference_reference,train_vigor.py,239,"print(""Query Images Test:"", len(query_dataset_test))"
+inference_reference,train_vigor.py,240,"print(""Reference Images Test:"", len(reference_dataset_test))"
+inference_reference,train_vigor.py,253,# Sim Sample + Eval on Train                                                  #
+inference_reference,train_vigor.py,259,"query_dataset_train = VigorDatasetEval(data_folder=config.data_folder ,"
+inference_reference,train_vigor.py,267,"batch_size=config.batch_size_eval,"
+inference_reference,train_vigor.py,273,"reference_dataset_train = VigorDatasetEval(data_folder=config.data_folder ,"
+inference_reference,train_vigor.py,281,"batch_size=config.batch_size_eval,"
+checkpoint_reference,train_vigor.py,315,"""weight_decay"": 0.01,"
+checkpoint_reference,train_vigor.py,319,"""weight_decay"": 0.0,"
+inference_reference,train_vigor.py,366,"r1_test = evaluate(config=config,"
+inference_reference,train_vigor.py,368,"reference_dataloader=reference_dataloader_test,"
+inference_reference,train_vigor.py,369,"query_dataloader=query_dataloader_test,"
+inference_reference,train_vigor.py,415,# evaluate
+inference_reference,train_vigor.py,416,if (epoch % config.eval_every_n_epoch == 0 and epoch != 0) or epoch == config.epochs:
+inference_reference,train_vigor.py,418,"print(""\n{}[{}]{}"".format(30*""-"", ""Evaluate"", 30*""-""))"
+inference_reference,train_vigor.py,420,"r1_test = evaluate(config=config,"
+inference_reference,train_vigor.py,422,"reference_dataloader=reference_dataloader_test,"
+inference_reference,train_vigor.py,423,"query_dataloader=query_dataloader_test,"
+inference_reference,train_vigor.py,436,if r1_test > best_score:
+inference_reference,train_vigor.py,438,best_score = r1_test
+checkpoint_reference,train_vigor.py,441,"torch.save(model.module.state_dict(), '{}/weights_e{}_{:.4f}.pth'.format(model_path, epoch, r1_test))"
+inference_reference,train_vigor.py,441,"torch.save(model.module.state_dict(), '{}/weights_e{}_{:.4f}.pth'.format(model_path, epoch, r1_test))"
+checkpoint_reference,train_vigor.py,443,"torch.save(model.state_dict(), '{}/weights_e{}_{:.4f}.pth'.format(model_path, epoch, r1_test))"
+inference_reference,train_vigor.py,443,"torch.save(model.state_dict(), '{}/weights_e{}_{:.4f}.pth'.format(model_path, epoch, r1_test))"
+checkpoint_reference,train_vigor.py,452,"torch.save(model.module.state_dict(), '{}/weights_end.pth'.format(model_path))"
+checkpoint_reference,train_vigor.py,454,"torch.save(model.state_dict(), '{}/weights_end.pth'.format(model_path))"

@@ -1,0 +1,14 @@
+{
+  "created_at_utc": "2026-08-06T17:54:46.745864+00:00",
+  "repository": "SkyEyeLoc/MobileGeo",
+  "mat_files_found": 2,
+  "valid_mat_files": [
+    "/content/drive/MyDrive/mobilegeo_project/data/official_mobilegeo_precomputed_features/second_D2S.mat",
+    "/content/drive/MyDrive/mobilegeo_project/data/official_mobilegeo_precomputed_features/second_S2D.mat"
+  ],
+  "valid_mat_file_count": 2,
+  "raw_image_inference_reproducible": false,
+  "official_checkpoint_reproduction_supported": false,
+  "final_supported_provenance": "PUBLISHED_PRECOMPUTED_FEATURE_EVALUATION",
+  "explanation": "At least one released .mat file contains the feature and label variables required by Tools/evaluate_norm.py."
+}

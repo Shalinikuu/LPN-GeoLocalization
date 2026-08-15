@@ -1,0 +1,8 @@
+Item,Result
+Clean top-1 successes,14
+Clean query-scale trials,"27,972"
+Stable deployment threshold available,False
+Accuracy-degradation claim allowed,False
+Top1 similarity >1× stability lift,2 / 10 corruption conditions
+Top1-top2 margin >1× stability lift,10 / 10 corruption conditions
+Mean top1-top2 margin lift at 10% coverage,2.281×

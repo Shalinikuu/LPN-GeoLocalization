@@ -1,0 +1,29 @@
+{
+  "created_at_utc": "2026-08-09T06:30:13.139348+00:00",
+  "source_checks": {
+    "notebook06_complete": true,
+    "notebook06_validation_passed": true,
+    "model_name_correct": true,
+    "model_provenance_correct": true,
+    "official_mobilegeo_model_false": true
+  },
+  "hardware_checks": {
+    "source_notebook_ready": true,
+    "checkpoint_available": true,
+    "cuda_available": false,
+    "jetson_platform_detected": false,
+    "orin_family_detected": false,
+    "orin_nano_identity_detected": false,
+    "actual_orin_nano_runtime": false
+  },
+  "benchmark_mode": "REFERENCE_HOST_PREPARATION_ONLY_NO_ORIN_NANO_LATENCY_CLAIM",
+  "actual_orin_nano_benchmark_allowed": false,
+  "orin_nano_performance_claim_allowed": false,
+  "runtime_gpu": null,
+  "machine_readable_runtime_gpu": null,
+  "machine_readable_runtime_gpu_recovered": false,
+  "console_reported_runtime_gpu": "Tesla T4",
+  "console_reported_compute_capability": "7.5",
+  "console_reported_machine": "x86_64",
+  "console_metadata_provenance": "USER_PROVIDED_NOTEBOOK07_CELL1_CONSOLE_OUTPUT"
+}

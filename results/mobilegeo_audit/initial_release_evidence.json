@@ -1,0 +1,8 @@
+{
+  "repository_audited": true,
+  "raw_image_inference_tested": false,
+  "official_checkpoint_verified": false,
+  "precomputed_features_verified": false,
+  "licence_verified": false,
+  "final_provenance_decision": "PENDING_FURTHER_AUDIT"
+}

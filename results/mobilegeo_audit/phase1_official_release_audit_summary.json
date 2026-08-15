@@ -1,0 +1,44 @@
+{
+  "completed_at_utc": "2026-08-06T17:58:10.098397+00:00",
+  "phase": "PHASE_1_OFFICIAL_MOBILEGEO_RELEASE_AUDIT",
+  "phase_complete": true,
+  "repository": "SkyEyeLoc/MobileGeo",
+  "supported_provenance": "PUBLISHED_PRECOMPUTED_FEATURE_EVALUATION",
+  "raw_image_inference_reproduced": false,
+  "official_mobilegeo_checkpoint_found": false,
+  "precomputed_feature_evaluation_completed": true,
+  "valid_mat_asset_count": 2,
+  "evaluated_assets": [
+    {
+      "asset_name": "second_D2S.mat",
+      "asset_sha256": "8e3055e5feb84db90e73f47025745fa5bc71e9a709a8cd82d0cfd78dfab40d3c",
+      "query_count": 37854,
+      "gallery_count": 951,
+      "descriptor_dimension": 768,
+      "recall_at_1_percent": 93.9451577112062,
+      "recall_at_5_percent": 98.01870343953082,
+      "recall_at_10_percent": 98.56554129022032,
+      "mean_average_precision_percent": 95.82841923283013
+    },
+    {
+      "asset_name": "second_S2D.mat",
+      "asset_sha256": "4cdb17083cd7c6fdf5ca26c63cc24760c4618565a84ca04eb782282805c7c1ab",
+      "query_count": 701,
+      "gallery_count": 51354,
+      "descriptor_dimension": 768,
+      "recall_at_1_percent": 95.72039942938659,
+      "recall_at_5_percent": 97.14693295292439,
+      "recall_at_10_percent": 97.43223965763195,
+      "mean_average_precision_percent": 92.63492678390732
+    }
+  ],
+  "limitations": [
+    "No trained MobileGeo checkpoint was verified in the cloned repository.",
+    "No complete raw-image preprocessing and query/gallery inference pipeline was reproduced.",
+    "The released evaluation operates on precomputed descriptors.",
+    "The repository MobileGeo weight link was empty during the audit.",
+    "No repository license file was verified.",
+    "AGX Orin performance claims were not independently reproduced."
+  ],
+  "next_phase": "PHASE_2_CORRECTED_SUES200_LOCATION_DISJOINT_BENCHMARK"
+}

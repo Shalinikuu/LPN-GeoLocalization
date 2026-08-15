@@ -1,0 +1,27 @@
+{
+  "created_at_utc": "2026-08-06T20:00:53.011748+00:00",
+  "repository": "Skyy93/Sample4Geo",
+  "repository_url": "https://github.com/Skyy93/Sample4Geo.git",
+  "local_path": "/content/drive/MyDrive/mobilegeo_project/repositories/Sample4Geo",
+  "branch": "main",
+  "commit_hash": "498c6511478053ddb4a43f24a9f4942fab238f09",
+  "short_commit": "498c651",
+  "commit_date": "2025-08-08T10:18:16+02:00",
+  "commit_subject": "Update README.md",
+  "python_source_file_count": 24,
+  "configuration_file_count": 0,
+  "checkpoint_files_inside_repository": [],
+  "checkpoint_found_inside_repository": false,
+  "license_files": [],
+  "license_found": false,
+  "readme_files": [
+    "README.md"
+  ],
+  "environment_files": [
+    "requirements.txt"
+  ],
+  "sues200_reference_found": false,
+  "audit_status": "REQUIRES_CHECKPOINT_AND_PIPELINE_VALIDATION",
+  "common_benchmark_ready": false,
+  "next_action": "Identify the official checkpoint, model configuration and image preprocessing."
+}

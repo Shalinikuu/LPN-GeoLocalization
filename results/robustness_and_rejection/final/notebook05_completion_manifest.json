@@ -1,0 +1,300 @@
+{
+  "created_at_utc": "2026-08-08T21:02:57.437633+00:00",
+  "notebook": "05_robustness_and_rejection",
+  "status": "COMPLETE",
+  "validation_checks": {
+    "notebook04_complete": true,
+    "notebook04_near_chance_baseline": true,
+    "model_name_correct": true,
+    "model_provenance_correct": true,
+    "robustness_mode_correct": true,
+    "accuracy_degradation_primary_claim_blocked": true,
+    "deployment_threshold_claim_blocked": true,
+    "clean_top1_success_count_14": true,
+    "corruption_condition_count_10": true,
+    "severity_consistency_pass": true,
+    "cell2_stability_reconstruction_pass": true,
+    "rejection_correctness_calibration_blocked": true,
+    "crs_unverified": true,
+    "meter_level_claim_blocked": true,
+    "retrieval_not_verified_pose": true,
+    "expected_corruption_conditions": true,
+    "expected_corruption_families": true,
+    "all_corruption_severity_ordering_pass": true,
+    "margin_summary_has_10_conditions": true,
+    "top1_similarity_summary_has_10_conditions": true,
+    "margin_enriches_identity_stability_all_conditions_at_10pct": true,
+    "raw_similarity_not_consistently_enriching": true
+  },
+  "all_validation_checks_pass": true,
+  "model": {
+    "name": "AdvancedEdgeGeoLPN_LOCAL_REIMPLEMENTATION",
+    "provenance": "LOCAL_REIMPLEMENTATION",
+    "official_mobilegeo_model": false
+  },
+  "source_clean_benchmark": {
+    "status": "NEAR_CHANCE",
+    "query_scale_trials": 27972,
+    "clean_top1_successes": 14,
+    "clean_top1_success_rate": 0.0005005005005005005,
+    "primary_accuracy_degradation_claim_allowed": false
+  },
+  "corruption_suite": {
+    "families": [
+      "brightness",
+      "contrast",
+      "gaussian_blur",
+      "gaussian_noise",
+      "jpeg"
+    ],
+    "condition_count": 10,
+    "family_count": 5,
+    "severity_levels_per_family": 2,
+    "all_strong_severity_more_perturbing_than_mild": true,
+    "family_severity_results": [
+      {
+        "family": "brightness",
+        "mild_condition": "brightness_mild",
+        "strong_condition": "brightness_strong",
+        "mild_cosine": 0.6741021871566772,
+        "strong_cosine": 0.2492676824331283,
+        "mild_l2_drift": 0.7298699617385864,
+        "strong_l2_drift": 1.2085727453231812,
+        "cosine_severity_pass": true,
+        "l2_severity_pass": true,
+        "pass": true
+      },
+      {
+        "family": "contrast",
+        "mild_condition": "contrast_mild",
+        "strong_condition": "contrast_strong",
+        "mild_cosine": 0.8982828259468079,
+        "strong_cosine": 0.7528573870658875,
+        "mild_l2_drift": 0.3989653289318084,
+        "strong_l2_drift": 0.6812310814857483,
+        "cosine_severity_pass": true,
+        "l2_severity_pass": true,
+        "pass": true
+      },
+      {
+        "family": "gaussian_blur",
+        "mild_condition": "blur_mild",
+        "strong_condition": "blur_strong",
+        "mild_cosine": 0.6566082239151001,
+        "strong_cosine": 0.3818830549716949,
+        "mild_l2_drift": 0.8085525631904602,
+        "strong_l2_drift": 1.0941897630691528,
+        "cosine_severity_pass": true,
+        "l2_severity_pass": true,
+        "pass": true
+      },
+      {
+        "family": "gaussian_noise",
+        "mild_condition": "noise_mild",
+        "strong_condition": "noise_strong",
+        "mild_cosine": 0.94024658203125,
+        "strong_cosine": 0.7594296336174011,
+        "mild_l2_drift": 0.3133977651596069,
+        "strong_l2_drift": 0.6624742746353149,
+        "cosine_severity_pass": true,
+        "l2_severity_pass": true,
+        "pass": true
+      },
+      {
+        "family": "jpeg",
+        "mild_condition": "jpeg_mild",
+        "strong_condition": "jpeg_strong",
+        "mild_cosine": 0.94381982088089,
+        "strong_cosine": 0.8203787207603455,
+        "mild_l2_drift": 0.3177345097064972,
+        "strong_l2_drift": 0.5769218802452087,
+        "cosine_severity_pass": true,
+        "l2_severity_pass": true,
+        "pass": true
+      }
+    ]
+  },
+  "descriptor_stability": {
+    "most_stable_condition_by_mean_cosine": "jpeg_mild",
+    "highest_mean_cosine": 0.94381982088089,
+    "least_stable_condition_by_mean_cosine": "brightness_strong",
+    "lowest_mean_cosine": 0.2492676824331283,
+    "highest_top1_identity_stability_condition": "jpeg_mild",
+    "highest_top1_identity_stability": 0.4758329758329759,
+    "lowest_top1_identity_stability_condition": "brightness_strong",
+    "lowest_top1_identity_stability": 0.0228800228800228
+  },
+  "rejection_diagnostic": {
+    "true_correctness_threshold_calibration_available": false,
+    "deployment_threshold_claim_allowed": false,
+    "top1_similarity": {
+      "conditions_with_positive_stability_lift_at_10pct": 2,
+      "total_conditions": 10,
+      "mean_stability_lift_at_10pct": 0.8999069074119881,
+      "interpretation": "NOT_CONSISTENTLY_ENRICHING_IDENTITY_STABILITY"
+    },
+    "top1_top2_margin": {
+      "conditions_with_positive_stability_lift_at_10pct": 10,
+      "total_conditions": 10,
+      "mean_stability_lift_at_10pct": 2.2814062938498054,
+      "median_stability_lift_at_10pct": 2.3047333699120527,
+      "minimum_stability_lift_at_10pct": 1.704855180512984,
+      "maximum_stability_lift_at_10pct": 3.0646303119175227,
+      "interpretation": "DESCRIPTIVE_IDENTITY_STABILITY_ENRICHMENT_ONLY",
+      "is_true_correctness_measure": false
+    }
+  },
+  "final_interpretation": {
+    "clean_baseline": "NEAR_CHANCE_ZERO_SHOT_VPS_RETRIEVAL",
+    "robustness_claim": "DESCRIPTOR_RANK_AND_IDENTITY_STABILITY_ONLY",
+    "accuracy_degradation_primary_claim_allowed": false,
+    "descriptor_severity_result": "ALL_FIVE_CORRUPTION_FAMILIES_SHOWED_GREATER_DESCRIPTOR_PERTURBATION_AT_STRONG_THAN_MILD_SEVERITY",
+    "top1_similarity_result": "RAW_TOP1_SIMILARITY_DID_NOT_CONSISTENTLY_ENRICH_CLEAN_TO_CORRUPTED_TOP1_IDENTITY_STABILITY",
+    "margin_result": "TOP1_TOP2_MARGIN_DESCRIPTIVELY_ENRICHED_CLEAN_TO_CORRUPTED_TOP1_IDENTITY_STABILITY_AT_10_PERCENT_COVERAGE_FOR_ALL_10_TESTED_CORRUPTION_CONDITIONS",
+    "margin_result_limitation": "IDENTITY_STABILITY_IS_NOT_TRUE_LOCALIZATION_CORRECTNESS",
+    "correctness_rejection_result": "INSUFFICIENT_TRUE_TOP1_SUCCESSES_FOR_STABLE_CORRECTNESS_BASED_REJECTION_CALIBRATION",
+    "validated_deployment_threshold_available": false,
+    "official_mobilegeo_result": false,
+    "crs_status": "UNVERIFIED",
+    "meter_level_error_claim_allowed": false,
+    "retrieval_is_verified_uav_pose": false
+  },
+  "reporting_constraints": {
+    "official_mobilegeo_result": false,
+    "crs_status": "UNVERIFIED",
+    "wgs84_claim_allowed": false,
+    "meter_level_geodetic_error_claim_allowed": false,
+    "retrieval_is_verified_uav_pose": false,
+    "jetson_latency_claim_allowed_from_colab": false,
+    "nominal_dataset_level_is_verified_agl_or_msl": false
+  },
+  "artifact_hashes": {
+    "precondition_audit": {
+      "path": "/content/drive/MyDrive/mobilegeo_project/results/robustness_and_rejection/audit/notebook05_precondition_audit.json",
+      "bytes": 988,
+      "sha256": "31613882b0fd21db426f85f28a42ae54e0cc23a26f781b3f7df804da1d194916"
+    },
+    "protocol": {
+      "path": "/content/drive/MyDrive/mobilegeo_project/results/robustness_and_rejection/protocol/notebook05_robustness_rejection_protocol.json",
+      "bytes": 2062,
+      "sha256": "4faae89fb2a2923bdbfe415224722777a0c2bdfc59b1e2d4a8130e9924d833fc"
+    },
+    "corruption_audit": {
+      "path": "/content/drive/MyDrive/mobilegeo_project/results/robustness_and_rejection/audit/notebook05_corruption_stability_report.json",
+      "bytes": 3545,
+      "sha256": "73236230c46536b2b3e183c880499a99bbd6754b128df5f0f5770564a08ab2df"
+    },
+    "rejection_audit": {
+      "path": "/content/drive/MyDrive/mobilegeo_project/results/robustness_and_rejection/audit/notebook05_rejection_coverage_audit.json",
+      "bytes": 4790,
+      "sha256": "5236b2780703c944b543d8589358802690924a436b08866480d361e35273ba47"
+    },
+    "clean_confidence_trials": {
+      "path": "/content/drive/MyDrive/mobilegeo_project/results/robustness_and_rejection/reports/vps_clean_confidence_trials.csv",
+      "bytes": 11676479,
+      "sha256": "2ac2f7b224965328a71a2c0b105f9c0fdbff6903169509851b760eac8882e08b"
+    },
+    "descriptor_stability": {
+      "path": "/content/drive/MyDrive/mobilegeo_project/results/robustness_and_rejection/reports/vps_corruption_descriptor_stability.csv",
+      "bytes": 3089,
+      "sha256": "914ae7dacd574453de38989fddcbb8c4078fb6725bfcf1f56f3063d48f3b349f"
+    },
+    "scale_stability": {
+      "path": "/content/drive/MyDrive/mobilegeo_project/results/robustness_and_rejection/reports/vps_corruption_retrieval_stability_by_scale.csv",
+      "bytes": 37646,
+      "sha256": "b4d59d4376cfe02f284fb5fb67aac547d7125ba82167e027b26a781e91a07e80"
+    },
+    "macro_stability": {
+      "path": "/content/drive/MyDrive/mobilegeo_project/results/robustness_and_rejection/reports/vps_corruption_macro_stability.csv",
+      "bytes": 3337,
+      "sha256": "9c0ffd96f974d33273293fdb30913d24236616dbd004d194edfde0934a778916"
+    },
+    "corrupted_confidence_trials": {
+      "path": "/content/drive/MyDrive/mobilegeo_project/results/robustness_and_rejection/reports/vps_corrupted_confidence_trials.csv",
+      "bytes": 85724892,
+      "sha256": "d0eb7eb3effa9f49371bd66e93edc7c21c8968bef0ca9e73ef5c14439ee2bf41"
+    },
+    "clean_correctness_curve": {
+      "path": "/content/drive/MyDrive/mobilegeo_project/results/robustness_and_rejection/reports/vps_clean_correctness_coverage_curve.csv",
+      "bytes": 4104,
+      "sha256": "ac609293919cac224e749454f2eeb6ce04a605207f8e0bfa8c4f3504030da9e7"
+    },
+    "stability_curve": {
+      "path": "/content/drive/MyDrive/mobilegeo_project/results/robustness_and_rejection/reports/vps_corruption_stability_coverage_curve.csv",
+      "bytes": 78504,
+      "sha256": "fc5387c9d925dae1f90a232a9f5e7e02d770ba1219b951da628248355607243d"
+    },
+    "corrupted_correctness_curve": {
+      "path": "/content/drive/MyDrive/mobilegeo_project/results/robustness_and_rejection/reports/vps_corrupted_correctness_coverage_curve.csv",
+      "bytes": 44722,
+      "sha256": "64aec9c3c3bdefc8927b6a536a5f32762da34b206425f0f504d07665b0fd52d5"
+    },
+    "rejection_stability_summary": {
+      "path": "/content/drive/MyDrive/mobilegeo_project/results/robustness_and_rejection/reports/vps_rejection_stability_summary.csv",
+      "bytes": 3104,
+      "sha256": "7ca67c8ae6991055766f733093f9510391886d59f28c406d900d466f4c3f9cd4"
+    },
+    "clean_rejection_summary": {
+      "path": "/content/drive/MyDrive/mobilegeo_project/results/robustness_and_rejection/reports/vps_clean_rejection_summary.csv",
+      "bytes": 444,
+      "sha256": "c1786c557e5b6cbecda5d9f5aa102675b37bc92093f471427c36a1f50837325d"
+    },
+    "notebook04_completion": {
+      "path": "/content/drive/MyDrive/mobilegeo_project/results/georeferenced_benchmark/final/notebook04_completion_manifest.json",
+      "bytes": 9617,
+      "sha256": "6f255311a7e9ef55118dc9a6a4e4d7416299707eea25492d9797f97fc97da29d"
+    }
+  },
+  "corrupted_embedding_hashes": {
+    "blur_mild": {
+      "path": "/content/drive/MyDrive/mobilegeo_project/results/robustness_and_rejection/embeddings/vps_query_blur_mild_embeddings.npz",
+      "bytes": 15844791,
+      "sha256": "a345ce0df68d12e16f8e8a33d054b990ffe720a220095ff0be73c2b02cf281c8"
+    },
+    "blur_strong": {
+      "path": "/content/drive/MyDrive/mobilegeo_project/results/robustness_and_rejection/embeddings/vps_query_blur_strong_embeddings.npz",
+      "bytes": 15829078,
+      "sha256": "c800d0b870f330a281cdfeb5e8963d6abf0bbdee7d19c3ef5428e68a989bd7d2"
+    },
+    "brightness_mild": {
+      "path": "/content/drive/MyDrive/mobilegeo_project/results/robustness_and_rejection/embeddings/vps_query_brightness_mild_embeddings.npz",
+      "bytes": 15839089,
+      "sha256": "9e86615f3704d56c2167338096bfd0ab0ea0e9cc7c0eaef5903259c99fd794a2"
+    },
+    "brightness_strong": {
+      "path": "/content/drive/MyDrive/mobilegeo_project/results/robustness_and_rejection/embeddings/vps_query_brightness_strong_embeddings.npz",
+      "bytes": 15825995,
+      "sha256": "c506d48e0c9e3b197c489434b21f13f70c4101d796206b42c3aea97b8c005861"
+    },
+    "contrast_mild": {
+      "path": "/content/drive/MyDrive/mobilegeo_project/results/robustness_and_rejection/embeddings/vps_query_contrast_mild_embeddings.npz",
+      "bytes": 15841316,
+      "sha256": "29ab5570c14fd8df7a4b26cffae762b05a59536e435a89d9359b5f2b8035ed32"
+    },
+    "contrast_strong": {
+      "path": "/content/drive/MyDrive/mobilegeo_project/results/robustness_and_rejection/embeddings/vps_query_contrast_strong_embeddings.npz",
+      "bytes": 15831240,
+      "sha256": "eaae60babb59627fc088c828d53a79bc3427b7c1228bd83e4e7a488331e77efd"
+    },
+    "jpeg_mild": {
+      "path": "/content/drive/MyDrive/mobilegeo_project/results/robustness_and_rejection/embeddings/vps_query_jpeg_mild_embeddings.npz",
+      "bytes": 15843903,
+      "sha256": "4aebbc088e54a659c547dc81286a53d92d8dc0f4c6c0bd56715671f3f5586233"
+    },
+    "jpeg_strong": {
+      "path": "/content/drive/MyDrive/mobilegeo_project/results/robustness_and_rejection/embeddings/vps_query_jpeg_strong_embeddings.npz",
+      "bytes": 15839229,
+      "sha256": "47e81d36dcbc9f0e4ae83e5d963cbbfc9c6387045e4c74c961a28e133b48700c"
+    },
+    "noise_mild": {
+      "path": "/content/drive/MyDrive/mobilegeo_project/results/robustness_and_rejection/embeddings/vps_query_noise_mild_embeddings.npz",
+      "bytes": 15840280,
+      "sha256": "9378da9c19c92a262518cb13f2a4b9f6bd2780a5088656e0e50535676c46c229"
+    },
+    "noise_strong": {
+      "path": "/content/drive/MyDrive/mobilegeo_project/results/robustness_and_rejection/embeddings/vps_query_noise_strong_embeddings.npz",
+      "bytes": 15835241,
+      "sha256": "25936e931eb1faab813543c589fec818d68e4a466645eb91ca6271e5fc4bc65e"
+    }
+  }
+}

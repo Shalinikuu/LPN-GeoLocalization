@@ -1,0 +1,21 @@
+{
+  "created_at_utc": "2026-08-06T18:45:50.668143+00:00",
+  "dataset": "SUES-200-512x512",
+  "protocol_name": "PROJECT_DEFINED_LOCATION_DISJOINT_60_20_20",
+  "official_sues200_protocol_claimed": false,
+  "split_seed": 42,
+  "total_locations": 200,
+  "train_locations": 120,
+  "validation_locations": 40,
+  "test_locations": 40,
+  "total_drone_images": 40000,
+  "total_satellite_images": 200,
+  "train_validation_overlap": 0,
+  "train_test_overlap": 0,
+  "validation_test_overlap": 0,
+  "missing_satellite_locations": [],
+  "missing_drone_locations": [],
+  "missing_positive_tiles": [],
+  "altitude_reference": "NOMINAL_DATASET_FOLDER_LABEL_NOT_VERIFIED_AS_AGL_OR_MSL",
+  "location_disjoint_validation_passed": true
+}

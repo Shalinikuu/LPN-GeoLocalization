@@ -1,0 +1,46 @@
+{
+  "created_at_utc": "2026-08-07T07:39:28.379550+00:00",
+  "method": "UltraVPR",
+  "repository_commit": "e8456de13661e7d7584396c9ac3610ec020d0aaf",
+  "architecture": "E2ResNet50_orientation8_se2gem",
+  "descriptor_dimension": 256,
+  "checkpoint_provenance": "OFFICIAL_ULTRAVPR_CHECKPOINT",
+  "evaluation_provenance_label": "OFFICIAL_ULTRAVPR_CHECKPOINT_ZERO_SHOT_TRANSFER_TO_PROJECT_SUES200_SPLIT",
+  "official_ultravpr_sues200_result": false,
+  "benchmark_protocol": "PROJECT_DEFINED_LOCATION_DISJOINT_60_20_20",
+  "query_count": 8000,
+  "gallery_count": 40,
+  "similarity": "COSINE_SIMILARITY_ON_L2_NORMALIZED_DESCRIPTORS",
+  "ranking": "EXACT_FULL_GALLERY_SORT",
+  "positive_definition": "ONE_MATCHING_SATELLITE_TILE_PER_QUERY",
+  "overall_metrics": {
+    "query_count": 8000,
+    "recall_at_1_percent": 81.9375,
+    "recall_at_5_percent": 95.22500000000001,
+    "recall_at_10_percent": 98.475,
+    "mean_average_precision_percent": 87.83206439211499,
+    "mean_positive_rank": 1.667125,
+    "median_positive_rank": 1.0,
+    "p95_positive_rank": 5.0,
+    "maximum_positive_rank": 28,
+    "mean_top1_top2_margin": 0.12488774671033025,
+    "median_top1_top2_margin": 0.11950841546058655
+  },
+  "search_timing": {
+    "total_seconds": 0.044076823000068543,
+    "milliseconds_per_query": 0.005509602875008568,
+    "scope": "SIMILARITY_MATRIX_AND_FULL_SORT_ONLY",
+    "descriptor_extraction_excluded": true
+  },
+  "files": {
+    "metrics_csv": "/content/drive/MyDrive/mobilegeo_project/results/common_benchmark/reports/ultravpr_location_disjoint_metrics.csv",
+    "query_results_csv": "/content/drive/MyDrive/mobilegeo_project/results/common_benchmark/rankings/ultravpr_query_results.csv",
+    "complete_rankings_csv": "/content/drive/MyDrive/mobilegeo_project/results/common_benchmark/rankings/ultravpr_complete_rankings.csv",
+    "per_location_metrics_csv": "/content/drive/MyDrive/mobilegeo_project/results/common_benchmark/reports/ultravpr_per_location_metrics.csv"
+  },
+  "reporting_restrictions": [
+    "Do not describe this as an official UltraVPR SUES-200 result.",
+    "This is zero-shot transfer to the project-defined SUES-200 split.",
+    "Do not report retrieval as verified UAV pose."
+  ]
+}

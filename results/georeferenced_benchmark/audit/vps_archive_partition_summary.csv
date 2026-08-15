@@ -1,0 +1,3 @@
+dataset_partition,samples,samples_with_labels,uav_candidate_images
+merge_test_700-1800_cr0.95_stride100,2331,2331,0
+val,349,349,0

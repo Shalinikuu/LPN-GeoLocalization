@@ -1,0 +1,204 @@
+UAV GEO-LOCALIZATION / MOBILEGEO PROJECT
+FINAL SUPERVISOR RESULTS SUMMARY
+============================================================
+
+LOCAL MODEL
+-----------
+Model:
+AdvancedEdgeGeoLPN_LOCAL_REIMPLEMENTATION
+
+Provenance:
+LOCAL_REIMPLEMENTATION
+
+Parameters:
+4,940,080
+
+Descriptor:
+2048-D
+
+Input:
+224 x 224
+
+Checkpoint:
+/content/drive/MyDrive/mobilegeo_project/baseline_v1/checkpoint/AdvancedEdgeGeoLPN_LOCAL_REIMPLEMENTATION.pth
+
+Checkpoint SHA256:
+adc64177582638690b841c1be390b7d05dfb27f4d2001b3d52fb74455020b807
+
+
+OFFICIAL MOBILEGEO RELEASED-FEATURE CHECK
+-----------------------------------------
+Provenance:
+PUBLISHED_PRECOMPUTED_FEATURE_EVALUATION
+
+D2S R@1:
+93.89%
+
+D2S R@5:
+98.02%
+
+This is NOT official raw-image checkpoint reproduction.
+
+
+CORRECTED SUES-200 LOCAL-MODEL BENCHMARK
+----------------------------------------
+Protocol:
+PROJECT_DEFINED_LOCATION_DISJOINT_60_20_20
+
+R@1:
+94.58%
+
+R@5:
+99.99%
+
+R@10:
+100.00%
+
+mAP:
+96.93%
+
+Mean positive rank:
+1.082
+
+Top-1 failures:
+434
+
+
+SAMPLE4GEO ZERO-SHOT
+--------------------
+R@1:
+85.90%
+
+R@5:
+98.74%
+
+R@10:
+99.78%
+
+mAP:
+91.79%
+
+Local-model R@1 advantage:
++8.68 percentage points
+
+
+VPS CROSS-DOMAIN
+----------------
+Macro R@1:
+0.0501%
+
+Macro R@5:
+0.2109%
+
+Macro R@10:
+0.4183%
+
+Macro mAP:
+0.3938%
+
+Interpretation:
+DESCRIPTORS_ARE_NONCOLLAPSED_BUT_ZERO_SHOT_CROSS_DOMAIN_RETRIEVAL_SIGNAL_IS_NEAR_CHANCE
+
+CRS:
+UNVERIFIED
+
+WGS84 verified:
+NO
+
+Retrieval equals verified UAV pose:
+NO
+
+
+ROBUSTNESS
+----------
+Mode:
+DESCRIPTOR_STABILITY_AND_REJECTION_DIAGNOSTICS
+
+Most descriptor-stable:
+jpeg_mild = 0.94382
+
+Least descriptor-stable:
+brightness_strong = 0.24927
+
+Stable deployment rejection threshold:
+NO
+
+
+KEYFRAME / ORDERED SAMPLE
+-------------------------
+Stride 2:
+49.94% processing reduction
+
+Stride 5:
+79.92% processing reduction
+
+Stride 10:
+89.96% processing reduction
+
+These are count-based reductions, not Jetson latency measurements.
+
+
+ORDERED WINDOW
+--------------
+Best tested multi-sample window:
+L = 5
+
+L=5 mAP:
+0.4153%
+
+L=5 normalized rank gain:
+8.05%
+
+Temporal provenance:
+DATASET_SAMPLE_NAME_ORDERING
+
+Verified timestamps / FPS:
+NO
+
+
+DEPLOYMENT
+----------
+TorchScript:
+VALIDATED
+
+Actual Jetson Orin Nano benchmark:
+NOT PERFORMED
+
+Actual Jetson latency:
+NOT MEASURED
+
+Actual Jetson throughput:
+NOT MEASURED
+
+Actual Jetson memory:
+NOT MEASURED
+
+Deployment ZIP:
+/content/drive/MyDrive/mobilegeo_project/results/orin_nano_benchmark/final/orin_nano_deployment_benchmark_package.zip
+
+Deployment ZIP SHA256:
+d62c1aff79890a45569ac5464ec8a91ba0b317f3eb45212d23b22eb3b5862a2f
+
+
+VIDEO RESULTS
+-------------
+Total project video files found:
+7
+
+Replay/comparison videos are qualitative visualization outputs.
+They must not be described as verified geographic UAV pose.
+
+
+DASHBOARD RESULTS
+-----------------
+Dashboard root:
+/content/drive/MyDrive/mobilegeo_project/final_results_dashboard
+
+Figures:
+/content/drive/MyDrive/mobilegeo_project/final_results_dashboard/figures
+
+Tables:
+/content/drive/MyDrive/mobilegeo_project/final_results_dashboard/tables
+
+Video index:
+/content/drive/MyDrive/mobilegeo_project/final_results_dashboard/video_index

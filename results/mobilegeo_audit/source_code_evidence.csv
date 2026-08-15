@@ -1,0 +1,177 @@
+category,relative_path,line_number,line_text
+checkpoint_reference,FoundationModel/backbones/ConvNeXt.py,243,# https://dl.fbaipublicfiles.com/convnext/convnext_tiny_1k_224_ema.pth
+checkpoint_reference,FoundationModel/backbones/ConvNeXt.py,251,# https://dl.fbaipublicfiles.com/convnext/convnext_small_1k_224_ema.pth
+checkpoint_reference,FoundationModel/backbones/ConvNeXt.py,259,# https://dl.fbaipublicfiles.com/convnext/convnext_base_1k_224_ema.pth
+checkpoint_reference,FoundationModel/backbones/ConvNeXt.py,260,# https://dl.fbaipublicfiles.com/convnext/convnext_base_22k_224.pth
+checkpoint_reference,FoundationModel/backbones/ConvNeXt.py,268,# https://dl.fbaipublicfiles.com/convnext/convnext_large_1k_224_ema.pth
+checkpoint_reference,FoundationModel/backbones/ConvNeXt.py,269,# https://dl.fbaipublicfiles.com/convnext/convnext_large_22k_224.pth
+checkpoint_reference,FoundationModel/backbones/ConvNeXt.py,277,# https://dl.fbaipublicfiles.com/convnext/convnext_xlarge_22k_224.pth
+input_resolution,FoundationModel/backbones/ConvNeXt.py,45,"shape (batch_size, height, width, channels) while channels_first corresponds to inputs"
+input_resolution,FoundationModel/backbones/ConvNeXt.py,46,"with shape (batch_size, channels, height, width)."
+input_resolution,FoundationModel/backbones/ConvNeXt.py,63,"# [batch_size, channels, height, width]"
+normalization,FoundationModel/backbones/ConvNeXt.py,49,"def __init__(self, normalized_shape, eps=1e-6, data_format=""channels_last""):"
+normalization,FoundationModel/backbones/ConvNeXt.py,51,"self.weight = nn.Parameter(torch.ones(normalized_shape), requires_grad=True)"
+normalization,FoundationModel/backbones/ConvNeXt.py,52,"self.bias = nn.Parameter(torch.zeros(normalized_shape), requires_grad=True)"
+normalization,FoundationModel/backbones/ConvNeXt.py,57,"self.normalized_shape = (normalized_shape,)"
+normalization,FoundationModel/backbones/ConvNeXt.py,61,"return F.layer_norm(x, self.normalized_shape, self.weight, self.bias, self.eps)"
+normalization,FoundationModel/backbones/ConvNeXt.py,64,"mean = x.mean(dim=(2,3), keepdim=True)"
+normalization,FoundationModel/backbones/ConvNeXt.py,131,"std = torch.sqrt(kernel.var(dim=(1, 2, 3), unbiased=False) + eps)  # (C,)"
+normalization,FoundationModel/backbones/ConvNeXt.py,226,"nn.init.trunc_normal_(m.weight, std=0.2)"
+dataset_reference,FoundationModel/backbones/ConvNeXt.py,16,See discussion: https://github.com/tensorflow/tpu/issues/494#issuecomment-532968956 ... I've opted for
+download_link,FoundationModel/backbones/ConvNeXt.py,3,https://github.com/facebookresearch/ConvNeXt
+download_link,FoundationModel/backbones/ConvNeXt.py,16,See discussion: https://github.com/tensorflow/tpu/issues/494#issuecomment-532968956 ... I've opted for
+download_link,FoundationModel/backbones/ConvNeXt.py,181,https://arxiv.org/pdf/2201.03545.pdf
+download_link,FoundationModel/backbones/ConvNeXt.py,243,# https://dl.fbaipublicfiles.com/convnext/convnext_tiny_1k_224_ema.pth
+download_link,FoundationModel/backbones/ConvNeXt.py,251,# https://dl.fbaipublicfiles.com/convnext/convnext_small_1k_224_ema.pth
+download_link,FoundationModel/backbones/ConvNeXt.py,259,# https://dl.fbaipublicfiles.com/convnext/convnext_base_1k_224_ema.pth
+download_link,FoundationModel/backbones/ConvNeXt.py,260,# https://dl.fbaipublicfiles.com/convnext/convnext_base_22k_224.pth
+download_link,FoundationModel/backbones/ConvNeXt.py,268,# https://dl.fbaipublicfiles.com/convnext/convnext_large_1k_224_ema.pth
+download_link,FoundationModel/backbones/ConvNeXt.py,269,# https://dl.fbaipublicfiles.com/convnext/convnext_large_22k_224.pth
+download_link,FoundationModel/backbones/ConvNeXt.py,277,# https://dl.fbaipublicfiles.com/convnext/convnext_xlarge_22k_224.pth
+inference_reference,FoundationModel/backbones/ConvNeXt.py,38,"def forward(self, x):"
+inference_reference,FoundationModel/backbones/ConvNeXt.py,59,"def forward(self, x: torch.Tensor) -> torch.Tensor:"
+inference_reference,FoundationModel/backbones/ConvNeXt.py,100,"def forward(self, x: torch.Tensor) -> torch.Tensor:"
+inference_reference,FoundationModel/backbones/ConvNeXt.py,229,"def forward_features(self, x: torch.Tensor) -> torch.Tensor:"
+inference_reference,FoundationModel/backbones/ConvNeXt.py,236,"def forward(self, x: torch.Tensor) -> torch.Tensor:"
+inference_reference,FoundationModel/backbones/ConvNeXt.py,237,x = self.forward_features(x)
+checkpoint_reference,FoundationModel/backbones/ConvNeXt_bn.py,201,# https://dl.fbaipublicfiles.com/convnext/convnext_tiny_1k_224_ema.pth
+checkpoint_reference,FoundationModel/backbones/ConvNeXt_bn.py,209,# https://dl.fbaipublicfiles.com/convnext/convnext_small_1k_224_ema.pth
+checkpoint_reference,FoundationModel/backbones/ConvNeXt_bn.py,217,# https://dl.fbaipublicfiles.com/convnext/convnext_base_1k_224_ema.pth
+checkpoint_reference,FoundationModel/backbones/ConvNeXt_bn.py,218,# https://dl.fbaipublicfiles.com/convnext/convnext_base_22k_224.pth
+checkpoint_reference,FoundationModel/backbones/ConvNeXt_bn.py,226,# https://dl.fbaipublicfiles.com/convnext/convnext_large_1k_224_ema.pth
+checkpoint_reference,FoundationModel/backbones/ConvNeXt_bn.py,227,# https://dl.fbaipublicfiles.com/convnext/convnext_large_22k_224.pth
+checkpoint_reference,FoundationModel/backbones/ConvNeXt_bn.py,235,# https://dl.fbaipublicfiles.com/convnext/convnext_xlarge_22k_224.pth
+input_resolution,FoundationModel/backbones/ConvNeXt_bn.py,45,"shape (batch_size, height, width, channels) while channels_first corresponds to inputs"
+input_resolution,FoundationModel/backbones/ConvNeXt_bn.py,46,"with shape (batch_size, channels, height, width)."
+input_resolution,FoundationModel/backbones/ConvNeXt_bn.py,67,"# [batch_size, channels, height, width]"
+normalization,FoundationModel/backbones/ConvNeXt_bn.py,49,"def __init__(self, normalized_shape, eps=1e-6, data_format=""channels_last""):"
+normalization,FoundationModel/backbones/ConvNeXt_bn.py,51,"self.weight = nn.Parameter(torch.ones(normalized_shape), requires_grad=True)"
+normalization,FoundationModel/backbones/ConvNeXt_bn.py,52,"self.bias = nn.Parameter(torch.zeros(normalized_shape), requires_grad=True)"
+normalization,FoundationModel/backbones/ConvNeXt_bn.py,57,"self.normalized_shape = (normalized_shape,)"
+normalization,FoundationModel/backbones/ConvNeXt_bn.py,59,# self.bn = nn.BatchNorm2d(normalized_shape)
+normalization,FoundationModel/backbones/ConvNeXt_bn.py,65,"return F.layer_norm(x, self.normalized_shape, self.weight, self.bias, self.eps)"
+normalization,FoundationModel/backbones/ConvNeXt_bn.py,68,"mean = x.mean(dim=(2,3), keepdim=True)"
+normalization,FoundationModel/backbones/ConvNeXt_bn.py,184,"nn.init.trunc_normal_(m.weight, std=0.2)"
+dataset_reference,FoundationModel/backbones/ConvNeXt_bn.py,16,See discussion: https://github.com/tensorflow/tpu/issues/494#issuecomment-532968956 ... I've opted for
+download_link,FoundationModel/backbones/ConvNeXt_bn.py,3,https://github.com/facebookresearch/ConvNeXt
+download_link,FoundationModel/backbones/ConvNeXt_bn.py,16,See discussion: https://github.com/tensorflow/tpu/issues/494#issuecomment-532968956 ... I've opted for
+download_link,FoundationModel/backbones/ConvNeXt_bn.py,139,https://arxiv.org/pdf/2201.03545.pdf
+download_link,FoundationModel/backbones/ConvNeXt_bn.py,201,# https://dl.fbaipublicfiles.com/convnext/convnext_tiny_1k_224_ema.pth
+download_link,FoundationModel/backbones/ConvNeXt_bn.py,209,# https://dl.fbaipublicfiles.com/convnext/convnext_small_1k_224_ema.pth
+download_link,FoundationModel/backbones/ConvNeXt_bn.py,217,# https://dl.fbaipublicfiles.com/convnext/convnext_base_1k_224_ema.pth
+download_link,FoundationModel/backbones/ConvNeXt_bn.py,218,# https://dl.fbaipublicfiles.com/convnext/convnext_base_22k_224.pth
+download_link,FoundationModel/backbones/ConvNeXt_bn.py,226,# https://dl.fbaipublicfiles.com/convnext/convnext_large_1k_224_ema.pth
+download_link,FoundationModel/backbones/ConvNeXt_bn.py,227,# https://dl.fbaipublicfiles.com/convnext/convnext_large_22k_224.pth
+download_link,FoundationModel/backbones/ConvNeXt_bn.py,235,# https://dl.fbaipublicfiles.com/convnext/convnext_xlarge_22k_224.pth
+inference_reference,FoundationModel/backbones/ConvNeXt_bn.py,38,"def forward(self, x):"
+inference_reference,FoundationModel/backbones/ConvNeXt_bn.py,61,"def forward(self, x: torch.Tensor) -> torch.Tensor:"
+inference_reference,FoundationModel/backbones/ConvNeXt_bn.py,108,"def forward(self, x: torch.Tensor) -> torch.Tensor:"
+inference_reference,FoundationModel/backbones/ConvNeXt_bn.py,187,"def forward_features(self, x: torch.Tensor) -> torch.Tensor:"
+inference_reference,FoundationModel/backbones/ConvNeXt_bn.py,194,"def forward(self, x: torch.Tensor) -> torch.Tensor:"
+inference_reference,FoundationModel/backbones/ConvNeXt_bn.py,195,x = self.forward_features(x)
+input_resolution,FoundationModel/backbones/dinov2.py,105,"img = cv2.resize(img, (patch_h * patch_size, patch_w * patch_size)) / 255"
+inference_reference,FoundationModel/backbones/dinov2.py,48,"def forward(self, x):"
+inference_reference,FoundationModel/backbones/dinov2.py,54,with torch.no_grad():
+inference_reference,FoundationModel/backbones/dinov2.py,117,features_dict = encoder.forward_features(x)
+inference_reference,FoundationModel/backbones/dinov3.py,17,"def forward(self, pixel_values):"
+checkpoint_reference,FoundationModel/backbones/model_convnext.py,155,"""convnext_tiny_1k"": ""https://dl.fbaipublicfiles.com/convnext/convnext_tiny_1k_224_ema.pth"","
+checkpoint_reference,FoundationModel/backbones/model_convnext.py,156,"""convnext_small_1k"": ""https://dl.fbaipublicfiles.com/convnext/convnext_small_1k_224_ema.pth"","
+checkpoint_reference,FoundationModel/backbones/model_convnext.py,157,"""convnext_base_1k"": ""https://dl.fbaipublicfiles.com/convnext/convnext_base_1k_224_ema.pth"","
+checkpoint_reference,FoundationModel/backbones/model_convnext.py,158,"""convnext_large_1k"": ""https://dl.fbaipublicfiles.com/convnext/convnext_large_1k_224_ema.pth"","
+checkpoint_reference,FoundationModel/backbones/model_convnext.py,159,"""convnext_tiny_22k"": ""https://dl.fbaipublicfiles.com/convnext/convnext_tiny_22k_1k_224.pth"","
+checkpoint_reference,FoundationModel/backbones/model_convnext.py,160,"""convnext_small_22k"": ""https://dl.fbaipublicfiles.com/convnext/convnext_small_22k_1k_224.pth"","
+checkpoint_reference,FoundationModel/backbones/model_convnext.py,161,"""convnext_base_22k"": ""https://dl.fbaipublicfiles.com/convnext/convnext_base_22k_1k_224.pth"","
+checkpoint_reference,FoundationModel/backbones/model_convnext.py,162,"""convnext_large_22k"": ""https://dl.fbaipublicfiles.com/convnext/convnext_large_22k_1k_224.pth"","
+checkpoint_reference,FoundationModel/backbones/model_convnext.py,163,"""convnext_xlarge_22k"": ""https://dl.fbaipublicfiles.com/convnext/convnext_xlarge_22k_1k_224.pth"","
+checkpoint_reference,FoundationModel/backbones/model_convnext.py,172,"checkpoint = torch.hub.load_state_dict_from_url(url=url, map_location=""cpu"", check_hash=True)"
+checkpoint_reference,FoundationModel/backbones/model_convnext.py,174,"model.load_state_dict(checkpoint[""model""], strict=False)"
+checkpoint_reference,FoundationModel/backbones/model_convnext.py,183,"checkpoint = torch.hub.load_state_dict_from_url(url=url, map_location=""cpu"")"
+checkpoint_reference,FoundationModel/backbones/model_convnext.py,185,"model.load_state_dict(checkpoint[""model""], strict=False)"
+checkpoint_reference,FoundationModel/backbones/model_convnext.py,194,"checkpoint = torch.hub.load_state_dict_from_url(url=url, map_location=""cpu"")"
+checkpoint_reference,FoundationModel/backbones/model_convnext.py,196,"model.load_state_dict(checkpoint[""model""], strict=False)"
+checkpoint_reference,FoundationModel/backbones/model_convnext.py,205,"checkpoint = torch.hub.load_state_dict_from_url(url=url, map_location=""cpu"")"
+checkpoint_reference,FoundationModel/backbones/model_convnext.py,207,"model.load_state_dict(checkpoint[""model""], strict=False)"
+checkpoint_reference,FoundationModel/backbones/model_convnext.py,217,"checkpoint = torch.hub.load_state_dict_from_url(url=url, map_location=""cpu"")"
+checkpoint_reference,FoundationModel/backbones/model_convnext.py,219,"model.load_state_dict(checkpoint[""model""], strict=False)"
+input_resolution,FoundationModel/backbones/model_convnext.py,129,"shape (batch_size, height, width, channels) while channels_first corresponds to inputs"
+input_resolution,FoundationModel/backbones/model_convnext.py,130,"with shape (batch_size, channels, height, width)."
+normalization,FoundationModel/backbones/model_convnext.py,111,"trunc_normal_(m.weight, std=.02)"
+normalization,FoundationModel/backbones/model_convnext.py,133,"def __init__(self, normalized_shape, eps=1e-6, data_format=""channels_last""):"
+normalization,FoundationModel/backbones/model_convnext.py,135,self.weight = nn.Parameter(torch.ones(normalized_shape))
+normalization,FoundationModel/backbones/model_convnext.py,136,self.bias = nn.Parameter(torch.zeros(normalized_shape))
+normalization,FoundationModel/backbones/model_convnext.py,141,"self.normalized_shape = (normalized_shape,)"
+normalization,FoundationModel/backbones/model_convnext.py,145,"return F.layer_norm(x, self.normalized_shape, self.weight, self.bias, self.eps)"
+download_link,FoundationModel/backbones/model_convnext.py,59,https://arxiv.org/pdf/2201.03545.pdf
+download_link,FoundationModel/backbones/model_convnext.py,155,"""convnext_tiny_1k"": ""https://dl.fbaipublicfiles.com/convnext/convnext_tiny_1k_224_ema.pth"","
+download_link,FoundationModel/backbones/model_convnext.py,156,"""convnext_small_1k"": ""https://dl.fbaipublicfiles.com/convnext/convnext_small_1k_224_ema.pth"","
+download_link,FoundationModel/backbones/model_convnext.py,157,"""convnext_base_1k"": ""https://dl.fbaipublicfiles.com/convnext/convnext_base_1k_224_ema.pth"","
+download_link,FoundationModel/backbones/model_convnext.py,158,"""convnext_large_1k"": ""https://dl.fbaipublicfiles.com/convnext/convnext_large_1k_224_ema.pth"","
+download_link,FoundationModel/backbones/model_convnext.py,159,"""convnext_tiny_22k"": ""https://dl.fbaipublicfiles.com/convnext/convnext_tiny_22k_1k_224.pth"","
+download_link,FoundationModel/backbones/model_convnext.py,160,"""convnext_small_22k"": ""https://dl.fbaipublicfiles.com/convnext/convnext_small_22k_1k_224.pth"","
+download_link,FoundationModel/backbones/model_convnext.py,161,"""convnext_base_22k"": ""https://dl.fbaipublicfiles.com/convnext/convnext_base_22k_1k_224.pth"","
+download_link,FoundationModel/backbones/model_convnext.py,162,"""convnext_large_22k"": ""https://dl.fbaipublicfiles.com/convnext/convnext_large_22k_1k_224.pth"","
+download_link,FoundationModel/backbones/model_convnext.py,163,"""convnext_xlarge_22k"": ""https://dl.fbaipublicfiles.com/convnext/convnext_xlarge_22k_1k_224.pth"","
+inference_reference,FoundationModel/backbones/model_convnext.py,40,"def forward(self, x):"
+inference_reference,FoundationModel/backbones/model_convnext.py,114,"def forward_features(self, x):"
+inference_reference,FoundationModel/backbones/model_convnext.py,120,"def forward(self, x):"
+inference_reference,FoundationModel/backbones/model_convnext.py,121,x = self.forward_features(x)
+inference_reference,FoundationModel/backbones/model_convnext.py,143,"def forward(self, x):"
+checkpoint_reference,FoundationModel/backbones/osnet.py,470,"model_dir = os.path.join(torch_home, 'checkpoints')"
+checkpoint_reference,FoundationModel/backbones/osnet.py,480,filename = key + '_imagenet.pth'
+checkpoint_reference,FoundationModel/backbones/osnet.py,486,state_dict = torch.load(cached_file)
+checkpoint_reference,FoundationModel/backbones/osnet.py,502,model.load_state_dict(model_dict)
+input_resolution,FoundationModel/backbones/osnet.py,527,# standard size (width x1.0)
+input_resolution,FoundationModel/backbones/osnet.py,542,# medium size (width x0.75)
+input_resolution,FoundationModel/backbones/osnet.py,557,# tiny size (width x0.5)
+input_resolution,FoundationModel/backbones/osnet.py,572,# very tiny size (width x0.25)
+input_resolution,FoundationModel/backbones/osnet.py,589,# standard size (width x1.0) + IBN layer
+download_link,FoundationModel/backbones/osnet.py,13,"'https://drive.google.com/uc?id=1LaG1EJpHrxdAxKnSCJ_i0u-nbxSAeiFY',"
+download_link,FoundationModel/backbones/osnet.py,15,"'https://drive.google.com/uc?id=1uwA9fElHOk3ZogwbeY5GkLI6QPTX70Hq',"
+download_link,FoundationModel/backbones/osnet.py,17,"'https://drive.google.com/uc?id=16DGLbZukvVYgINws8u8deSaOqjybZ83i',"
+download_link,FoundationModel/backbones/osnet.py,19,"'https://drive.google.com/uc?id=1rb8UN5ZzPKRc_xvtHlyDh-cSz88YX9hs',"
+download_link,FoundationModel/backbones/osnet.py,21,'https://drive.google.com/uc?id=1sr90V6irlYYDd4_4ISU2iruoRG8J__6l'
+training_reference,FoundationModel/backbones/osnet.py,298,"loss='softmax',"
+training_reference,FoundationModel/backbones/osnet.py,306,self.loss = loss
+training_reference,FoundationModel/backbones/osnet.py,433,#     if self.loss == 'softmax':
+training_reference,FoundationModel/backbones/osnet.py,435,#     elif self.loss == 'triplet':
+training_reference,FoundationModel/backbones/osnet.py,438,"#         raise KeyError(""Unsupported loss: {}"".format(self.loss))"
+training_reference,FoundationModel/backbones/osnet.py,526,"def osnet_x1_0(num_classes=1000, pretrained=True, loss='softmax', **kwargs):"
+training_reference,FoundationModel/backbones/osnet.py,533,"loss=loss,"
+training_reference,FoundationModel/backbones/osnet.py,541,"def osnet_x0_75(num_classes=1000, pretrained=True, loss='softmax', **kwargs):"
+training_reference,FoundationModel/backbones/osnet.py,548,"loss=loss,"
+training_reference,FoundationModel/backbones/osnet.py,556,"def osnet_x0_5(num_classes=1000, pretrained=True, loss='softmax', **kwargs):"
+training_reference,FoundationModel/backbones/osnet.py,563,"loss=loss,"
+training_reference,FoundationModel/backbones/osnet.py,571,"def osnet_x0_25(num_classes=1000, pretrained=True, loss='softmax', **kwargs):"
+training_reference,FoundationModel/backbones/osnet.py,578,"loss=loss,"
+training_reference,FoundationModel/backbones/osnet.py,587,"num_classes=1000, pretrained=True, loss='softmax', **kwargs"
+training_reference,FoundationModel/backbones/osnet.py,596,"loss=loss,"
+inference_reference,FoundationModel/backbones/osnet.py,57,"def forward(self, x):"
+inference_reference,FoundationModel/backbones/osnet.py,81,"def forward(self, x):"
+inference_reference,FoundationModel/backbones/osnet.py,98,"def forward(self, x):"
+inference_reference,FoundationModel/backbones/osnet.py,121,"def forward(self, x):"
+inference_reference,FoundationModel/backbones/osnet.py,151,"def forward(self, x):"
+inference_reference,FoundationModel/backbones/osnet.py,208,"def forward(self, x):"
+inference_reference,FoundationModel/backbones/osnet.py,262,"def forward(self, x):"
+inference_reference,FoundationModel/backbones/osnet.py,422,"# def forward(self, x, return_featuremaps=False):"
+inference_reference,FoundationModel/backbones/osnet.py,440,"def forward(self, x):"
+inference_reference,FoundationModel/backbones/resnet.py,89,"def forward(self, x):"
+feature_reference,Tools/evaluate_norm.py,16,"parser.add_argument('--test_weight', default='xx.mat', type=str)"
+feature_reference,Tools/evaluate_norm.py,75,result = scipy.io.loadmat(mat_file)
+dataset_reference,Tools/evaluate_norm.py,30,"query = qf.view(-1, 1)"
+dataset_reference,Tools/evaluate_norm.py,31,"score = torch.mm(gf, query)"
+dataset_reference,Tools/evaluate_norm.py,36,query_index = np.argwhere(gl == ql)  # 正确的索引
+dataset_reference,Tools/evaluate_norm.py,37,good_index = query_index
+dataset_reference,Tools/evaluate_norm.py,76,query_feature = torch.FloatTensor(result['query_f']).cuda()
+dataset_reference,Tools/evaluate_norm.py,77,query_label = result['query_label'][0]  # 0-836
+dataset_reference,Tools/evaluate_norm.py,79,gallery_feature = torch.FloatTensor(result['gallery_f']).cuda()
+dataset_reference,Tools/evaluate_norm.py,80,gallery_label = result['gallery_label'][0]
+dataset_reference,Tools/evaluate_norm.py,81,gallery_label_light = gallery_label[::54]  # 0-1651
+dataset_reference,Tools/evaluate_norm.py,85,# query_name = result['query_name']
+dataset_reference,Tools/evaluate_norm.py,86,# gallery_name = result['gallery_name']
+dataset_reference,Tools/evaluate_norm.py,87,"print(""query feature:"", query_feature.shape, ""gallery feature:"", gallery_feature.shape)"
+dataset_reference,Tools/evaluate_norm.py,89,"dismat = 1 - torch.mm(query_feature, gallery_feature.t())"
+dataset_reference,Tools/evaluate_norm.py,94,CMC = torch.IntTensor(len(gallery_label)).zero_()
+dataset_reference,Tools/evaluate_norm.py,100,"for i, q in enumerate(query_label):"
+dataset_reference,Tools/evaluate_norm.py,101,"ap_tmp, CMC_tmp, indices, matches = evaluate(query_feature[i], query_label[i], gallery_feature, gallery_label)"
+dataset_reference,Tools/evaluate_norm.py,127,CMC = CMC / len(query_label)  # average CMC
+dataset_reference,Tools/evaluate_norm.py,131,"CMC[0] * 100, CMC[4] * 100, CMC[9] * 100, CMC[round(len(gallery_label) * 0.01)] * 100, ap / len(query_label) * 100))"

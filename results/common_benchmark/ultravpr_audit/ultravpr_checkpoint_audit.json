@@ -1,0 +1,88 @@
+{
+  "created_at_utc": "2026-08-06T20:49:40.174678+00:00",
+  "method": "UltraVPR",
+  "repository": "cbbhuxx/UltraVPR",
+  "official_share_url": "https://cloud.tsinghua.edu.cn/d/ea66ca1bbb334132bcd1/",
+  "official_share_token": "ea66ca1bbb334132bcd1",
+  "official_share_inventory": [
+    {
+      "path": "/checkpoints",
+      "is_directory": true,
+      "size_bytes": null
+    },
+    {
+      "path": "/events.out.tfevents.1730638356.crpnacc7v38s739i9qv0-fajb1",
+      "is_directory": false,
+      "size_bytes": 3661
+    },
+    {
+      "path": "/checkpoints/checkpoint.pth.tar",
+      "is_directory": false,
+      "size_bytes": 117116571
+    },
+    {
+      "path": "/checkpoints/flags.json",
+      "is_directory": false,
+      "size_bytes": 629
+    },
+    {
+      "path": "/checkpoints/model_best.pth.tar",
+      "is_directory": false,
+      "size_bytes": 117116571
+    }
+  ],
+  "released_model_files": [
+    {
+      "path": "/checkpoints/checkpoint.pth.tar",
+      "size_bytes": 117116571
+    },
+    {
+      "path": "/checkpoints/model_best.pth.tar",
+      "size_bytes": 117116571
+    }
+  ],
+  "selected_share_path": "/checkpoints/model_best.pth.tar",
+  "selection_rule": "EXACT_MODEL_BEST_PTH_TAR_PREFERRED_E2RESNET50_C8_SE2GEM32",
+  "checkpoint_path": "/content/drive/MyDrive/mobilegeo_project/checkpoints/ultravpr/model_best.pth.tar",
+  "checkpoint_size_bytes": 117116571,
+  "checkpoint_size_mb": 111.69106578826904,
+  "checkpoint_sha256": "7fb2f95721ac3bdbbfe86b2b217b34af0bbbf243e70e6bcf72ec738738db64f4",
+  "checkpoint_object_type": "<class 'dict'>",
+  "checkpoint_container_keys": [
+    "epoch",
+    "state_dict",
+    "recalls",
+    "best_score",
+    "optimizer",
+    "parallel"
+  ],
+  "state_dict_source": "checkpoint['state_dict']",
+  "state_dict_tensor_entries": 483,
+  "total_tensor_values": 26948676,
+  "parameter_prefix_counts": {
+    "backbone": 479,
+    "aggregator": 3,
+    "upscale": 1
+  },
+  "safe_loading_error": null,
+  "checkpoint_origin": "OFFICIAL_ULTRAVPR_TSINGHUA_CLOUD_SHARE",
+  "planned_evaluation": "ZERO_SHOT_TRANSFER_TO_PROJECT_DEFINED_SUES200_SPLIT",
+  "provenance_label": "OFFICIAL_ULTRAVPR_CHECKPOINT_ZERO_SHOT_TRANSFER_TO_PROJECT_SUES200_SPLIT",
+  "strict_model_loading_validated": true,
+  "api_attempt_log": [
+    {
+      "url": "https://cloud.tsinghua.edu.cn/api2/d/ea66ca1bbb334132bcd1/dir/?p=%2F",
+      "status": 200,
+      "content_type": "application/json; charset=utf-8"
+    },
+    {
+      "url": "https://cloud.tsinghua.edu.cn/api2/d/ea66ca1bbb334132bcd1/dir/?p=%2Fcheckpoints",
+      "status": 200,
+      "content_type": "application/json; charset=utf-8"
+    }
+  ],
+  "official_non_strict_loading_validated": true,
+  "parameter_coverage_percent": 100.0,
+  "descriptor_dimension": 256,
+  "model_load_audit": "/content/drive/MyDrive/mobilegeo_project/results/common_benchmark/ultravpr_audit/ultravpr_model_load_smoke_test.json"
+}

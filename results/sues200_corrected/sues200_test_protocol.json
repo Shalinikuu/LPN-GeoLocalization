@@ -1,0 +1,27 @@
+{
+  "dataset": "SUES-200-512x512",
+  "protocol": "PROJECT_DEFINED_LOCATION_DISJOINT_60_20_20",
+  "evaluation_split": "test",
+  "query_view": "drone",
+  "gallery_view": "satellite",
+  "test_location_count": 40,
+  "test_query_count": 8000,
+  "test_gallery_count": 40,
+  "queries_per_height": {
+    "150": 2000,
+    "200": 2000,
+    "250": 2000,
+    "300": 2000
+  },
+  "location_overlap_with_train": 0,
+  "location_overlap_with_validation": 0,
+  "altitude_reference": "NOMINAL_DATASET_FOLDER_LABEL_NOT_VERIFIED_AS_AGL_OR_MSL",
+  "query_manifest": "/content/drive/MyDrive/mobilegeo_project/manifests/sues200_corrected/sues200_test_queries.csv",
+  "gallery_manifest": "/content/drive/MyDrive/mobilegeo_project/manifests/sues200_corrected/sues200_test_gallery.csv",
+  "height_manifests": {
+    "150": "/content/drive/MyDrive/mobilegeo_project/manifests/sues200_corrected/sues200_test_queries_150.csv",
+    "200": "/content/drive/MyDrive/mobilegeo_project/manifests/sues200_corrected/sues200_test_queries_200.csv",
+    "250": "/content/drive/MyDrive/mobilegeo_project/manifests/sues200_corrected/sues200_test_queries_250.csv",
+    "300": "/content/drive/MyDrive/mobilegeo_project/manifests/sues200_corrected/sues200_test_queries_300.csv"
+  }
+}

@@ -1,0 +1,205 @@
+{
+  "created_at_utc": "2026-08-08T20:35:03.870094+00:00",
+  "notebook": "04_georeferenced_project_benchmark",
+  "status": "COMPLETE",
+  "validation_checks": {
+    "query_count_2331": true,
+    "gallery_count_27972": true,
+    "12_expected_scales": true,
+    "2331_gallery_per_scale": true,
+    "349_cross_partition_duplicates": true,
+    "all_cross_partition_duplicates_exact": true,
+    "protocol_ready": true,
+    "protocol_name_correct": true,
+    "full_cache_ready": true,
+    "model_name_correct": true,
+    "model_provenance_correct": true,
+    "checkpoint_verified": true,
+    "descriptor_validation": true,
+    "query_embedding_shape": true,
+    "gallery_embedding_shape": true,
+    "descriptor_not_collapsed": true,
+    "near_chance_interpretation": true,
+    "crs_unverified": true,
+    "meter_error_claim_blocked": true,
+    "retrieval_not_verified_pose": true
+  },
+  "all_validation_checks_pass": true,
+  "benchmark": {
+    "protocol": "PROJECT_DEFINED_VPS_LEAKAGE_SAFE_SCALE_CONTROLLED_RETRIEVAL",
+    "protocol_origin": "PROJECT_DEFINED",
+    "core_partition": "merge_test_700-1800_cr0.95_stride100",
+    "excluded_partition": "val",
+    "excluded_partition_reason": "349_EXACT_DUPLICATE_SAMPLES_OF_CORE_PARTITION",
+    "query_count": 2331,
+    "gallery_count_per_scale": 2331,
+    "scale_count": 12,
+    "map_sizes": [
+      700,
+      800,
+      900,
+      1000,
+      1100,
+      1200,
+      1300,
+      1400,
+      1500,
+      1600,
+      1700,
+      1800
+    ],
+    "total_scale_controlled_gallery_records": 27972,
+    "positive_definition": "EXACT_FULL_SAMPLE_KEY_MATCH",
+    "positives_per_query_per_scale": 1
+  },
+  "model": {
+    "name": "AdvancedEdgeGeoLPN_LOCAL_REIMPLEMENTATION",
+    "provenance": "LOCAL_REIMPLEMENTATION",
+    "official_mobilegeo_model": false,
+    "descriptor_dim": 2048,
+    "checkpoint_sha256": "adc64177582638690b841c1be390b7d05dfb27f4d2001b3d52fb74455020b807",
+    "checkpoint_sha256_verified": true
+  },
+  "results": {
+    "macro_R@1": 0.0005005005005005005,
+    "macro_R@5": 0.0021092521092521094,
+    "macro_R@10": 0.004182754182754183,
+    "macro_mAP": 0.003937865287340886,
+    "macro_mean_positive_rank": 1088.0505148005147,
+    "random_R@1": 0.000429000429000429,
+    "random_R@5": 0.002145002145002145,
+    "random_R@10": 0.00429000429000429,
+    "random_expected_mAP": 0.0035742096906113295,
+    "random_expected_mean_rank": 1166.0,
+    "positive_beats_random_negative_probability": 0.5333207091019591,
+    "descriptor_collapse_detected": false,
+    "interpretation": "DESCRIPTORS_ARE_NONCOLLAPSED_BUT_ZERO_SHOT_CROSS_DOMAIN_RETRIEVAL_SIGNAL_IS_NEAR_CHANCE"
+  },
+  "scale_diagnostics": {
+    "best_R@1_map_size": 700,
+    "best_mAP_map_size": 700,
+    "best_mean_rank_map_size": 700,
+    "worst_mean_rank_map_size": 1400
+  },
+  "reporting_constraints": {
+    "crs_status": "UNVERIFIED",
+    "wgs84_claim_allowed": false,
+    "meter_level_geodetic_error_claim_allowed": false,
+    "retrieval_is_verified_uav_pose": false,
+    "nominal_level_status": "DATASET_FOLDER_TOKEN_ONLY_NOT_VERIFIED_AS_AGL_OR_MSL",
+    "runtime_timing_status": "GOOGLE_COLAB_RUNTIME_NOT_JETSON_ORIN_NANO",
+    "search_timing_scope": "SIMILARITY_MATRIX_PLUS_FULL_SORT_DESCRIPTOR_EXTRACTION_EXCLUDED"
+  },
+  "scientific_interpretation": {
+    "primary_result": "The local SUES-200-oriented reimplementation shows near-chance zero-shot retrieval performance on the project-defined VPS benchmark.",
+    "pipeline_diagnostic": "Descriptor collapse was not detected. All query and gallery descriptors were unique at five-decimal rounding, and positive pairs showed only weak average separation from random negatives.",
+    "transfer_interpretation": "The measured result is consistent with weak cross-domain transfer rather than a successful VPS geolocalization result.",
+    "official_result_status": "NOT_AN_OFFICIAL_MOBILEGEO_VPS_RESULT",
+    "pose_status": "RETRIEVAL_OUTPUT_IS_NOT_VERIFIED_UAV_POSE",
+    "crs_status": "CRS_UNVERIFIED",
+    "meter_level_error_status": "NOT_REPORTED_BECAUSE_CRS_PROVENANCE_IS_UNVERIFIED",
+    "timing_status": "GOOGLE_COLAB_RUNTIME_NOT_JETSON_ORIN_NANO"
+  },
+  "artifact_hashes": {
+    "schema_audit": {
+      "path": "/content/drive/MyDrive/mobilegeo_project/results/georeferenced_benchmark/audit/vps_archive_full_georeference_audit.json",
+      "bytes": 2207,
+      "sha256": "0b000c88b655d1a4f612bfd11278e24d2237a36aaaaae6c93a9fae169abbb868"
+    },
+    "path_resolution_audit": {
+      "path": "/content/drive/MyDrive/mobilegeo_project/results/georeferenced_benchmark/audit/vps_partition_safe_resolution_audit.json",
+      "bytes": 1634,
+      "sha256": "4ceaa4c5c2b3a106721aad7b6127a44e3b67c5ea60fcfdc952a472096601428b"
+    },
+    "duplicate_audit": {
+      "path": "/content/drive/MyDrive/mobilegeo_project/results/georeferenced_benchmark/audit/vps_cross_partition_duplicate_audit.csv",
+      "bytes": 62509,
+      "sha256": "34228b9d43394d307099d17076f74c7c25ca5448d2f356209248272ec5f7368e"
+    },
+    "protocol": {
+      "path": "/content/drive/MyDrive/mobilegeo_project/results/georeferenced_benchmark/protocol/vps_leakage_safe_protocol.json",
+      "bytes": 1487,
+      "sha256": "f0d722e83403a1f7ae6e4bb5fe6262489c52bc5a7570813281a181229ba98c29"
+    },
+    "cache_audit": {
+      "path": "/content/drive/MyDrive/mobilegeo_project/results/georeferenced_benchmark/audit/vps_local_cache_audit.json",
+      "bytes": 972,
+      "sha256": "1aa089dd081021541c7cc411709bb022d423d1bb3d1a1a032e6cd77c8599abb2"
+    },
+    "descriptor_report": {
+      "path": "/content/drive/MyDrive/mobilegeo_project/results/georeferenced_benchmark/audit/vps_local_descriptor_extraction_report.json",
+      "bytes": 2220,
+      "sha256": "caca4f551e468bcaa099a8b1d064da361250b0a283aa4301f6da18e0e770a2ef"
+    },
+    "retrieval_metrics_csv": {
+      "path": "/content/drive/MyDrive/mobilegeo_project/results/georeferenced_benchmark/reports/vps_local_12scale_retrieval_metrics.csv",
+      "bytes": 3914,
+      "sha256": "e711886aa96a73f5ea0ab1f8e54f952aa2444a41f8d95c33a051c256b4300cb1"
+    },
+    "retrieval_metrics_json": {
+      "path": "/content/drive/MyDrive/mobilegeo_project/results/georeferenced_benchmark/reports/vps_local_12scale_retrieval_metrics.json",
+      "bytes": 11789,
+      "sha256": "689c7a282edf29667dde65bcaca459bdb826cf311a48ca62d8a26071133f3128"
+    },
+    "chance_diagnostic_csv": {
+      "path": "/content/drive/MyDrive/mobilegeo_project/results/georeferenced_benchmark/reports/vps_local_chance_level_diagnostic.csv",
+      "bytes": 4508,
+      "sha256": "420aaa3de2da641d0dd4f8c05826611603b4b93aa86ff19b6dcf6b930994fe91"
+    },
+    "chance_diagnostic_json": {
+      "path": "/content/drive/MyDrive/mobilegeo_project/results/georeferenced_benchmark/audit/vps_local_chance_level_diagnostic.json",
+      "bytes": 1515,
+      "sha256": "7402d0474b7839b333267c8f66438ab1f713256ba6da17b4ac44a07105bb2504"
+    },
+    "query_manifest": {
+      "path": "/content/drive/MyDrive/mobilegeo_project/results/georeferenced_benchmark/manifests/vps_core_eval_queries.csv",
+      "bytes": 976459,
+      "sha256": "cd9bfa959e7f9b765dedd2cc9ee27e87a3081cb41f0a4207569228ec656800fd"
+    },
+    "gallery_manifest": {
+      "path": "/content/drive/MyDrive/mobilegeo_project/results/georeferenced_benchmark/manifests/vps_core_eval_gallery_all_scales.csv",
+      "bytes": 13444982,
+      "sha256": "dc26bacf725079e6a06a1663a0acc0b27b3a513dc5f700476345f90e6a9df3d2"
+    },
+    "cached_query_manifest": {
+      "path": "/content/drive/MyDrive/mobilegeo_project/results/georeferenced_benchmark/manifests/vps_cached_query_manifest.csv",
+      "bytes": 1100031,
+      "sha256": "d9c82c33913381fc503050cfb881beb169986be6a4c000f47ec9fb5c250c4b0d"
+    },
+    "cached_gallery_manifest": {
+      "path": "/content/drive/MyDrive/mobilegeo_project/results/georeferenced_benchmark/manifests/vps_cached_gallery_manifest.csv",
+      "bytes": 15668820,
+      "sha256": "d2d9a0b8381353e7cc8c0e230f794ff8df078a373d4ffc78b1fc70d971c5e290"
+    },
+    "per_query_rankings": {
+      "path": "/content/drive/MyDrive/mobilegeo_project/results/georeferenced_benchmark/rankings/vps_local_per_query_rankings.csv",
+      "bytes": 9637001,
+      "sha256": "658de561dc660af903ea4a1b79c2f88e5b008cee483b99911fc19810b704988f"
+    },
+    "top5_rankings": {
+      "path": "/content/drive/MyDrive/mobilegeo_project/results/georeferenced_benchmark/rankings/vps_local_top5_rankings.csv",
+      "bytes": 34538569,
+      "sha256": "d86e9b24b5da7aa81595b26e533e498e1ee332b7a301e312916a1df186111262"
+    },
+    "per_site_metrics": {
+      "path": "/content/drive/MyDrive/mobilegeo_project/results/georeferenced_benchmark/reports/vps_local_per_site_metrics.csv",
+      "bytes": 4555,
+      "sha256": "9c2c3e191c603deddb8bd548cded0f4e5aa59fa701b625906c518c02a95d6aeb"
+    },
+    "per_nominal_level_metrics": {
+      "path": "/content/drive/MyDrive/mobilegeo_project/results/georeferenced_benchmark/reports/vps_local_per_nominal_level_metrics.csv",
+      "bytes": 5475,
+      "sha256": "d6750c08a51618daedaf129b6cf61e94abf318ede4f38ce6093e32baac65ff01"
+    },
+    "query_embeddings": {
+      "path": "/content/drive/MyDrive/mobilegeo_project/results/georeferenced_benchmark/embeddings/vps_local_query_embeddings.npz",
+      "bytes": 15874504,
+      "sha256": "b2f68325597e0b9e6f05b7133c7a7b548785ede76306994fad5e61a039186e25"
+    },
+    "gallery_embeddings": {
+      "path": "/content/drive/MyDrive/mobilegeo_project/results/georeferenced_benchmark/embeddings/vps_local_gallery_embeddings.npz",
+      "bytes": 190257822,
+      "sha256": "c20c40a5739212461fdb0d43444a89983556c9d6a5304568a20756a816ed488f"
+    }
+  }
+}

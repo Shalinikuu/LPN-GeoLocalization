@@ -1,0 +1,5 @@
+outcome,query_count,query_percent
+both_correct,6671,83.3875
+local_only_correct,895,11.1875
+sample4geo_only_correct,201,2.5125
+both_wrong,233,2.9125

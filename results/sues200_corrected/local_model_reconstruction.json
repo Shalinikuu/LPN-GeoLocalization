@@ -1,0 +1,23 @@
+{
+  "model_name": "AdvancedEdgeGeoLPN_LOCAL_REIMPLEMENTATION",
+  "provenance_label": "LOCAL_REIMPLEMENTATION",
+  "checkpoint_path": "/content/drive/MyDrive/mobilegeo_project/baseline_v1/checkpoint/AdvancedEdgeGeoLPN_LOCAL_REIMPLEMENTATION.pth",
+  "checkpoint_loading": "STRICT_SUCCESS",
+  "backbone": "torchvision_mobilenet_v3_large_features",
+  "backbone_output_channels": 960,
+  "horizontal_parts": 4,
+  "part_descriptor_dimension": 512,
+  "combined_descriptor_dimension": 2048,
+  "input_height": 224,
+  "input_width": 224,
+  "preprocessing": "PROVISIONAL_IMAGENET_NORMALIZATION",
+  "sample_image": "/content/drive/MyDrive/SUES-200-512x512_extracted/SUES-200-512x512/satellite-view/0002/0.png",
+  "sample_descriptor_shape": [
+    1,
+    2048
+  ],
+  "sample_descriptor_norm": 1.0,
+  "sample_descriptor_finite": true,
+  "sample_inference_ms": 1037.6461450000534,
+  "device": "cuda"
+}

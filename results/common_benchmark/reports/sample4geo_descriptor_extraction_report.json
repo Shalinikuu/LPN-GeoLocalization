@@ -1,0 +1,63 @@
+{
+  "created_at_utc": "2026-08-06T20:28:56.808596+00:00",
+  "method": "Sample4Geo",
+  "model_name": "convnext_base.fb_in22k_ft_in1k_384",
+  "checkpoint_path": "/content/drive/MyDrive/mobilegeo_project/repositories/Sample4Geo/pretrained/university/convnext_base.fb_in22k_ft_in1k_384/weights_e1_0.9515.pth",
+  "checkpoint_loading": "STRICT_SUCCESS",
+  "provenance_label": "OFFICIAL_SAMPLE4GEO_CHECKPOINT_ZERO_SHOT_TRANSFER_TO_PROJECT_SUES200_SPLIT",
+  "official_sample4geo_sues200_result": false,
+  "benchmark_protocol": "PROJECT_DEFINED_LOCATION_DISJOINT_60_20_20",
+  "input_size": [
+    384,
+    384
+  ],
+  "descriptor_dimension": 1024,
+  "descriptor_normalization": "L2",
+  "preprocessing": {
+    "color_conversion": "OpenCV_BGR_TO_RGB",
+    "resize_interpolation": "cv2.INTER_LINEAR_EXACT",
+    "mean": [
+      0.48500001430511475,
+      0.4560000002384186,
+      0.4059999883174896
+    ],
+    "std": [
+      0.2290000021457672,
+      0.2240000069141388,
+      0.22499999403953552
+    ]
+  },
+  "gallery": {
+    "manifest": "/content/drive/MyDrive/mobilegeo_project/manifests/sues200_corrected/sues200_test_gallery.csv",
+    "embedding_file": "/content/drive/MyDrive/mobilegeo_project/results/common_benchmark/embeddings/sample4geo_sues200_test_gallery_embeddings.npz",
+    "descriptor_shape": [
+      40,
+      1024
+    ],
+    "timing": {
+      "image_count": 40,
+      "batch_size": 16,
+      "model_inference_seconds": 5.48066197299886,
+      "model_inference_ms_per_image": 137.0165493249715,
+      "end_to_end_seconds": 6.77239038800144,
+      "end_to_end_ms_per_image": 169.309759700036
+    }
+  },
+  "queries": {
+    "manifest": "/content/drive/MyDrive/mobilegeo_project/manifests/sues200_corrected/sues200_test_queries.csv",
+    "embedding_file": "/content/drive/MyDrive/mobilegeo_project/results/common_benchmark/embeddings/sample4geo_sues200_test_query_embeddings.npz",
+    "descriptor_shape": [
+      8000,
+      1024
+    ],
+    "timing": {
+      "image_count": 8000,
+      "batch_size": 16,
+      "model_inference_seconds": 312.7384862189774,
+      "model_inference_ms_per_image": 39.09231077737218,
+      "end_to_end_seconds": 315.1886126640002,
+      "end_to_end_ms_per_image": 39.39857658300002
+    }
+  },
+  "timing_interpretation": "BATCHED_COLAB_RUNTIME_MEASUREMENT_NOT_JETSON_ORIN_NANO_DEPLOYMENT_LATENCY"
+}

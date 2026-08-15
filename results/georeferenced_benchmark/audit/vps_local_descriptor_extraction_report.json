@@ -1,0 +1,73 @@
+{
+  "created_at_utc": "2026-08-08T20:20:39.783113+00:00",
+  "model_name": "AdvancedEdgeGeoLPN_LOCAL_REIMPLEMENTATION",
+  "provenance": "LOCAL_REIMPLEMENTATION",
+  "checkpoint": "/content/drive/MyDrive/mobilegeo_project/baseline_v1/checkpoint/AdvancedEdgeGeoLPN_LOCAL_REIMPLEMENTATION.pth",
+  "checkpoint_sha256": "adc64177582638690b841c1be390b7d05dfb27f4d2001b3d52fb74455020b807",
+  "checkpoint_sha256_verified": true,
+  "architecture": {
+    "backbone": "MobileNetV3-Large features",
+    "feature_channels": 960,
+    "pooling": "AdaptiveAvgPool2d((4,1))",
+    "branch_count": 4,
+    "branch_projection": "960_to_512",
+    "descriptor_dim": 2048,
+    "final_normalization": "L2"
+  },
+  "preprocessing": {
+    "input_size": [
+      224,
+      224
+    ],
+    "normalization": "PROVISIONAL_IMAGENET_NORMALIZATION",
+    "mean": [
+      0.485,
+      0.456,
+      0.406
+    ],
+    "std": [
+      0.229,
+      0.224,
+      0.225
+    ]
+  },
+  "query": {
+    "images": 2331,
+    "runtime_seconds": 20.570860862731934,
+    "images_per_second": 113.31562716575728,
+    "descriptor_dim": 2048,
+    "norm_min": 0.9999998807907104,
+    "norm_mean": 1.0,
+    "norm_max": 1.0000001192092896
+  },
+  "gallery": {
+    "images": 27972,
+    "runtime_seconds": 281.01663398742676,
+    "images_per_second": 99.53859173066432,
+    "descriptor_dim": 2048,
+    "norm_min": 0.9999998807907104,
+    "norm_mean": 1.0,
+    "norm_max": 1.0000001192092896
+  },
+  "query_shape": [
+    2331,
+    2048
+  ],
+  "gallery_shape": [
+    27972,
+    2048
+  ],
+  "descriptor_validation": true,
+  "runtime_environment": {
+    "device": "Tesla T4",
+    "timing_scope": "DESCRIPTOR_EXTRACTION_INCLUDING_IMAGE_DECODE_PREPROCESS_AND_MODEL_FORWARD",
+    "deployment_claim": "GOOGLE_COLAB_RUNTIME_NOT_JETSON_ORIN_NANO"
+  },
+  "protocol": "PROJECT_DEFINED_VPS_LEAKAGE_SAFE_SCALE_CONTROLLED_RETRIEVAL",
+  "crs_status": "UNVERIFIED",
+  "wgs84_claim_allowed": false,
+  "outputs": {
+    "query_embeddings": "/content/drive/MyDrive/mobilegeo_project/results/georeferenced_benchmark/embeddings/vps_local_query_embeddings.npz",
+    "gallery_embeddings": "/content/drive/MyDrive/mobilegeo_project/results/georeferenced_benchmark/embeddings/vps_local_gallery_embeddings.npz"
+  }
+}

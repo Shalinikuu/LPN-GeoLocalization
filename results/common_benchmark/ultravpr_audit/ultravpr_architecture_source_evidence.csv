@@ -1,0 +1,157 @@
+script,category,line_number,line_text
+eval_VPAir.py,preprocessing,9,import torchvision.transforms as tvf
+eval_VPAir.py,model_constructor,15,from models.aggregators.se2gem import se2gem
+eval_VPAir.py,aggregation,15,from models.aggregators.se2gem import se2gem
+eval_VPAir.py,model_constructor,16,from models.backbones.e2resnet import E2ResNet
+eval_VPAir.py,model_constructor,45,self.model = model
+eval_VPAir.py,aggregation,61,if os.path.exists(f'./LOGS/global_descriptors_{split}.npy'):
+eval_VPAir.py,descriptor_output,61,if os.path.exists(f'./LOGS/global_descriptors_{split}.npy'):
+eval_VPAir.py,descriptor_output,62,"print(f""Skipping {split} features extraction, loading from cache"")"
+eval_VPAir.py,aggregation,63,return np.load(f'./LOGS/global_descriptors_{split}.npy')
+eval_VPAir.py,descriptor_output,63,return np.load(f'./LOGS/global_descriptors_{split}.npy')
+eval_VPAir.py,aggregation,67,"global_descriptors = np.zeros((len(self.dataset), self.feature_dim))"
+eval_VPAir.py,descriptor_output,67,"global_descriptors = np.zeros((len(self.dataset), self.feature_dim))"
+eval_VPAir.py,descriptor_output,68,"for batch in tqdm(self.dataloader, ncols=100, desc=f'Extracting {split} features'):"
+eval_VPAir.py,aggregation,71,descriptors = self.model(imgs)
+eval_VPAir.py,descriptor_output,71,descriptors = self.model(imgs)
+eval_VPAir.py,aggregation,72,descriptors = descriptors.detach().cpu().numpy()
+eval_VPAir.py,descriptor_output,72,descriptors = descriptors.detach().cpu().numpy()
+eval_VPAir.py,aggregation,73,# add to global descriptors
+eval_VPAir.py,descriptor_output,73,# add to global descriptors
+eval_VPAir.py,aggregation,74,"global_descriptors[np.array(indices), :] = descriptors"
+eval_VPAir.py,descriptor_output,74,"global_descriptors[np.array(indices), :] = descriptors"
+eval_VPAir.py,aggregation,76,# save global descriptors
+eval_VPAir.py,descriptor_output,76,# save global descriptors
+eval_VPAir.py,aggregation,77,"np.save(f'./LOGS/global_descriptors_{split}.npy', global_descriptors)"
+eval_VPAir.py,descriptor_output,77,"np.save(f'./LOGS/global_descriptors_{split}.npy', global_descriptors)"
+eval_VPAir.py,aggregation,78,return global_descriptors
+eval_VPAir.py,descriptor_output,78,return global_descriptors
+eval_VPAir.py,preprocessing,85,# add transforms
+eval_VPAir.py,preprocessing,86,transforms = tvf.Compose([
+eval_VPAir.py,preprocessing,87,"tvf.ToTensor(),"
+eval_VPAir.py,preprocessing,88,"tvf.Normalize([0.485, 0.456, 0.406],"
+eval_VPAir.py,input_shape,89,"[0.229, 0.224, 0.225]),"
+eval_VPAir.py,preprocessing,90,"tvf.Resize((300, 400), interpolation=tvf.InterpolationMode.BICUBIC),"
+eval_VPAir.py,input_shape,90,"tvf.Resize((300, 400), interpolation=tvf.InterpolationMode.BICUBIC),"
+eval_VPAir.py,preprocessing,92,# apply transforms
+eval_VPAir.py,preprocessing,93,image_tensor = transforms(image_pil)
+eval_VPAir.py,model_constructor,100,"self.backbone = E2ResNet(depth=50, out_indices=(3, ), with_geotensor=True, orientation=8, middle_channels=2048)"
+eval_VPAir.py,model_constructor,101,"self.aggregator = se2gem(in_dim=256, out_dim=256)"
+eval_VPAir.py,aggregation,101,"self.aggregator = se2gem(in_dim=256, out_dim=256)"
+eval_VPAir.py,input_shape,101,"self.aggregator = se2gem(in_dim=256, out_dim=256)"
+eval_VPAir.py,descriptor_output,109,def load_model(ckpt_path):
+eval_VPAir.py,model_constructor,110,model = ultravpr()
+eval_VPAir.py,checkpoint_loading,113,"state_dict = torch.load(ckpt_path, map_location='cpu')"
+eval_VPAir.py,checkpoint_loading,114,"model.load_state_dict(state_dict['state_dict'], strict=False)"
+eval_VPAir.py,checkpoint_loading,115,"# model.load_state_dict(state_dict, strict=False)"
+eval_VPAir.py,preprocessing,150,"img_resize_size: Tuple = (400, 300)) -> None:"
+eval_VPAir.py,input_shape,150,"img_resize_size: Tuple = (400, 300)) -> None:"
+eval_VPAir.py,preprocessing,156,"q_array = cv2.resize(q_array, img_resize_size, interpolation=cv2.INTER_CUBIC)"
+eval_VPAir.py,input_shape,156,"q_array = cv2.resize(q_array, img_resize_size, interpolation=cv2.INTER_CUBIC)"
+eval_VPAir.py,preprocessing,169,"db_array = cv2.resize(db_array, img_resize_size, interpolation=cv2.INTER_CUBIC)"
+eval_VPAir.py,input_shape,169,"db_array = cv2.resize(db_array, img_resize_size, interpolation=cv2.INTER_CUBIC)"
+eval_VPAir.py,model_constructor,212,model = load_model('./runPath/e2resnet50_c8_se2gem_32/checkpoints/model_best.pth.tar')
+eval_VPAir.py,aggregation,212,model = load_model('./runPath/e2resnet50_c8_se2gem_32/checkpoints/model_best.pth.tar')
+eval_VPAir.py,descriptor_output,212,model = load_model('./runPath/e2resnet50_c8_se2gem_32/checkpoints/model_best.pth.tar')
+eval_VPAir.py,model_constructor,215,"database_pipeline = InferencePipeline(model=model, dataset=database_dataset, feature_dim=256)"
+eval_VPAir.py,input_shape,215,"database_pipeline = InferencePipeline(model=model, dataset=database_dataset, feature_dim=256)"
+eval_VPAir.py,model_constructor,216,"query_pipeline = InferencePipeline(model=model, dataset=query_dataset, feature_dim=256)"
+eval_VPAir.py,input_shape,216,"query_pipeline = InferencePipeline(model=model, dataset=query_dataset, feature_dim=256)"
+eval_VPAir.py,aggregation,219,"db_global_descriptors = database_pipeline.run(split='db')  # shape: (num_db, feature_dim)"
+eval_VPAir.py,descriptor_output,219,"db_global_descriptors = database_pipeline.run(split='db')  # shape: (num_db, feature_dim)"
+eval_VPAir.py,aggregation,220,"query_global_descriptors = query_pipeline.run(split='query')  # shape: (num_query, feature_dim)"
+eval_VPAir.py,descriptor_output,220,"query_global_descriptors = query_pipeline.run(split='query')  # shape: (num_query, feature_dim)"
+eval_VPAir.py,aggregation,223,"top_k_matches = calculate_top_k(q_matrix=query_global_descriptors, db_matrix=db_global_descriptors, top_k=10)"
+eval_VPAir.py,descriptor_output,223,"top_k_matches = calculate_top_k(q_matrix=query_global_descriptors, db_matrix=db_global_descriptors, top_k=10)"
+eval_UAV-VisLoc.py,preprocessing,9,import torchvision.transforms as tvf
+eval_UAV-VisLoc.py,model_constructor,14,from models.aggregators.se2gem import se2gem
+eval_UAV-VisLoc.py,aggregation,14,from models.aggregators.se2gem import se2gem
+eval_UAV-VisLoc.py,model_constructor,15,from models.backbones.e2resnet import E2ResNet
+eval_UAV-VisLoc.py,model_constructor,77,self.model = model
+eval_UAV-VisLoc.py,aggregation,94,if os.path.exists(f'./LOGS/global_descriptors_{split}_512_0deg.npy'):
+eval_UAV-VisLoc.py,input_shape,94,if os.path.exists(f'./LOGS/global_descriptors_{split}_512_0deg.npy'):
+eval_UAV-VisLoc.py,descriptor_output,94,if os.path.exists(f'./LOGS/global_descriptors_{split}_512_0deg.npy'):
+eval_UAV-VisLoc.py,descriptor_output,95,"print(f""Skipping {split} features extraction, loading from cache"")"
+eval_UAV-VisLoc.py,aggregation,96,return np.load(f'./LOGS/global_descriptors_{split}_512_0deg.npy')
+eval_UAV-VisLoc.py,input_shape,96,return np.load(f'./LOGS/global_descriptors_{split}_512_0deg.npy')
+eval_UAV-VisLoc.py,descriptor_output,96,return np.load(f'./LOGS/global_descriptors_{split}_512_0deg.npy')
+eval_UAV-VisLoc.py,aggregation,100,"global_descriptors = np.zeros((len(self.dataset), self.feature_dim))"
+eval_UAV-VisLoc.py,descriptor_output,100,"global_descriptors = np.zeros((len(self.dataset), self.feature_dim))"
+eval_UAV-VisLoc.py,descriptor_output,101,"for batch in tqdm(self.dataloader, ncols=100, desc=f'Extracting {split} features'):"
+eval_UAV-VisLoc.py,aggregation,106,descriptors = self.model(imgs)
+eval_UAV-VisLoc.py,descriptor_output,106,descriptors = self.model(imgs)
+eval_UAV-VisLoc.py,aggregation,107,descriptors = descriptors.detach().cpu().numpy()
+eval_UAV-VisLoc.py,descriptor_output,107,descriptors = descriptors.detach().cpu().numpy()
+eval_UAV-VisLoc.py,aggregation,109,# add to global descriptors
+eval_UAV-VisLoc.py,descriptor_output,109,# add to global descriptors
+eval_UAV-VisLoc.py,aggregation,110,"global_descriptors[np.array(indices), :] = descriptors"
+eval_UAV-VisLoc.py,descriptor_output,110,"global_descriptors[np.array(indices), :] = descriptors"
+eval_UAV-VisLoc.py,aggregation,112,# save global descriptors
+eval_UAV-VisLoc.py,descriptor_output,112,# save global descriptors
+eval_UAV-VisLoc.py,aggregation,114,"np.save(f'./LOGS/global_descriptors_{split}_512_0deg.npy', global_descriptors)"
+eval_UAV-VisLoc.py,input_shape,114,"np.save(f'./LOGS/global_descriptors_{split}_512_0deg.npy', global_descriptors)"
+eval_UAV-VisLoc.py,descriptor_output,114,"np.save(f'./LOGS/global_descriptors_{split}_512_0deg.npy', global_descriptors)"
+eval_UAV-VisLoc.py,aggregation,115,return global_descriptors
+eval_UAV-VisLoc.py,descriptor_output,115,return global_descriptors
+eval_UAV-VisLoc.py,preprocessing,130,# add transforms
+eval_UAV-VisLoc.py,preprocessing,131,transforms = tvf.Compose([
+eval_UAV-VisLoc.py,preprocessing,132,"tvf.Resize((266, 399), interpolation=tvf.InterpolationMode.BICUBIC),"
+eval_UAV-VisLoc.py,input_shape,132,"tvf.Resize((266, 399), interpolation=tvf.InterpolationMode.BICUBIC),"
+eval_UAV-VisLoc.py,preprocessing,134,"tvf.ToTensor(),"
+eval_UAV-VisLoc.py,preprocessing,135,"tvf.Normalize([0.485, 0.456, 0.406],"
+eval_UAV-VisLoc.py,input_shape,136,"[0.229, 0.224, 0.225])"
+eval_UAV-VisLoc.py,preprocessing,139,# apply transforms
+eval_UAV-VisLoc.py,preprocessing,140,image_tensor = transforms(image_pil)
+eval_UAV-VisLoc.py,model_constructor,146,"self.backbone = E2ResNet(depth=50, out_indices=(3, ), with_geotensor=True, orientation=8, middle_channels=2048)"
+eval_UAV-VisLoc.py,model_constructor,147,"self.aggregator = se2gem(in_dim=256, out_dim=256)"
+eval_UAV-VisLoc.py,aggregation,147,"self.aggregator = se2gem(in_dim=256, out_dim=256)"
+eval_UAV-VisLoc.py,input_shape,147,"self.aggregator = se2gem(in_dim=256, out_dim=256)"
+eval_UAV-VisLoc.py,descriptor_output,153,def load_model(ckpt_path):
+eval_UAV-VisLoc.py,model_constructor,154,model = ultravpr()
+eval_UAV-VisLoc.py,checkpoint_loading,157,"state_dict = torch.load(ckpt_path, map_location='cpu')"
+eval_UAV-VisLoc.py,checkpoint_loading,158,"model.load_state_dict(state_dict['state_dict'], strict=False)"
+eval_UAV-VisLoc.py,checkpoint_loading,159,"# model.load_state_dict(state_dict, strict=False)"
+eval_UAV-VisLoc.py,model_constructor,251,model = load_model('./runPath/e2resnet50_c8_se2gem_32/checkpoints/model_best.pth.tar')
+eval_UAV-VisLoc.py,aggregation,251,model = load_model('./runPath/e2resnet50_c8_se2gem_32/checkpoints/model_best.pth.tar')
+eval_UAV-VisLoc.py,descriptor_output,251,model = load_model('./runPath/e2resnet50_c8_se2gem_32/checkpoints/model_best.pth.tar')
+eval_UAV-VisLoc.py,model_constructor,254,"database_pipeline = InferencePipeline(model=model, dataset=database_dataset, feature_dim=256, db_type = 'db')"
+eval_UAV-VisLoc.py,input_shape,254,"database_pipeline = InferencePipeline(model=model, dataset=database_dataset, feature_dim=256, db_type = 'db')"
+eval_UAV-VisLoc.py,model_constructor,255,"query_pipeline = InferencePipeline(model=model, dataset=query_dataset, feature_dim=256, db_type = 'query')"
+eval_UAV-VisLoc.py,input_shape,255,"query_pipeline = InferencePipeline(model=model, dataset=query_dataset, feature_dim=256, db_type = 'query')"
+eval_UAV-VisLoc.py,aggregation,258,"db_global_descriptors = database_pipeline.run(split='db')  # shape: (num_db, feature_dim)"
+eval_UAV-VisLoc.py,descriptor_output,258,"db_global_descriptors = database_pipeline.run(split='db')  # shape: (num_db, feature_dim)"
+eval_UAV-VisLoc.py,aggregation,259,"query_global_descriptors = query_pipeline.run(split='query')  # shape: (num_query, feature_dim)"
+eval_UAV-VisLoc.py,descriptor_output,259,"query_global_descriptors = query_pipeline.run(split='query')  # shape: (num_query, feature_dim)"
+eval_UAV-VisLoc.py,aggregation,262,"top_k_matches = calculate_top_k(q_matrix=query_global_descriptors, db_matrix=db_global_descriptors, top_k=10)"
+eval_UAV-VisLoc.py,descriptor_output,262,"top_k_matches = calculate_top_k(q_matrix=query_global_descriptors, db_matrix=db_global_descriptors, top_k=10)"
+eval_UAV-VisLoc.py,input_shape,265,"record_matches(top_k_matches, query_dataset, database_dataset, out_file='./LOGS/record_512.txt')"
+export_ultravpr.py,model_constructor,93,# The main wrapper for the entire E2ResNet backbone
+export_ultravpr.py,model_constructor,94,class ExportedE2ResNet(nn.Module):
+export_ultravpr.py,model_constructor,106,# These attributes must match the original E2ResNet configuration
+export_ultravpr.py,model_constructor,111,# Reconstruct the forward pass of the original E2ResNet
+export_ultravpr.py,aggregation,115,x = self.layers['maxpool'](x)
+export_ultravpr.py,aggregation,122,out = self.layers['gpool'](outs[0])
+export_ultravpr.py,descriptor_output,129,def load_and_prepare_model(ckpt_path):
+export_ultravpr.py,model_constructor,132,model = utils.set_model(opt)
+export_ultravpr.py,descriptor_output,132,model = utils.set_model(opt)
+export_ultravpr.py,checkpoint_loading,136,"state_dict = torch.load(ckpt_path, map_location='cpu')"
+export_ultravpr.py,checkpoint_loading,137,"model.load_state_dict(state_dict['state_dict'], strict=False)"
+export_ultravpr.py,model_constructor,144,"print(""Exporting the E2ResNet backbone to standard PyTorch modules..."")"
+export_ultravpr.py,model_constructor,157,exported_backbone = ExportedE2ResNet(exported_dict)
+export_ultravpr.py,model_constructor,186,model_ckpt_path = '/media/cbbhuxx/UD210/my-paper-code/e2resnet50_c8_se2gem_32/checkpoints/model_best.pth.tar'
+export_ultravpr.py,aggregation,186,model_ckpt_path = '/media/cbbhuxx/UD210/my-paper-code/e2resnet50_c8_se2gem_32/checkpoints/model_best.pth.tar'
+export_ultravpr.py,model_constructor,192,prepared_model = load_and_prepare_model(model_ckpt_path)
+export_ultravpr.py,descriptor_output,192,prepared_model = load_and_prepare_model(model_ckpt_path)
+export_ultravpr.py,model_constructor,193,"pytorch_model = UltraVPR(prepared_model.backbone, prepared_model.aggregator).eval().to(device)"
+export_ultravpr.py,descriptor_output,202,pytorch_output = pytorch_model(dummy_image)
+export_ultravpr.py,descriptor_output,203,"print(""PyTorch model output shape:"", pytorch_output.shape)"
+export_ultravpr.py,descriptor_output,214,"output_names=[""output""],"
+export_ultravpr.py,model_constructor,222,onnx_model = onnx.load(onnx_export_path)
+export_ultravpr.py,descriptor_output,236,onnx.checker.check_model(onnx_model_check)
+export_ultravpr.py,descriptor_output,246,"ort_outputs = ort_session.run(None, ort_inputs)"
+export_ultravpr.py,descriptor_output,247,onnx_output = ort_outputs[0]
+export_ultravpr.py,descriptor_output,249,"print(""ONNX model output shape:"", onnx_output.shape)"
+export_ultravpr.py,descriptor_output,251,# Compare the outputs of PyTorch and ONNX Runtime
+export_ultravpr.py,descriptor_output,252,# This will raise an AssertionError if the outputs are not close enough
+export_ultravpr.py,descriptor_output,253,"np.testing.assert_allclose(to_numpy(pytorch_output), onnx_output, rtol=1e-02, atol=1e-03)"
+export_ultravpr.py,descriptor_output,255,"print(""\n✅ SUCCESS: The simplified ONNX model's output matches the PyTorch model's output!"")"

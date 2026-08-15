@@ -1,0 +1,125 @@
+{
+  "created_at_utc": "2026-08-06T19:53:31.912460+00:00",
+  "model_name": "AdvancedEdgeGeoLPN_LOCAL_REIMPLEMENTATION",
+  "provenance_label": "LOCAL_REIMPLEMENTATION",
+  "benchmark_status": "CORRECTED_PROJECT_DEFINED_LOCATION_DISJOINT_BENCHMARK",
+  "official_mobilegeo_result": false,
+  "official_sues200_protocol": false,
+  "benchmark_protocol": "PROJECT_DEFINED_LOCATION_DISJOINT_60_20_20",
+  "train_location_count": 120,
+  "validation_location_count": 40,
+  "test_location_count": 40,
+  "test_query_count": 8000,
+  "test_gallery_count": 40,
+  "descriptor_dimension": 2048,
+  "input_resolution": [
+    224,
+    224
+  ],
+  "preprocessing": "PROVISIONAL_IMAGENET_NORMALIZATION",
+  "similarity": "COSINE_SIMILARITY",
+  "metrics": [
+    {
+      "group": "overall",
+      "nominal_height": "all",
+      "query_count": 8000,
+      "location_count": 40,
+      "recall_at_1_percent": 94.575,
+      "recall_at_5_percent": 99.9875,
+      "recall_at_10_percent": 100.0,
+      "mean_average_precision_percent": 96.92541666666666,
+      "mean_positive_rank": 1.082125,
+      "median_positive_rank": 1.0,
+      "p95_positive_rank": 2.0,
+      "mean_top1_top2_margin": 0.2958928942680359,
+      "median_top1_top2_margin": 0.29789331555366516
+    },
+    {
+      "group": "height_150",
+      "nominal_height": 150,
+      "query_count": 2000,
+      "location_count": 40,
+      "recall_at_1_percent": 93.35,
+      "recall_at_5_percent": 99.95,
+      "recall_at_10_percent": 100.0,
+      "mean_average_precision_percent": 96.19,
+      "mean_positive_rank": 1.1025,
+      "median_positive_rank": 1.0,
+      "p95_positive_rank": 2.0,
+      "mean_top1_top2_margin": 0.28725555539131165,
+      "median_top1_top2_margin": 0.2926311194896698
+    },
+    {
+      "group": "height_200",
+      "nominal_height": 200,
+      "query_count": 2000,
+      "location_count": 40,
+      "recall_at_1_percent": 94.55,
+      "recall_at_5_percent": 100.0,
+      "recall_at_10_percent": 100.0,
+      "mean_average_precision_percent": 96.88916666666667,
+      "mean_positive_rank": 1.0825,
+      "median_positive_rank": 1.0,
+      "p95_positive_rank": 2.0,
+      "mean_top1_top2_margin": 0.3060366213321686,
+      "median_top1_top2_margin": 0.31602993607521057
+    },
+    {
+      "group": "height_250",
+      "nominal_height": 250,
+      "query_count": 2000,
+      "location_count": 40,
+      "recall_at_1_percent": 95.45,
+      "recall_at_5_percent": 100.0,
+      "recall_at_10_percent": 100.0,
+      "mean_average_precision_percent": 97.32916666666667,
+      "mean_positive_rank": 1.0775,
+      "median_positive_rank": 1.0,
+      "p95_positive_rank": 1.0,
+      "mean_top1_top2_margin": 0.3031556308269501,
+      "median_top1_top2_margin": 0.30194607377052307
+    },
+    {
+      "group": "height_300",
+      "nominal_height": 300,
+      "query_count": 2000,
+      "location_count": 40,
+      "recall_at_1_percent": 94.95,
+      "recall_at_5_percent": 100.0,
+      "recall_at_10_percent": 100.0,
+      "mean_average_precision_percent": 97.29333333333334,
+      "mean_positive_rank": 1.066,
+      "median_positive_rank": 1.0,
+      "p95_positive_rank": 2.0,
+      "mean_top1_top2_margin": 0.28712376952171326,
+      "median_top1_top2_margin": 0.27698349952697754
+    }
+  ],
+  "search_timing": {
+    "query_count": 8000,
+    "gallery_count": 40,
+    "similarity_comparisons": 320000,
+    "search_seconds": 0.05004071700022905,
+    "search_ms_per_query": 0.006255089625028631,
+    "search_scope": "COSINE_MATRIX_MULTIPLICATION_AND_FULL_SORT",
+    "descriptor_extraction_included": false
+  },
+  "files": {
+    "metrics_csv": "/content/drive/MyDrive/mobilegeo_project/results/sues200_corrected/corrected_location_disjoint_metrics.csv",
+    "query_results_csv": "/content/drive/MyDrive/mobilegeo_project/results/sues200_corrected/corrected_query_results.csv",
+    "rankings_csv": "/content/drive/MyDrive/mobilegeo_project/results/sues200_corrected/corrected_location_disjoint_rankings.csv",
+    "per_location_metrics_csv": "/content/drive/MyDrive/mobilegeo_project/results/sues200_corrected/corrected_per_location_metrics.csv"
+  },
+  "hashes": {
+    "gallery_embeddings_sha256": "62201afa0a11ec7fef3459c5c207f1b6bb621a45a20e21712259d7ec1eb5734c",
+    "query_embeddings_sha256": "5b489ef438159a083987de0c0ae7fe2daffe787c6261d897994d36f0ede5e0ce",
+    "metrics_csv_sha256": "5311dc893881edf672de99afd682f4ddacd34f9e621684be5339baccd229f358",
+    "rankings_csv_sha256": "1ac60d635f786c273bcb1e839aab9d22827f29d9dd8066add3a4a02cdcdf2d9b"
+  },
+  "reporting_restrictions": [
+    "Do not describe this as an official MobileGeo result.",
+    "Do not describe this split as the official SUES-200 protocol.",
+    "The nominal height labels are not verified as AGL or MSL altitude.",
+    "The result measures image retrieval, not verified geographic UAV pose."
+  ]
+}

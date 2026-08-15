@@ -1,0 +1,115 @@
+{
+  "created_at_utc": "2026-08-07T08:02:24.822554+00:00",
+  "project": "UAV_GEO_LOCALIZATION",
+  "phase": "PHASE_3_COMMON_RETRIEVAL_BENCHMARK",
+  "phase_complete": true,
+  "benchmark": "COMMON_SUES200_LOCATION_DISJOINT_BENCHMARK",
+  "protocol": "PROJECT_DEFINED_LOCATION_DISJOINT_60_20_20",
+  "test_query_count": 8000,
+  "test_gallery_count": 40,
+  "test_location_count": 40,
+  "nominal_height_labels": [
+    150,
+    200,
+    250,
+    300
+  ],
+  "height_label_interpretation": "NOMINAL_DATASET_FOLDER_LABEL_NOT_VERIFIED_AS_AGL_OR_MSL",
+  "direct_common_benchmark_methods": [
+    {
+      "method": "AdvancedEdgeGeoLPN_LOCAL_REIMPLEMENTATION",
+      "provenance": "LOCAL_REIMPLEMENTATION",
+      "descriptor_dimension": 2048,
+      "recall_at_1_percent": 94.575
+    },
+    {
+      "method": "Sample4Geo",
+      "provenance": "OFFICIAL_SAMPLE4GEO_CHECKPOINT_ZERO_SHOT_TRANSFER_FROM_UNIVERSITY1652",
+      "descriptor_dimension": 1024,
+      "recall_at_1_percent": 85.9
+    },
+    {
+      "method": "UltraVPR",
+      "provenance": "OFFICIAL_ULTRAVPR_CHECKPOINT_ZERO_SHOT_TRANSFER_TO_PROJECT_SUES200_SPLIT",
+      "descriptor_dimension": 256,
+      "recall_at_1_percent": 81.9375
+    }
+  ],
+  "mobilegeo_release_status": {
+    "direct_common_table_entry": false,
+    "provenance": "PUBLISHED_PRECOMPUTED_FEATURE_EVALUATION",
+    "released_descriptor_dimension": 768,
+    "reason": "No verified official MobileGeo checkpoint and complete raw-image-to-descriptor pipeline were available for generating descriptors on this exact project-defined test split."
+  },
+  "checkpoint_records": [
+    {
+      "method": "AdvancedEdgeGeoLPN_LOCAL_REIMPLEMENTATION",
+      "path": "/content/drive/MyDrive/mobilegeo_project/baseline_v1/checkpoint/AdvancedEdgeGeoLPN_LOCAL_REIMPLEMENTATION.pth",
+      "sha256": "adc64177582638690b841c1be390b7d05dfb27f4d2001b3d52fb74455020b807",
+      "provenance": "LOCAL_REIMPLEMENTATION"
+    },
+    {
+      "method": "Sample4Geo",
+      "path": "/content/drive/MyDrive/mobilegeo_project/repositories/Sample4Geo/pretrained/university/convnext_base.fb_in22k_ft_in1k_384/weights_e1_0.9515.pth",
+      "sha256": "04f4c8990a8fea73171806dabfe94c405b792b3b5ef87ce2db768daa529e5332",
+      "provenance": "OFFICIAL_SAMPLE4GEO_CHECKPOINT"
+    },
+    {
+      "method": "UltraVPR",
+      "path": "/content/drive/MyDrive/mobilegeo_project/checkpoints/ultravpr/model_best.pth.tar",
+      "sha256": "7fb2f95721ac3bdbbfe86b2b217b34af0bbbf243e70e6bcf72ec738738db64f4",
+      "provenance": "OFFICIAL_ULTRAVPR_CHECKPOINT"
+    }
+  ],
+  "embedding_records": [
+    {
+      "filename": "sample4geo_sues200_test_gallery_embeddings.npz",
+      "path": "/content/drive/MyDrive/mobilegeo_project/results/common_benchmark/embeddings/sample4geo_sues200_test_gallery_embeddings.npz",
+      "size_bytes": 150016,
+      "sha256": "20594d8a115963fbbb668af9c6c1ac891e5d6d24d25f79fae2d730ebb55c54f9"
+    },
+    {
+      "filename": "sample4geo_sues200_test_query_embeddings.npz",
+      "path": "/content/drive/MyDrive/mobilegeo_project/results/common_benchmark/embeddings/sample4geo_sues200_test_query_embeddings.npz",
+      "size_bytes": 30517826,
+      "sha256": "ae69d118e638bd93c9e2f1d850dab12fbc543a266fc9bf94a46a1dbb8b7c300a"
+    },
+    {
+      "filename": "ultravpr_sues200_test_gallery_embeddings.npz",
+      "path": "/content/drive/MyDrive/mobilegeo_project/results/common_benchmark/embeddings/ultravpr_sues200_test_gallery_embeddings.npz",
+      "size_bytes": 38445,
+      "sha256": "c01bc06d6cf57466c38b4142e7acfe99373a3fb31a5fa0c274b40a00e0c69991"
+    },
+    {
+      "filename": "ultravpr_sues200_test_query_embeddings.npz",
+      "path": "/content/drive/MyDrive/mobilegeo_project/results/common_benchmark/embeddings/ultravpr_sues200_test_query_embeddings.npz",
+      "size_bytes": 7644870,
+      "sha256": "4bebe70b7af919e99298ac13d144c41342a9ee9042d394d679fa81ef0a5c7ffe"
+    },
+    {
+      "filename": "sues200_test_gallery_embeddings.npz",
+      "path": "/content/drive/MyDrive/mobilegeo_project/results/sues200_corrected/embeddings/sues200_test_gallery_embeddings.npz",
+      "size_bytes": 298377,
+      "sha256": "62201afa0a11ec7fef3459c5c207f1b6bb621a45a20e21712259d7ec1eb5734c"
+    },
+    {
+      "filename": "sues200_test_query_embeddings.npz",
+      "path": "/content/drive/MyDrive/mobilegeo_project/results/sues200_corrected/embeddings/sues200_test_query_embeddings.npz",
+      "size_bytes": 60870270,
+      "sha256": "5b489ef438159a083987de0c0ae7fe2daffe787c6261d897994d36f0ede5e0ce"
+    }
+  ],
+  "embedding_files_included_in_zip": false,
+  "embedding_exclusion_reason": "Embedding NPZ files are retained separately in Google Drive to avoid duplicating large binary artifacts in the evidence ZIP.",
+  "full_320k_ranking_files_included_in_zip": false,
+  "ranking_exclusion_reason": "Large full-ranking CSV files are retained in the project results directory; compact metrics, audits and paired-query evidence are packaged instead.",
+  "reporting_restrictions": [
+    "Do not call the local reimplementation an official MobileGeo implementation.",
+    "Do not describe Sample4Geo zero-shot results as official SUES-200 results.",
+    "Do not describe UltraVPR zero-shot results as official SUES-200 results.",
+    "Do not directly rank MobileGeo published MAT metrics against the project-defined common benchmark.",
+    "Do not interpret image retrieval as verified geographic UAV pose.",
+    "Accuracy differences do not isolate architecture because training regimes differ."
+  ],
+  "next_phase": "PHASE_4_GEOREFERENCED_PROJECT_BENCHMARK"
+}

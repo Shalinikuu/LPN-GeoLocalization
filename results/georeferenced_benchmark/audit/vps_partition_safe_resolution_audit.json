@@ -1,0 +1,38 @@
+{
+  "created_at_utc": "2026-08-08T20:01:49.529971+00:00",
+  "root_cause_previous_ambiguity": "PLAIN_SAMPLE_ID_COLLISION_ACROSS_DATASET_PARTITIONS",
+  "unique_full_sample_keys": 2680,
+  "repeated_plain_sample_ids": 349,
+  "rows_affected_by_repeated_sample_ids": 698,
+  "image_resolution": {
+    "exactly_one_uav_image_samples": 2680,
+    "exactly_12_satellite_image_samples": 2680,
+    "unique_satellite_record_resolutions": 32160,
+    "missing_satellite_resolutions": 0,
+    "ambiguous_satellite_resolutions": 0,
+    "full_image_layout_resolved": true
+  },
+  "pixel_label_validation": {
+    "records": 32160,
+    "within_1px": 32068,
+    "exactly_2px": 92,
+    "greater_than_2px": 0,
+    "within_2px_fraction": 1.0,
+    "interpretation": "RASTER_LABEL_DISCRETIZATION_AUDIT",
+    "tolerance_used_for_internal_consistency_px": 2
+  },
+  "normalized_coordinate_validation": {
+    "maximum_error": 1.2061796006435088e-11,
+    "pass": true
+  },
+  "metadata_schema_validated": true,
+  "crs_status": "UNVERIFIED",
+  "wgs84_claim_allowed": false,
+  "metric_geodetic_claim_status": "BLOCKED_UNTIL_CRS_PROVENANCE_VERIFIED",
+  "retrieval_is_verified_uav_pose": false,
+  "outputs": {
+    "query_manifest": "/content/drive/MyDrive/mobilegeo_project/results/georeferenced_benchmark/manifests/vps_executable_query_manifest.csv",
+    "gallery_manifest": "/content/drive/MyDrive/mobilegeo_project/results/georeferenced_benchmark/manifests/vps_executable_gallery_manifest.csv",
+    "resolved_georeference_manifest": "/content/drive/MyDrive/mobilegeo_project/results/georeferenced_benchmark/manifests/vps_archive_resolved_georeference_manifest.csv"
+  }
+}

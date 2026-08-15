@@ -1,0 +1,72 @@
+{
+  "created_at_utc": "2026-08-09T06:31:14.997220+00:00",
+  "checkpoint_sha256_match": true,
+  "strict_checkpoint_load": true,
+  "parameter_count": 4940080,
+  "eager_smoke_output_shape": [
+    1,
+    2048
+  ],
+  "eager_descriptor_norm": 1.0,
+  "torchscript_exported": true,
+  "torchscript_equivalence_pass": true,
+  "torchscript_validation": [
+    {
+      "batch_size": 1,
+      "output_shape": [
+        1,
+        2048
+      ],
+      "max_abs_error": 7.497146725654602e-08,
+      "mean_abs_error": 1.3209729310403873e-08,
+      "minimum_cosine_similarity": 1.0000001192092896,
+      "mean_cosine_similarity": 1.0000001192092896,
+      "max_descriptor_norm_error": 5.960464477539063e-08
+    },
+    {
+      "batch_size": 2,
+      "output_shape": [
+        2,
+        2048
+      ],
+      "max_abs_error": 7.078051567077637e-08,
+      "mean_abs_error": 1.2693082140913248e-08,
+      "minimum_cosine_similarity": 1.0,
+      "mean_cosine_similarity": 1.0000001192092896,
+      "max_descriptor_norm_error": 5.960464477539063e-08
+    },
+    {
+      "batch_size": 4,
+      "output_shape": [
+        4,
+        2048
+      ],
+      "max_abs_error": 8.195638656616211e-08,
+      "mean_abs_error": 1.3827921030440393e-08,
+      "minimum_cosine_similarity": 0.9999998807907104,
+      "mean_cosine_similarity": 1.0,
+      "max_descriptor_norm_error": 1.7881393432617188e-07
+    },
+    {
+      "batch_size": 8,
+      "output_shape": [
+        8,
+        2048
+      ],
+      "max_abs_error": 8.568167686462402e-08,
+      "mean_abs_error": 1.3525627728938616e-08,
+      "minimum_cosine_similarity": 0.9999999403953552,
+      "mean_cosine_similarity": 1.0,
+      "max_descriptor_norm_error": 1.1920928955078125e-07
+    }
+  ],
+  "onnx_available": false,
+  "onnx_exported": false,
+  "onnx_checker_passed": false,
+  "onnx_error": null,
+  "actual_orin_nano_runtime": false,
+  "current_runtime_is_reference_host_only": true,
+  "orin_nano_performance_measured": false,
+  "orin_nano_latency_claim_allowed": false,
+  "tensorrt_engine_generated": false
+}

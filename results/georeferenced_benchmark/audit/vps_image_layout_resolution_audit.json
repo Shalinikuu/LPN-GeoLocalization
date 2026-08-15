@@ -1,0 +1,23 @@
+{
+  "pixel_error": {
+    "label_record_count": 32160,
+    "records_le_1_px": 32068,
+    "records_equal_2_px": 92,
+    "records_gt_2_px": 0,
+    "maximum_px": 2.0,
+    "tolerance_decision": "PENDING_INTERPRETATION"
+  },
+  "image_layout": {
+    "samples_with_image_descendants": 2331,
+    "satellite_rows_unique": 23784,
+    "satellite_rows_missing": 0,
+    "satellite_rows_ambiguous": 8376,
+    "uav_samples_exactly_one_candidate": 1982,
+    "uav_samples_zero_candidates": 0,
+    "uav_samples_multiple_candidates": 698,
+    "fully_resolved": false
+  },
+  "crs_status": "UNVERIFIED",
+  "wgs84_claim_allowed": false,
+  "runtime_seconds": 3.1817684173583984
+}

@@ -1,0 +1,51 @@
+{
+  "checkpoint": "/content/drive/MyDrive/mobilegeo_project/baseline_v1/checkpoint/AdvancedEdgeGeoLPN_LOCAL_REIMPLEMENTATION.pth",
+  "checkpoint_state_source": "<checkpoint_root>",
+  "state_tensor_count": 316,
+  "head_960x512_candidates": [
+    "fcs.0.weight",
+    "fcs.1.weight",
+    "fcs.2.weight",
+    "fcs.3.weight"
+  ],
+  "source_candidates": [
+    {
+      "path": "/content/drive/MyDrive/mobilegeo_project/notebooks/04_georeferenced_project_benchmark.ipynb",
+      "matched_terms": [
+        "AdvancedEdgeGeoLPN_LOCAL_REIMPLEMENTATION",
+        "AdaptiveAvgPool2d",
+        "mobilenet_v3_large",
+        "MobileNetV3"
+      ]
+    },
+    {
+      "path": "/content/drive/MyDrive/mobilegeo_project/notebooks/03_common_retrieval_benchmark.ipynb",
+      "matched_terms": [
+        "AdvancedEdgeGeoLPN_LOCAL_REIMPLEMENTATION"
+      ]
+    },
+    {
+      "path": "/content/drive/MyDrive/mobilegeo_project/notebooks/02_sues200_location_disjoint_benchmark.ipynb",
+      "matched_terms": [
+        "AdvancedEdgeGeoLPN_LOCAL_REIMPLEMENTATION",
+        "AdaptiveAvgPool2d",
+        "mobilenet_v3_large",
+        "MobileNetV3"
+      ]
+    },
+    {
+      "path": "/content/drive/MyDrive/mobilegeo_project/src/models/advanced_edge_geolpn_adapter.py",
+      "matched_terms": [
+        "AdvancedEdgeGeoLPN_LOCAL_REIMPLEMENTATION"
+      ]
+    },
+    {
+      "path": "/content/drive/MyDrive/mobilegeo_project/repositories/MobileGeo/FoundationModel/backbones/osnet.py",
+      "matched_terms": [
+        "AdaptiveAvgPool2d"
+      ]
+    }
+  ],
+  "required_model_name": "AdvancedEdgeGeoLPN_LOCAL_REIMPLEMENTATION",
+  "provenance": "LOCAL_REIMPLEMENTATION"
+}

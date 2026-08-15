@@ -1,0 +1,13 @@
+map_size,query_count,gallery_count,unique_sample_count,one_positive_per_query,gallery_manifest
+700,2331,2331,2331,True,/content/drive/MyDrive/mobilegeo_project/results/georeferenced_benchmark/manifests/vps_core_eval_gallery_map700.csv
+800,2331,2331,2331,True,/content/drive/MyDrive/mobilegeo_project/results/georeferenced_benchmark/manifests/vps_core_eval_gallery_map800.csv
+900,2331,2331,2331,True,/content/drive/MyDrive/mobilegeo_project/results/georeferenced_benchmark/manifests/vps_core_eval_gallery_map900.csv
+1000,2331,2331,2331,True,/content/drive/MyDrive/mobilegeo_project/results/georeferenced_benchmark/manifests/vps_core_eval_gallery_map1000.csv
+1100,2331,2331,2331,True,/content/drive/MyDrive/mobilegeo_project/results/georeferenced_benchmark/manifests/vps_core_eval_gallery_map1100.csv
+1200,2331,2331,2331,True,/content/drive/MyDrive/mobilegeo_project/results/georeferenced_benchmark/manifests/vps_core_eval_gallery_map1200.csv
+1300,2331,2331,2331,True,/content/drive/MyDrive/mobilegeo_project/results/georeferenced_benchmark/manifests/vps_core_eval_gallery_map1300.csv
+1400,2331,2331,2331,True,/content/drive/MyDrive/mobilegeo_project/results/georeferenced_benchmark/manifests/vps_core_eval_gallery_map1400.csv
+1500,2331,2331,2331,True,/content/drive/MyDrive/mobilegeo_project/results/georeferenced_benchmark/manifests/vps_core_eval_gallery_map1500.csv
+1600,2331,2331,2331,True,/content/drive/MyDrive/mobilegeo_project/results/georeferenced_benchmark/manifests/vps_core_eval_gallery_map1600.csv
+1700,2331,2331,2331,True,/content/drive/MyDrive/mobilegeo_project/results/georeferenced_benchmark/manifests/vps_core_eval_gallery_map1700.csv
+1800,2331,2331,2331,True,/content/drive/MyDrive/mobilegeo_project/results/georeferenced_benchmark/manifests/vps_core_eval_gallery_map1800.csv

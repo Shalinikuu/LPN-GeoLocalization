@@ -1,0 +1,22 @@
+{
+  "created_at_utc": "2026-08-08T21:04:29.122793+00:00",
+  "source_checks": {
+    "notebook05_complete": true,
+    "notebook05_validation_passed": true,
+    "model_name_correct": true,
+    "model_provenance_local": true,
+    "clean_baseline_near_chance": true
+  },
+  "sequence_parse_valid": true,
+  "ordered_group_count": 12,
+  "total_adjacent_pairs": 2319,
+  "step1_pairs": 2319,
+  "step1_fraction": 1.0,
+  "gap_pairs": 0,
+  "reverse_or_duplicate_pairs": 0,
+  "duplicate_sequence_tokens": 0,
+  "queries_with_all_12_scales": 2331,
+  "all_queries_have_12_scales": true,
+  "ordered_sequence_eligible": true,
+  "sequence_status": "ORDERED_SAMPLE_SEQUENCE_STRUCTURE_SUPPORTED"
+}

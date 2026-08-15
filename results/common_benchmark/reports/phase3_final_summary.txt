@@ -1,0 +1,42 @@
+PHASE 3 COMMON RETRIEVAL BENCHMARK — COMPLETE
+
+Protocol:
+PROJECT_DEFINED_LOCATION_DISJOINT_60_20_20
+
+Queries:
+8,000
+
+Gallery images:
+40
+
+Test locations:
+40
+
+Direct common benchmark:
+
+AdvancedEdgeGeoLPN_LOCAL_REIMPLEMENTATION
+Recall@1: 94.58%
+
+Sample4Geo
+Recall@1: 85.90%
+
+UltraVPR
+Recall@1: 81.94%
+
+Best method on this project-defined benchmark:
+AdvancedEdgeGeoLPN_LOCAL_REIMPLEMENTATION
+Recall@1: 94.58%
+
+MobileGeo:
+NOT INCLUDED IN DIRECT COMMON RANKING.
+Published MobileGeo precomputed MAT features remain
+a separate provenance result.
+
+Important:
+- The local model is not official MobileGeo.
+- Sample4Geo and UltraVPR are zero-shot transfers.
+- Training regimes differ.
+- Retrieval accuracy is not verified UAV pose.
+
+Next notebook:
+04_georeferenced_project_benchmark.ipynb

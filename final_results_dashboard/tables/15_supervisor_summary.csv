@@ -1,0 +1,11 @@
+Experiment,Main result,Provenance / limitation
+Official MobileGeo released features,D2S R@1 93.89%,PUBLISHED_PRECOMPUTED_FEATURE_EVALUATION
+Local model — corrected SUES-200,"R@1 94.58%, mAP 96.93%",LOCAL_REIMPLEMENTATION
+Sample4Geo — SUES zero-shot,"R@1 85.90%, mAP 91.79%",ZERO_SHOT_TRANSFER
+VPS zero-shot transfer,Near-chance retrieval,CRS_UNVERIFIED / no verified UAV pose
+Robustness diagnostics,Descriptor/rank stability measured,Clean VPS baseline near chance
+Keyframe subsampling,Up to 89.96% count-based processing reduction at stride 10,Not measured Jetson latency reduction
+Ordered-window consensus,Best tested window L=5,Dataset sample ordering; timestamps unavailable
+Replay / comparison video,Generated qualitative visualization,Visualization only
+TorchScript deployment preparation,Validated,Reference-host preparation
+Actual Jetson Orin Nano benchmark,Not performed,Target hardware unavailable / skipped

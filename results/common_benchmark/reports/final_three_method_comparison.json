@@ -1,0 +1,103 @@
+{
+  "created_at_utc": "2026-08-07T07:59:44.005259+00:00",
+  "phase": "PHASE_3_COMMON_RETRIEVAL_BENCHMARK",
+  "protocol": "PROJECT_DEFINED_LOCATION_DISJOINT_60_20_20",
+  "query_count": 8000,
+  "gallery_count": 40,
+  "test_locations": 40,
+  "methods_in_direct_common_table": [
+    "AdvancedEdgeGeoLPN_LOCAL_REIMPLEMENTATION",
+    "Sample4Geo",
+    "UltraVPR"
+  ],
+  "overall_results": [
+    {
+      "method_key": "Local_Reimplementation",
+      "method": "AdvancedEdgeGeoLPN_LOCAL_REIMPLEMENTATION",
+      "provenance": "LOCAL_REIMPLEMENTATION",
+      "training_context": "PROJECT_LOCAL_CHECKPOINT",
+      "descriptor_dimension": 2048,
+      "query_count": 8000,
+      "recall_at_1_percent": 94.575,
+      "recall_at_5_percent": 99.9875,
+      "recall_at_10_percent": 100.0,
+      "mean_average_precision_percent": 96.92541666666666,
+      "mean_positive_rank": 1.082125,
+      "rank_by_recall_at_1": 1,
+      "rank_by_map": 1
+    },
+    {
+      "method_key": "Sample4Geo",
+      "method": "Sample4Geo",
+      "provenance": "OFFICIAL_SAMPLE4GEO_CHECKPOINT_ZERO_SHOT_TRANSFER_FROM_UNIVERSITY1652",
+      "training_context": "University-1652",
+      "descriptor_dimension": 1024,
+      "query_count": 8000,
+      "recall_at_1_percent": 85.9,
+      "recall_at_5_percent": 98.7375,
+      "recall_at_10_percent": 99.775,
+      "mean_average_precision_percent": 91.78651903651904,
+      "mean_positive_rank": 1.27375,
+      "rank_by_recall_at_1": 2,
+      "rank_by_map": 2
+    },
+    {
+      "method_key": "UltraVPR",
+      "method": "UltraVPR",
+      "provenance": "OFFICIAL_ULTRAVPR_CHECKPOINT_ZERO_SHOT_TRANSFER_TO_PROJECT_SUES200_SPLIT",
+      "training_context": "OFFICIAL_ULTRAVPR_RELEASE_CHECKPOINT",
+      "descriptor_dimension": 256,
+      "query_count": 8000,
+      "recall_at_1_percent": 81.9375,
+      "recall_at_5_percent": 95.225,
+      "recall_at_10_percent": 98.475,
+      "mean_average_precision_percent": 87.83206439211499,
+      "mean_positive_rank": 1.667125,
+      "rank_by_recall_at_1": 3,
+      "rank_by_map": 3
+    }
+  ],
+  "pairwise_differences": {
+    "local_minus_sample4geo_r1_pp": 8.674999999999997,
+    "local_minus_ultravpr_r1_pp": 12.637500000000003,
+    "sample4geo_minus_ultravpr_r1_pp": 3.9625000000000057,
+    "local_minus_sample4geo_map_pp": 5.138897630147625,
+    "local_minus_ultravpr_map_pp": 9.093352274551677,
+    "sample4geo_minus_ultravpr_map_pp": 3.954454644404052
+  },
+  "paired_query_summary": {
+    "all_three_correct": 5735,
+    "all_three_wrong": 216,
+    "local_only_correct": 273,
+    "sample4geo_only_correct": 20,
+    "ultravpr_only_correct": 17,
+    "all_same_top1_prediction": 5873,
+    "at_least_one_correct": 7784
+  },
+  "mobilegeo_comparability": {
+    "release_provenance": "PUBLISHED_PRECOMPUTED_FEATURE_EVALUATION",
+    "published_descriptor_dimension": 768,
+    "published_assets_available": [
+      "second_D2S.mat",
+      "second_S2D.mat"
+    ],
+    "direct_common_benchmark_entry": false,
+    "reason": "No verified official MobileGeo checkpoint and complete raw-image-to-descriptor pipeline were released for generating descriptors on the exact project-defined 8,000-query / 40-gallery SUES-200 test split.",
+    "reporting_rule": "Published MobileGeo MAT results must remain in a separate provenance table and must not be ranked directly against the three methods evaluated on the common project split."
+  },
+  "interpretation_restrictions": [
+    "All three direct-comparison methods use identical queries, gallery and evaluator.",
+    "Their checkpoint training regimes differ, so accuracy differences do not isolate architecture.",
+    "Sample4Geo is zero-shot transfer from University-1652.",
+    "UltraVPR is zero-shot transfer to this project-defined SUES-200 split.",
+    "The local model is not official MobileGeo.",
+    "MobileGeo published MAT evaluation is not directly comparable to this common benchmark.",
+    "Retrieval results are not verified UAV pose estimates."
+  ],
+  "files": {
+    "overall_metrics_csv": "/content/drive/MyDrive/mobilegeo_project/results/common_benchmark/reports/final_three_method_common_metrics.csv",
+    "height_metrics_csv": "/content/drive/MyDrive/mobilegeo_project/results/common_benchmark/reports/final_three_method_height_metrics.csv",
+    "paired_query_results_csv": "/content/drive/MyDrive/mobilegeo_project/results/common_benchmark/rankings/final_three_method_paired_query_results.csv",
+    "report_md": "/content/drive/MyDrive/mobilegeo_project/results/common_benchmark/reports/final_three_method_comparison_report.md"
+  }
+}

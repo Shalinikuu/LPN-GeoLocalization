@@ -1,0 +1,24 @@
+{
+  "created_at_utc": "2026-08-08T21:12:07.978522+00:00",
+  "notebook": "06_keyframes_temporal_consensus",
+  "reason": "CELL2_EXACT_FLOAT_TOLERANCE_WAS_TOO_STRICT",
+  "model": "AdvancedEdgeGeoLPN_LOCAL_REIMPLEMENTATION",
+  "provenance": "LOCAL_REIMPLEMENTATION",
+  "phase4_saved_rank_metrics_consistent": true,
+  "phase4_source_max_metric_difference": 9.280770596475918e-17,
+  "phase4_source_max_mean_rank_difference": 2.2737367544323206e-13,
+  "l1_topk_counts_exact": true,
+  "l1_max_metric_absolute_difference": 6.830608838964691e-10,
+  "l1_max_equivalent_total_rank_sum_difference": 1.9999999994408881,
+  "tie_level_rank_tolerance_total_positions": 2.0001,
+  "l1_baseline_reproduced_tie_aware": true,
+  "interpretation": "NUMERICALLY_REPRODUCED_WITH_ONLY_NEGLIGIBLE_FLOATING_OR_TIE_ORDER_VARIATION",
+  "scientific_constraints": {
+    "results_modified": false,
+    "retrieval_metrics_recomputed_or_overwritten": false,
+    "verified_timestamp_claim_allowed": false,
+    "fps_claim_allowed": false,
+    "retrieval_is_verified_uav_pose": false,
+    "crs_status": "UNVERIFIED"
+  }
+}

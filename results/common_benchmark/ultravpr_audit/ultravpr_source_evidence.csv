@@ -1,0 +1,258 @@
+category,relative_path,line_number,line_text
+weights_reference,README.md,3,"<h3 align=""center""><a href=""https://ieeexplore.ieee.org/document/11091472"" target='_blank'>UltraVPR: Unsupervised Lightweight Rotation-Invariant Aerial Visual Place Recognition</a> </h3>"
+download_link,README.md,3,"<h3 align=""center""><a href=""https://ieeexplore.ieee.org/document/11091472"" target='_blank'>UltraVPR: Unsupervised Lightweight Rotation-Invariant Aerial Visual Place Recognition</a> </h3>"
+download_link,README.md,11,![image](https://github.com/cbbhuxx/UltraVPR/blob/main/img/example0.jpg)
+onnx_reference,README.md,14,- [✅] The ONNX model and its export code will be released.
+onnx_reference,README.md,16,"- The optimized ONNX export code enables the TensorRT model to run at approximately 44 Hz on the Jetson Orin NX, significantly surpassing the 14 Hz reported in the paper."
+weights_reference,README.md,18,- [ ] The model weights trained on a larger dataset will be released.
+download_link,README.md,34,You can download the **training data** from [Baidu Netdisk](https://pan.baidu.com/s/1ips8bresAVJqgzxVBQ86xg?pwd=5kf8) or [Tsinghua Cloud](https://cloud.tsinghua.edu.cn/d/68c3a4ed24cc40f1a7da/?p=%2Ftraining_data&mode=list).
+evaluation_reference,README.md,36,You can download the **test data** from here.
+vpair_reference,README.md,37,"[VPAir](https://github.com/AerVisLoc/vpair?tab=readme-ov-file),"
+download_link,README.md,37,"[VPAir](https://github.com/AerVisLoc/vpair?tab=readme-ov-file),"
+uav_visloc_reference,README.md,38,UAV-VisLoc (eval): [Baidu Netdisk](https://pan.baidu.com/s/1oF09pLUwQZB5lr1Rq6L0-g?pwd=kau2) or [Tsinghua cloud](https://cloud.tsinghua.edu.cn/d/2721a1f83cdf4718a52f/)
+evaluation_reference,README.md,38,UAV-VisLoc (eval): [Baidu Netdisk](https://pan.baidu.com/s/1oF09pLUwQZB5lr1Rq6L0-g?pwd=kau2) or [Tsinghua cloud](https://cloud.tsinghua.edu.cn/d/2721a1f83cdf4718a52f/)
+download_link,README.md,38,UAV-VisLoc (eval): [Baidu Netdisk](https://pan.baidu.com/s/1oF09pLUwQZB5lr1Rq6L0-g?pwd=kau2) or [Tsinghua cloud](https://cloud.tsinghua.edu.cn/d/2721a1f83cdf4718a52f/)
+uav_visloc_reference,README.md,41,[UAV-VisLoc](https://github.com/IntelliSensing/UAV-VisLoc)
+download_link,README.md,41,[UAV-VisLoc](https://github.com/IntelliSensing/UAV-VisLoc)
+weights_reference,README.md,45,## Weights
+weights_reference,README.md,47,**UltraVPR's weights**: [Baidu Netdisk](https://pan.baidu.com/s/1epVFLysy0WqGh0xUlpTEAA?pwd=1qdf) or [Tsinghua cloud](https://cloud.tsinghua.edu.cn/d/ea66ca1bbb334132bcd1/)
+download_link,README.md,47,**UltraVPR's weights**: [Baidu Netdisk](https://pan.baidu.com/s/1epVFLysy0WqGh0xUlpTEAA?pwd=1qdf) or [Tsinghua cloud](https://cloud.tsinghua.edu.cn/d/ea66ca1bbb334132bcd1/)
+weights_reference,README.md,50,"If you want to retrain the model, please first load the pre-trained weights of the backbone network. Relevant code is in utils.py."
+weights_reference,README.md,52,**E2ResNet's weights**: [Baidu Netdisk](https://pan.baidu.com/s/13dSCLUrmOH6QhkvlFlJyTg?pwd=ghvf) or [Tsinghua cloud](https://cloud.tsinghua.edu.cn/d/8b2b0ba8dcc44dab9908/)
+download_link,README.md,52,**E2ResNet's weights**: [Baidu Netdisk](https://pan.baidu.com/s/13dSCLUrmOH6QhkvlFlJyTg?pwd=ghvf) or [Tsinghua cloud](https://cloud.tsinghua.edu.cn/d/8b2b0ba8dcc44dab9908/)
+download_link,README.md,55,([Specific training parameters](https://github.com/cbbhuxx/UltraVPR/blob/main/models/backbones/README.md))
+evaluation_reference,README.md,68,## Eval
+vpair_reference,README.md,69,"If you want to test on VPAir, please run the following code:"
+evaluation_reference,README.md,69,"If you want to test on VPAir, please run the following code:"
+vpair_reference,README.md,71,python eval_VPAir.py
+evaluation_reference,README.md,71,python eval_VPAir.py
+uav_visloc_reference,README.md,74,"If you want to test on UAV-VisLoc, please run the following code:"
+evaluation_reference,README.md,74,"If you want to test on UAV-VisLoc, please run the following code:"
+uav_visloc_reference,README.md,76,python eval_UAV-VisLoc.py
+evaluation_reference,README.md,76,python eval_UAV-VisLoc.py
+download_link,README.md,82,- [NetVlad](https://github.com/Nanne/pytorch-NetVlad)
+download_link,README.md,83,- [ReDet](https://github.com/csuhan/ReDet)
+download_link,README.md,84,- [CosPlace](https://github.com/gmberton/CosPlace.git)
+download_link,README.md,87,"When using code within this repository, please refer the following [paper](https://ieeexplore.ieee.org/document/11091472) in your publications:"
+weights_reference,README.md,92,"title={UltraVPR: Unsupervised Lightweight Rotation- Invariant Aerial Visual Place Recognition},"
+vpair_reference,dataloader/aerialvl.py,25,test_db_dir = '/media/robot/CBBPS9/dataset/VPAir/reference_views/'
+evaluation_reference,dataloader/aerialvl.py,25,test_db_dir = '/media/robot/CBBPS9/dataset/VPAir/reference_views/'
+vpair_reference,dataloader/aerialvl.py,26,"test_q_dir = ""/media/robot/CBBPS9/dataset/VPAir/queries/"""
+evaluation_reference,dataloader/aerialvl.py,26,"test_q_dir = ""/media/robot/CBBPS9/dataset/VPAir/queries/"""
+input_size_reference,dataloader/aerialvl.py,32,"transforms.RandomResizedCrop(size=400, scale=(0.8, 1.0)),"
+input_size_reference,dataloader/aerialvl.py,37,"transforms.Resize((320, 320), interpolation=transforms.InterpolationMode.BICUBIC)"
+input_size_reference,dataloader/aerialvl.py,45,"transforms.Resize((300, 400), interpolation=transforms.InterpolationMode.BICUBIC)"
+input_size_reference,dataloader/aerialvl.py,53,"transforms.Resize((320, 320), interpolation=transforms.InterpolationMode.BICUBIC)"
+evaluation_reference,dataloader/aerialvl.py,66,"return ValDatasetFromStruct(root_dir=test_db_dir,"
+evaluation_reference,dataloader/aerialvl.py,70,"return ValDatasetFromStruct_(root_dir=test_q_dir,"
+evaluation_reference,dataloader/aerialvl.py,151,self.model.eval()
+evaluation_reference,eval_UAV-VisLoc.py,37,"""""""Dataset with images from database and queries, used for inference (testing and building cache)."
+evaluation_reference,eval_UAV-VisLoc.py,75,class InferencePipeline:
+evaluation_reference,eval_UAV-VisLoc.py,76,"def __init__(self, model, dataset, feature_dim, db_type, batch_size=1, num_workers=1, device='cuda'):"
+evaluation_reference,eval_UAV-VisLoc.py,79,self.feature_dim = feature_dim
+evaluation_reference,eval_UAV-VisLoc.py,94,if os.path.exists(f'./LOGS/global_descriptors_{split}_512_0deg.npy'):
+evaluation_reference,eval_UAV-VisLoc.py,95,"print(f""Skipping {split} features extraction, loading from cache"")"
+evaluation_reference,eval_UAV-VisLoc.py,96,return np.load(f'./LOGS/global_descriptors_{split}_512_0deg.npy')
+evaluation_reference,eval_UAV-VisLoc.py,100,"global_descriptors = np.zeros((len(self.dataset), self.feature_dim))"
+evaluation_reference,eval_UAV-VisLoc.py,101,"for batch in tqdm(self.dataloader, ncols=100, desc=f'Extracting {split} features'):"
+evaluation_reference,eval_UAV-VisLoc.py,105,# model inference
+evaluation_reference,eval_UAV-VisLoc.py,106,descriptors = self.model(imgs)
+evaluation_reference,eval_UAV-VisLoc.py,107,descriptors = descriptors.detach().cpu().numpy()
+evaluation_reference,eval_UAV-VisLoc.py,109,# add to global descriptors
+evaluation_reference,eval_UAV-VisLoc.py,110,"global_descriptors[np.array(indices), :] = descriptors"
+evaluation_reference,eval_UAV-VisLoc.py,112,# save global descriptors
+evaluation_reference,eval_UAV-VisLoc.py,114,"np.save(f'./LOGS/global_descriptors_{split}_512_0deg.npy', global_descriptors)"
+evaluation_reference,eval_UAV-VisLoc.py,115,return global_descriptors
+input_size_reference,eval_UAV-VisLoc.py,132,"tvf.Resize((266, 399), interpolation=tvf.InterpolationMode.BICUBIC),"
+model_loading_reference,eval_UAV-VisLoc.py,157,"state_dict = torch.load(ckpt_path, map_location='cpu')"
+model_loading_reference,eval_UAV-VisLoc.py,158,"model.load_state_dict(state_dict['state_dict'], strict=False)"
+model_loading_reference,eval_UAV-VisLoc.py,159,"# model.load_state_dict(state_dict, strict=False)"
+evaluation_reference,eval_UAV-VisLoc.py,161,model.eval()
+uav_visloc_reference,eval_UAV-VisLoc.py,243,query_path = '/media/robot/CBBPS9/dataset/custom_uav_visloc/custom/01/query'                    # path to query images folder path
+uav_visloc_reference,eval_UAV-VisLoc.py,244,datasets_path = '/media/robot/CBBPS9/dataset/custom_uav_visloc/custom/01/reference'
+weights_reference,eval_UAV-VisLoc.py,251,model = load_model('./runPath/e2resnet50_c8_se2gem_32/checkpoints/model_best.pth.tar')
+evaluation_reference,eval_UAV-VisLoc.py,253,# set up inference pipeline
+evaluation_reference,eval_UAV-VisLoc.py,254,"database_pipeline = InferencePipeline(model=model, dataset=database_dataset, feature_dim=256, db_type = 'db')"
+evaluation_reference,eval_UAV-VisLoc.py,255,"query_pipeline = InferencePipeline(model=model, dataset=query_dataset, feature_dim=256, db_type = 'query')"
+evaluation_reference,eval_UAV-VisLoc.py,257,# run inference
+evaluation_reference,eval_UAV-VisLoc.py,258,"db_global_descriptors = database_pipeline.run(split='db')  # shape: (num_db, feature_dim)"
+evaluation_reference,eval_UAV-VisLoc.py,259,"query_global_descriptors = query_pipeline.run(split='query')  # shape: (num_query, feature_dim)"
+evaluation_reference,eval_UAV-VisLoc.py,262,"top_k_matches = calculate_top_k(q_matrix=query_global_descriptors, db_matrix=db_global_descriptors, top_k=10)"
+evaluation_reference,eval_VPAir.py,19,"""""""Dataset with images from database and queries, used for inference (testing and building cache)."
+evaluation_reference,eval_VPAir.py,43,class InferencePipeline:
+evaluation_reference,eval_VPAir.py,44,"def __init__(self, model, dataset, feature_dim, batch_size=1, num_workers=1, device='cuda'):"
+evaluation_reference,eval_VPAir.py,47,self.feature_dim = feature_dim
+evaluation_reference,eval_VPAir.py,61,if os.path.exists(f'./LOGS/global_descriptors_{split}.npy'):
+evaluation_reference,eval_VPAir.py,62,"print(f""Skipping {split} features extraction, loading from cache"")"
+evaluation_reference,eval_VPAir.py,63,return np.load(f'./LOGS/global_descriptors_{split}.npy')
+evaluation_reference,eval_VPAir.py,67,"global_descriptors = np.zeros((len(self.dataset), self.feature_dim))"
+evaluation_reference,eval_VPAir.py,68,"for batch in tqdm(self.dataloader, ncols=100, desc=f'Extracting {split} features'):"
+evaluation_reference,eval_VPAir.py,71,descriptors = self.model(imgs)
+evaluation_reference,eval_VPAir.py,72,descriptors = descriptors.detach().cpu().numpy()
+evaluation_reference,eval_VPAir.py,73,# add to global descriptors
+evaluation_reference,eval_VPAir.py,74,"global_descriptors[np.array(indices), :] = descriptors"
+evaluation_reference,eval_VPAir.py,76,# save global descriptors
+evaluation_reference,eval_VPAir.py,77,"np.save(f'./LOGS/global_descriptors_{split}.npy', global_descriptors)"
+evaluation_reference,eval_VPAir.py,78,return global_descriptors
+input_size_reference,eval_VPAir.py,90,"tvf.Resize((300, 400), interpolation=tvf.InterpolationMode.BICUBIC),"
+model_loading_reference,eval_VPAir.py,113,"state_dict = torch.load(ckpt_path, map_location='cpu')"
+model_loading_reference,eval_VPAir.py,114,"model.load_state_dict(state_dict['state_dict'], strict=False)"
+model_loading_reference,eval_VPAir.py,115,"# model.load_state_dict(state_dict, strict=False)"
+evaluation_reference,eval_VPAir.py,117,model.eval()
+input_size_reference,eval_VPAir.py,150,"img_resize_size: Tuple = (400, 300)) -> None:"
+input_size_reference,eval_VPAir.py,156,"q_array = cv2.resize(q_array, img_resize_size, interpolation=cv2.INTER_CUBIC)"
+input_size_reference,eval_VPAir.py,169,"db_array = cv2.resize(db_array, img_resize_size, interpolation=cv2.INTER_CUBIC)"
+vpair_reference,eval_VPAir.py,205,query_path = '/media/robot/CBBPS9/dataset/VPAir/queries/'         # path to query images folder path
+vpair_reference,eval_VPAir.py,206,datasets_path = '/media/robot/CBBPS9/dataset/VPAir/reference_views/'      # path to database images folder path
+weights_reference,eval_VPAir.py,212,model = load_model('./runPath/e2resnet50_c8_se2gem_32/checkpoints/model_best.pth.tar')
+evaluation_reference,eval_VPAir.py,214,# set up inference pipeline
+evaluation_reference,eval_VPAir.py,215,"database_pipeline = InferencePipeline(model=model, dataset=database_dataset, feature_dim=256)"
+evaluation_reference,eval_VPAir.py,216,"query_pipeline = InferencePipeline(model=model, dataset=query_dataset, feature_dim=256)"
+evaluation_reference,eval_VPAir.py,218,# run inference
+evaluation_reference,eval_VPAir.py,219,"db_global_descriptors = database_pipeline.run(split='db')  # shape: (num_db, feature_dim)"
+evaluation_reference,eval_VPAir.py,220,"query_global_descriptors = query_pipeline.run(split='query')  # shape: (num_query, feature_dim)"
+evaluation_reference,eval_VPAir.py,223,"top_k_matches = calculate_top_k(q_matrix=query_global_descriptors, db_matrix=db_global_descriptors, top_k=10)"
+onnx_reference,export_ultravpr.py,11,# Import libraries for ONNX export and verification
+onnx_reference,export_ultravpr.py,12,import onnx
+onnx_reference,export_ultravpr.py,13,import onnxruntime
+onnx_reference,export_ultravpr.py,14,import onnxsim  # Import the onnx-simplifier library
+weights_reference,export_ultravpr.py,134,# Load pretrained weights
+model_loading_reference,export_ultravpr.py,136,"state_dict = torch.load(ckpt_path, map_location='cpu')"
+model_loading_reference,export_ultravpr.py,137,"model.load_state_dict(state_dict['state_dict'], strict=False)"
+evaluation_reference,export_ultravpr.py,140,model.eval()
+onnx_reference,export_ultravpr.py,175,# Helper function to convert a PyTorch tensor to a NumPy array for ONNX Runtime
+weights_reference,export_ultravpr.py,186,model_ckpt_path = '/media/cbbhuxx/UD210/my-paper-code/e2resnet50_c8_se2gem_32/checkpoints/model_best.pth.tar'
+onnx_reference,export_ultravpr.py,187,"onnx_export_path = ""./ultravpr_original.onnx"""
+onnx_reference,export_ultravpr.py,188,"onnx_simplified_export_path = ""./ultravpr_simplified.onnx"""
+weights_reference,export_ultravpr.py,191,# This function handles loading weights and converting the backbone
+evaluation_reference,export_ultravpr.py,193,"pytorch_model = UltraVPR(prepared_model.backbone, prepared_model.aggregator).eval().to(device)"
+evaluation_reference,export_ultravpr.py,200,# --- 4. Run Inference with the PyTorch Model ---
+onnx_reference,export_ultravpr.py,205,# --- 5. Export the Model to ONNX ---
+onnx_reference,export_ultravpr.py,206,"print(f""\n--- Exporting model to ONNX at {onnx_export_path} ---"")"
+onnx_reference,export_ultravpr.py,208,torch.onnx.export(
+onnx_reference,export_ultravpr.py,211,"onnx_export_path,"
+onnx_reference,export_ultravpr.py,217,"print(""ONNX export complete!"")"
+onnx_reference,export_ultravpr.py,219,# --- 6. Simplify the Exported ONNX Model ---
+onnx_reference,export_ultravpr.py,220,"print(f""\n--- Simplifying ONNX model ---"")"
+onnx_reference,export_ultravpr.py,222,onnx_model = onnx.load(onnx_export_path)
+onnx_reference,export_ultravpr.py,223,"model_simplified, check = onnxsim.simplify(onnx_model)"
+onnx_reference,export_ultravpr.py,224,"assert check, ""ONNX model simplification check failed."""
+onnx_reference,export_ultravpr.py,225,"onnx.save(model_simplified, onnx_simplified_export_path)"
+onnx_reference,export_ultravpr.py,226,"print(f""Simplified model saved to {onnx_simplified_export_path}"")"
+onnx_reference,export_ultravpr.py,228,"print(f""\n❌ FAILED: An error occurred during ONNX simplification: {e}"")"
+onnx_reference,export_ultravpr.py,231,# --- 7. Verify the SIMPLIFIED ONNX Model ---
+onnx_reference,export_ultravpr.py,232,"print(f""\n--- Verifying simplified ONNX model: {onnx_simplified_export_path} ---"")"
+onnx_reference,export_ultravpr.py,235,onnx_model_check = onnx.load(onnx_simplified_export_path)
+onnx_reference,export_ultravpr.py,236,onnx.checker.check_model(onnx_model_check)
+onnx_reference,export_ultravpr.py,237,"print(""ONNX model structure is valid."")"
+onnx_reference,export_ultravpr.py,239,# Create an ONNX Runtime inference session
+evaluation_reference,export_ultravpr.py,239,# Create an ONNX Runtime inference session
+onnx_reference,export_ultravpr.py,240,"ort_session = onnxruntime.InferenceSession(onnx_simplified_export_path, providers=['CPUExecutionProvider'])"
+evaluation_reference,export_ultravpr.py,240,"ort_session = onnxruntime.InferenceSession(onnx_simplified_export_path, providers=['CPUExecutionProvider'])"
+onnx_reference,export_ultravpr.py,242,# Prepare inputs for ONNX Runtime (must be NumPy arrays)
+onnx_reference,export_ultravpr.py,245,# Run inference with ONNX Runtime
+evaluation_reference,export_ultravpr.py,245,# Run inference with ONNX Runtime
+onnx_reference,export_ultravpr.py,247,onnx_output = ort_outputs[0]
+onnx_reference,export_ultravpr.py,249,"print(""ONNX model output shape:"", onnx_output.shape)"
+onnx_reference,export_ultravpr.py,251,# Compare the outputs of PyTorch and ONNX Runtime
+onnx_reference,export_ultravpr.py,253,"np.testing.assert_allclose(to_numpy(pytorch_output), onnx_output, rtol=1e-02, atol=1e-03)"
+evaluation_reference,export_ultravpr.py,253,"np.testing.assert_allclose(to_numpy(pytorch_output), onnx_output, rtol=1e-02, atol=1e-03)"
+onnx_reference,export_ultravpr.py,255,"print(""\n✅ SUCCESS: The simplified ONNX model's output matches the PyTorch model's output!"")"
+onnx_reference,export_ultravpr.py,258,"print(f""\n❌ FAILED: An error occurred during ONNX verification: {e}"")"
+evaluation_reference,load_dataset.py,16,"# print(""test number:"", len(whole_test_set))"
+evaluation_reference,load_dataset.py,22,"elif opt.mode.lower() == ""test"":"
+evaluation_reference,main.py,10,"from mode_type import test, train, classes"
+evaluation_reference,main.py,21,"parser.add_argument('--mode', type=str, default='train', help='Mode', choices=['train', 'test'])"
+evaluation_reference,main.py,31,"parser.add_argument('--cacheBatchSize', type=int, default=24, help='Batch size for caching and testing')"
+weights_reference,main.py,40,"parser.add_argument('--weightDecay', type=float, default=0.001, help='Weight decay for SGD.')"
+weights_reference,main.py,44,"parser.add_argument('--savePath', type=str, default='checkpoints',"
+weights_reference,main.py,45,help='Path to save checkpoints to in logdir. Default=checkpoints/')
+weights_reference,main.py,48,"parser.add_argument('--resume', type=str, default='', help='Path to load checkpoint from, for resuming training or testing.')"
+evaluation_reference,main.py,48,"parser.add_argument('--resume', type=str, default='', help='Path to load checkpoint from, for resuming training or testing.')"
+model_loading_reference,main.py,48,"parser.add_argument('--resume', type=str, default='', help='Path to load checkpoint from, for resuming training or testing.')"
+weights_reference,main.py,76,weight_decay=opt.weightDecay)
+evaluation_reference,main.py,83,if opt.mode.lower() == 'test':
+evaluation_reference,main.py,86,"print(""====> testing ..."")"
+evaluation_reference,main.py,87,"recalls = test.test(opt,"
+evaluation_reference,main.py,131,"recalls = test.test(opt,"
+weights_reference,main.py,143,"utils.save_checkpoint(opt,{"
+evaluation_reference,mode_type/classes.py,21,model.eval()
+evaluation_reference,mode_type/classes.py,22,"dbFeat = h5.create_dataset(""Descriptors"","
+evaluation_reference,mode_type/classes.py,42,del h5['Descriptors']
+evaluation_reference,mode_type/test.py,8,"def test(opt,model,test_set, val_set, device):"
+evaluation_reference,mode_type/test.py,9,"test_data_loader = DataLoader(dataset=test_set,"
+evaluation_reference,mode_type/test.py,16,model.eval()
+evaluation_reference,mode_type/test.py,25,"qFeat = np.empty((len(test_set), pool_size))"
+evaluation_reference,mode_type/test.py,34,"for iteration1, (input, indices) in enumerate(tqdm(test_data_loader, desc=""test_data:"", unit=""item"", ncols=80), 1):"
+evaluation_reference,mode_type/test.py,40,"del test_data_loader, val_data_loader"
+evaluation_reference,mode_type/test.py,58,for i in range(test_set.num):
+evaluation_reference,mode_type/test.py,60,if(abs(test_set.cc_index[i]-val_set.cc_index[predictions[i][k]]) <= 1):
+evaluation_reference,mode_type/test.py,63,recall_at_n = correct_at_n / test_set.num
+download_link,models/aggregators/se2gem.py,8,"""""""Implementation of GeM as in https://github.com/filipradenovic/cnnimageretrieval-pytorch"
+download_link,models/aggregators/se2gem.py,20,CosPlace aggregation layer as implemented in https://github.com/gmberton/CosPlace/blob/main/model/network.py
+evaluation_reference,models/aggregators/se2gem.py,23,out_dim: dimension of the output descriptor
+weights_reference,models/backbones/README.md,3,"For the training of the backbone network, we used two NVIDIA L40S GPUs, each with 48GB of GPU memory. The training was conducted using the Stochastic Gradient Descent (SGD) optimizer with an initial learning rate of 0.1, momentum of 0.9, and L2 weight decay (regularization) coefficient of 1 × $10^{-4}$. The model was trained for a total of 100 epochs, with the learning rate being decayed by a factor of 0.1 (gamma = 0.1) at the end of the 30th, 60th, and 90th epochs. The input image resolution was resized to 224×224, with a batch size of 256. The entire training process completed in  approximately 24 hours."
+input_size_reference,models/backbones/README.md,3,"For the training of the backbone network, we used two NVIDIA L40S GPUs, each with 48GB of GPU memory. The training was conducted using the Stochastic Gradient Descent (SGD) optimizer with an initial learning rate of 0.1, momentum of 0.9, and L2 weight decay (regularization) coefficient of 1 × $10^{-4}$. The model was trained for a total of 100 epochs, with the learning rate being decayed by a factor of 0.1 (gamma = 0.1) at the end of the 30th, 60th, and 90th epochs. The input image resolution was resized to 224×224, with a batch size of 256. The entire training process completed in  approximately 24 hours."
+weights_reference,models/backbones/base_backbone.py,5,from mmcv.runner import load_checkpoint
+weights_reference,models/backbones/base_backbone.py,20,"def init_weights(self, pretrained=None):"
+weights_reference,models/backbones/base_backbone.py,21,"""""""Init backbone weights"
+weights_reference,models/backbones/base_backbone.py,24,"pretrained (str | None): If pretrained is a string, then it"
+weights_reference,models/backbones/base_backbone.py,25,initializes backbone weights by loading the pretrained
+weights_reference,models/backbones/base_backbone.py,26,"checkpoint. If pretrained is None, then it follows default"
+weights_reference,models/backbones/base_backbone.py,29,"if isinstance(pretrained, str):"
+weights_reference,models/backbones/base_backbone.py,31,"load_checkpoint(self, pretrained, strict=False, logger=logger)"
+weights_reference,models/backbones/base_backbone.py,32,elif pretrained is None:
+weights_reference,models/backbones/base_backbone.py,36,raise TypeError('pretrained must be a str or None.'
+weights_reference,models/backbones/base_backbone.py,37,f' But received {type(pretrained)}.')
+evaluation_reference,models/backbones/base_backbone.py,53,mode (bool): Whether it is train_mode or test_mode
+download_link,models/backbones/e2resnet.py,3,Implementation of ReResNet as in https://github.com/csuhan/ReDet.git
+weights_reference,models/backbones/e2resnet.py,10,import torch.utils.checkpoint as cp
+evaluation_reference,models/backbones/e2resnet.py,22,"def regular_feature_type(gspace: gspaces.GSpace, planes: int, fixparams: bool = False):"
+evaluation_reference,models/backbones/e2resnet.py,23,""""""" build a regular feature map with the specified number of channels"""""""
+evaluation_reference,models/backbones/e2resnet.py,37,"def trivial_feature_type(gspace: gspaces.GSpace, planes: int, fixparams: bool = False):"
+evaluation_reference,models/backbones/e2resnet.py,38,""""""" build a trivial feature map with the specified number of channels"""""""
+evaluation_reference,models/backbones/e2resnet.py,48,"""trivial"": trivial_feature_type,"
+evaluation_reference,models/backbones/e2resnet.py,49,"""regular"": regular_feature_type,"
+evaluation_reference,models/backbones/e2resnet.py,79,"def build_norm_layer(cfg, gspace, num_features, postfix=''):"
+evaluation_reference,models/backbones/e2resnet.py,80,"in_type = FIELD_TYPE['regular'](gspace, num_features)"
+weights_reference,models/backbones/e2resnet.py,172,"out = cp.checkpoint(_inner_forward, x)"
+evaluation_reference,models/backbones/e2resnet.py,180,"def evaluate_output_shape(self, input_shape):"
+evaluation_reference,models/backbones/e2resnet.py,184,return self.downsample.evaluate_output_shape(input_shape)
+evaluation_reference,models/backbones/e2resnet.py,189,self.eval()
+weights_reference,models/backbones/e2resnet.py,312,"out = cp.checkpoint(_inner_forward, x)"
+evaluation_reference,models/backbones/e2resnet.py,320,"def evaluate_output_shape(self, input_shape):"
+evaluation_reference,models/backbones/e2resnet.py,324,return self.downsample.evaluate_output_shape(input_shape)
+evaluation_reference,models/backbones/e2resnet.py,329,self.eval()
+evaluation_reference,models/backbones/e2resnet.py,424,self.eval()
+evaluation_reference,models/backbones/e2resnet.py,496,self.with_geotensor = with_geotensor  # just for testing equivariance
+evaluation_reference,models/backbones/e2resnet.py,564,self.norm1.eval()
+evaluation_reference,models/backbones/e2resnet.py,571,m.eval()
+weights_reference,models/backbones/e2resnet.py,575,"def init_weights(self, pretrained=None):"
+weights_reference,models/backbones/e2resnet.py,576,"super(E2ResNet, self).init_weights(pretrained)"
+weights_reference,models/backbones/e2resnet.py,577,if pretrained is None:
+evaluation_reference,models/backbones/e2resnet.py,616,# trick: eval have effect on BatchNorm only
+evaluation_reference,models/backbones/e2resnet.py,618,m.eval()
+evaluation_reference,models/backbones/e2resnet.py,621,self.eval()
+evaluation_reference,models/upscale/vlad.py,28,"feature_x = gem_des_flatten.permute(0, 2, 1)"
+evaluation_reference,models/upscale/vlad.py,29,"dist_matrix = torch.pairwise_distance(feature_x, self.centroids.unsqueeze(0))"
+weights_reference,utils.py,38,ckpt_path = './pretrain/e2_resnet_50_c8_rot_ours/epoch_100.pth'
+weights_reference,utils.py,39,"checkpoint = torch.load(ckpt_path, map_location='cpu')"
+model_loading_reference,utils.py,39,"checkpoint = torch.load(ckpt_path, map_location='cpu')"
+weights_reference,utils.py,40,vpr_model_state_dict = checkpoint['state_dict']
+model_loading_reference,utils.py,42,"backbone.load_state_dict(backbone_state_dict, strict=False)"
+weights_reference,utils.py,47,ckpt_path = './pretrain/e2_resnet_50_c16_rot_ours/epoch_100.pth'
+weights_reference,utils.py,48,"checkpoint = torch.load(ckpt_path, map_location='cpu')"
+model_loading_reference,utils.py,48,"checkpoint = torch.load(ckpt_path, map_location='cpu')"
+weights_reference,utils.py,49,vpr_model_state_dict = checkpoint['state_dict']
+model_loading_reference,utils.py,51,"backbone.load_state_dict(backbone_state_dict, strict=False)"
+model_loading_reference,utils.py,78,if opt.resume:
+weights_reference,utils.py,79,"resume_ckpt = join(opt.resume, 'checkpoints', 'model_best.pth.tar')"
+model_loading_reference,utils.py,79,"resume_ckpt = join(opt.resume, 'checkpoints', 'model_best.pth.tar')"
+weights_reference,utils.py,80,"checkpoint = torch.load(resume_ckpt, map_location=lambda storage, loc: storage)"
+model_loading_reference,utils.py,80,"checkpoint = torch.load(resume_ckpt, map_location=lambda storage, loc: storage)"
+weights_reference,utils.py,81,"model.load_state_dict(checkpoint['state_dict'], strict=False)"
+model_loading_reference,utils.py,81,"model.load_state_dict(checkpoint['state_dict'], strict=False)"
+weights_reference,utils.py,82,"print(""=> loaded checkpoint '{}'"".format(resume_ckpt))"
+model_loading_reference,utils.py,82,"print(""=> loaded checkpoint '{}'"".format(resume_ckpt))"
+weights_reference,utils.py,86,"def save_checkpoint(opt,state, is_best, filename='checkpoint.pth.tar'):"
+weights_reference,utils.py,90,"shutil.copyfile(model_out_path, join(opt.savePath, 'model_best.pth.tar'))"

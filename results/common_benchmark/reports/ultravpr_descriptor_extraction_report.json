@@ -1,0 +1,68 @@
+{
+  "created_at_utc": "2026-08-07T07:36:32.924925+00:00",
+  "method": "UltraVPR",
+  "repository_commit": "e8456de13661e7d7584396c9ac3610ec020d0aaf",
+  "checkpoint_path": "/content/drive/MyDrive/mobilegeo_project/checkpoints/ultravpr/model_best.pth.tar",
+  "checkpoint_loading": "OFFICIAL_STRICT_FALSE",
+  "architecture": "E2ResNet50_orientation8_se2gem",
+  "descriptor_dimension": 256,
+  "input_size": [
+    300,
+    400
+  ],
+  "descriptor_normalization": "L2",
+  "preprocessing": {
+    "order": [
+      "ToTensor",
+      "ImageNet_Normalize",
+      "Resize"
+    ],
+    "mean": [
+      0.485,
+      0.456,
+      0.406
+    ],
+    "std": [
+      0.229,
+      0.224,
+      0.225
+    ],
+    "interpolation": "BICUBIC"
+  },
+  "provenance_label": "OFFICIAL_ULTRAVPR_CHECKPOINT_ZERO_SHOT_TRANSFER_TO_PROJECT_SUES200_SPLIT",
+  "official_ultravpr_sues200_result": false,
+  "benchmark_protocol": "PROJECT_DEFINED_LOCATION_DISJOINT_60_20_20",
+  "gallery": {
+    "count": 40,
+    "descriptor_shape": [
+      40,
+      256
+    ],
+    "embedding_file": "/content/drive/MyDrive/mobilegeo_project/results/common_benchmark/embeddings/ultravpr_sues200_test_gallery_embeddings.npz",
+    "timing": {
+      "image_count": 40,
+      "batch_size": 8,
+      "inference_seconds": 0.5500781489998872,
+      "inference_ms_per_image": 13.751953724997179,
+      "end_to_end_seconds": 14.46914446400001,
+      "end_to_end_ms_per_image": 361.72861160000025
+    }
+  },
+  "queries": {
+    "count": 8000,
+    "descriptor_shape": [
+      8000,
+      256
+    ],
+    "embedding_file": "/content/drive/MyDrive/mobilegeo_project/results/common_benchmark/embeddings/ultravpr_sues200_test_query_embeddings.npz",
+    "timing": {
+      "image_count": 8000,
+      "batch_size": 8,
+      "inference_seconds": 99.13278016100139,
+      "inference_ms_per_image": 12.391597520125176,
+      "end_to_end_seconds": 1237.093590789,
+      "end_to_end_ms_per_image": 154.636698848625
+    }
+  },
+  "timing_interpretation": "BATCHED_COLAB_RUNTIME_MEASUREMENT_NOT_JETSON_DEPLOYMENT_LATENCY"
+}

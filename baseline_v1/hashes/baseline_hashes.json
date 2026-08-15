@@ -1,0 +1,37 @@
+[
+  {
+    "file": "baseline_provenance.json",
+    "size_bytes": 324,
+    "sha256": "c496bff3ac8a092cebb4e5fc41b9df3bc80b3d8c901de3b8d4c0536dac08d62d"
+  },
+  {
+    "file": "checkpoint/AdvancedEdgeGeoLPN_LOCAL_REIMPLEMENTATION.pth",
+    "size_bytes": 19973165,
+    "sha256": "adc64177582638690b841c1be390b7d05dfb27f4d2001b3d52fb74455020b807"
+  },
+  {
+    "file": "outputs/mobilegeo_complete_outputs.zip",
+    "size_bytes": 22985854,
+    "sha256": "eb97d56b8ce74c4750256bc121c3c98fd4fd3cf153ac33e3fbd5fadc850fccea"
+  },
+  {
+    "file": "outputs/retrieval_metrics_smoke_test.json",
+    "size_bytes": 1116,
+    "sha256": "7f905180e2dd9f39c2fe693c313980620ae8b1906f05801b89db155f5aed2323"
+  },
+  {
+    "file": "outputs/retrieval_rankings_smoke_test.csv",
+    "size_bytes": 2501425,
+    "sha256": "ccf1169b29691e950fabb86750bb8ffb89954ad33a5e8ccc4154a58afbf4076a"
+  },
+  {
+    "file": "manifests/frame_manifest_smoke_test.csv",
+    "size_bytes": 1442080,
+    "sha256": "b31541e3c04dc7f6009d250f180f5fec972f9a914935102f95841804d7541e76"
+  },
+  {
+    "file": "manifests/tile_manifest_smoke_test.csv",
+    "size_bytes": 35047,
+    "sha256": "00013ea596744ec2259edf8fc5949a45a9f78c2eae2d680dde853a952fee8a1d"
+  }
+]

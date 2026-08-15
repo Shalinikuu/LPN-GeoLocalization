@@ -1,0 +1,41 @@
+{
+  "model_name": "AdvancedEdgeGeoLPN_LOCAL_REIMPLEMENTATION",
+  "provenance_label": "LOCAL_REIMPLEMENTATION",
+  "benchmark_protocol": "PROJECT_DEFINED_LOCATION_DISJOINT_60_20_20",
+  "input_size": [
+    224,
+    224
+  ],
+  "preprocessing": "PROVISIONAL_IMAGENET_NORMALIZATION",
+  "descriptor_dimension": 2048,
+  "gallery": {
+    "dataset_name": "test_gallery",
+    "image_count": 40,
+    "batch_size": 64,
+    "device": "cuda",
+    "descriptor_dimension": 2048,
+    "total_end_to_end_seconds": 4.291485130000183,
+    "inference_only_seconds": 0.2928242340003635,
+    "end_to_end_ms_per_image": 107.28712825000457,
+    "inference_ms_per_image": 7.320605850009088,
+    "descriptor_norm_mean": 1.0,
+    "descriptor_norm_std": 3.264680970005429e-08
+  },
+  "queries": {
+    "dataset_name": "test_queries",
+    "image_count": 8000,
+    "batch_size": 64,
+    "device": "cuda",
+    "descriptor_dimension": 2048,
+    "total_end_to_end_seconds": 1271.2300367989997,
+    "inference_only_seconds": 6.8454329939913805,
+    "end_to_end_ms_per_image": 158.90375459987496,
+    "inference_ms_per_image": 0.8556791242489226,
+    "descriptor_norm_mean": 1.0,
+    "descriptor_norm_std": 4.072136050581321e-08
+  },
+  "gallery_embedding_file": "/content/drive/MyDrive/mobilegeo_project/results/sues200_corrected/embeddings/sues200_test_gallery_embeddings.npz",
+  "gallery_embedding_sha256": "62201afa0a11ec7fef3459c5c207f1b6bb621a45a20e21712259d7ec1eb5734c",
+  "query_embedding_file": "/content/drive/MyDrive/mobilegeo_project/results/sues200_corrected/embeddings/sues200_test_query_embeddings.npz",
+  "query_embedding_sha256": "5b489ef438159a083987de0c0ae7fe2daffe787c6261d897994d36f0ede5e0ce"
+}

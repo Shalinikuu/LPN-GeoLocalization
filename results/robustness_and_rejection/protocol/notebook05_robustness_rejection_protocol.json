@@ -1,0 +1,54 @@
+{
+  "created_at_utc": "2026-08-08T20:48:09.847606+00:00",
+  "notebook": "05_robustness_and_rejection",
+  "model": "AdvancedEdgeGeoLPN_LOCAL_REIMPLEMENTATION",
+  "model_provenance": "LOCAL_REIMPLEMENTATION",
+  "source_benchmark": "PROJECT_DEFINED_VPS_LEAKAGE_SAFE_SCALE_CONTROLLED_RETRIEVAL",
+  "clean_baseline": {
+    "query_scale_trials": 27972,
+    "macro_R@1": 0.0005005005005004667,
+    "macro_R@5": 0.0021092521092520586,
+    "macro_R@10": 0.004182754182754133,
+    "macro_mAP": 0.003937865287340834,
+    "macro_mean_positive_rank": 1088.0505148005147,
+    "top1_success_count": 14,
+    "top5_success_count": 59,
+    "top10_success_count": 117,
+    "positive_beats_random_negative_probability": 0.5333207091019591,
+    "descriptor_collapse_detected": false,
+    "near_chance_clean_retrieval": true
+  },
+  "random_reference": {
+    "R@1": 0.000429000429000429,
+    "R@5": 0.002145002145002145,
+    "R@10": 0.00429000429000429,
+    "expected_top1_successes": 12.0,
+    "expected_top5_successes": 59.99999999999999,
+    "expected_top10_successes": 119.99999999999999
+  },
+  "robustness_mode": "DESCRIPTOR_STABILITY_AND_REJECTION_DIAGNOSTICS",
+  "primary_robustness_targets": [
+    "descriptor_cosine_stability",
+    "clean_to_corrupted_similarity_drift",
+    "positive_rank_drift",
+    "top1_identity_stability",
+    "confidence_margin_drift"
+  ],
+  "accuracy_degradation_primary_claim_allowed": false,
+  "rejection": {
+    "status": "DESCRIPTIVE_ONLY_INSUFFICIENT_CLEAN_TOP1_SUCCESSES_FOR_STABLE_CALIBRATION",
+    "stable_top1_calibration_available": false,
+    "minimum_successes_required_by_project_rule": 100,
+    "clean_top1_successes_available": 14,
+    "allowed_use": "DESCRIPTIVE_CONFIDENCE_AND_COVERAGE_ANALYSIS",
+    "deployment_threshold_claim_allowed": false
+  },
+  "reporting_constraints": {
+    "official_mobilegeo_result": false,
+    "crs_status": "UNVERIFIED",
+    "wgs84_claim_allowed": false,
+    "meter_level_error_claim_allowed": false,
+    "retrieval_is_verified_uav_pose": false,
+    "jetson_latency_claim_allowed_from_colab": false
+  }
+}

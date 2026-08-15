@@ -1,0 +1,41 @@
+{
+  "created_at_utc": "2026-08-08T19:52:05.633615+00:00",
+  "source_archive": "/content/drive/MyDrive/vps_dataset_archive.zip",
+  "source_mode": "ZIP_CENTRAL_DIRECTORY_AND_DIRECT_METADATA_READ_NO_FULL_EXTRACTION",
+  "archive_file_count": 63816,
+  "gps_info_count": 2680,
+  "labels_json_count": 3520,
+  "valid_gps_sample_count": 2680,
+  "georeferenced_satellite_record_count": 32160,
+  "samples_with_labels": 2680,
+  "samples_without_labels": 0,
+  "label_validation_record_count": 32160,
+  "all_uav_coordinates_inside_bounds": true,
+  "all_referenced_satellite_images_found": false,
+  "maximum_pixel_roundtrip_error_px": 2.0,
+  "maximum_center_distribution_error": 1.2061796006435088e-11,
+  "pixel_validation_pass": false,
+  "normalized_coordinate_validation_pass": true,
+  "schema_internal_consistency": false,
+  "samples_with_exactly_one_uav_candidate_image": 0,
+  "samples_with_zero_uav_candidate_images": 2680,
+  "samples_with_multiple_uav_candidate_images": 0,
+  "metadata_error_count": 0,
+  "coordinate_interpretation": {
+    "E": "EAST_LONGITUDE_LIKE_GEOGRAPHIC_DEGREES",
+    "N": "NORTH_LATITUDE_LIKE_GEOGRAPHIC_DEGREES"
+  },
+  "crs_status": "UNVERIFIED",
+  "wgs84_claim_allowed": false,
+  "metric_distance_claim_status": "BLOCKED_UNTIL_CRS_PROVENANCE_VERIFIED",
+  "nominal_level_token_policy": "PARSED_FROM_SAMPLE_NAME_ONLY_NOT_CLAIMED_AS_VERIFIED_AGL_OR_MSL",
+  "retrieval_policy": "RETRIEVAL_RESULT_IS_NOT_VERIFIED_UAV_POSE",
+  "runtime_seconds": 205.9652726650238,
+  "outputs": {
+    "georeference_manifest": "/content/drive/MyDrive/mobilegeo_project/results/georeferenced_benchmark/manifests/vps_archive_full_georeference_manifest.csv",
+    "sample_manifest": "/content/drive/MyDrive/mobilegeo_project/results/georeferenced_benchmark/manifests/vps_archive_uav_sample_manifest.csv",
+    "partition_summary": "/content/drive/MyDrive/mobilegeo_project/results/georeferenced_benchmark/audit/vps_archive_partition_summary.csv",
+    "site_summary": "/content/drive/MyDrive/mobilegeo_project/results/georeferenced_benchmark/audit/vps_archive_site_summary.csv",
+    "metadata_errors": "/content/drive/MyDrive/mobilegeo_project/results/georeferenced_benchmark/audit/vps_archive_metadata_errors.csv"
+  }
+}

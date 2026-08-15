@@ -1,0 +1,119 @@
+{
+  "created_at_utc": "2026-08-08T20:55:38.774947+00:00",
+  "notebook": "05_robustness_and_rejection",
+  "model": "AdvancedEdgeGeoLPN_LOCAL_REIMPLEMENTATION",
+  "provenance": "LOCAL_REIMPLEMENTATION",
+  "protocol_mode": "DESCRIPTOR_STABILITY_AND_REJECTION_DIAGNOSTICS",
+  "clean_baseline_status": "NEAR_CHANCE_RETRIEVAL",
+  "query_count": 2331,
+  "gallery_count_per_scale": 2331,
+  "scale_count": 12,
+  "corruption_condition_count": 10,
+  "corruptions": [
+    {
+      "name": "blur_mild",
+      "family": "gaussian_blur",
+      "severity": 1,
+      "radius": 1.5
+    },
+    {
+      "name": "blur_strong",
+      "family": "gaussian_blur",
+      "severity": 2,
+      "radius": 3.0
+    },
+    {
+      "name": "brightness_mild",
+      "family": "brightness",
+      "severity": 1,
+      "factor": 0.7
+    },
+    {
+      "name": "brightness_strong",
+      "family": "brightness",
+      "severity": 2,
+      "factor": 0.4
+    },
+    {
+      "name": "contrast_mild",
+      "family": "contrast",
+      "severity": 1,
+      "factor": 0.65
+    },
+    {
+      "name": "contrast_strong",
+      "family": "contrast",
+      "severity": 2,
+      "factor": 0.35
+    },
+    {
+      "name": "jpeg_mild",
+      "family": "jpeg",
+      "severity": 1,
+      "quality": 50
+    },
+    {
+      "name": "jpeg_strong",
+      "family": "jpeg",
+      "severity": 2,
+      "quality": 20
+    },
+    {
+      "name": "noise_mild",
+      "family": "gaussian_noise",
+      "severity": 1,
+      "sigma": 0.03
+    },
+    {
+      "name": "noise_strong",
+      "family": "gaussian_noise",
+      "severity": 2,
+      "sigma": 0.08
+    }
+  ],
+  "severity_consistency_checks": {
+    "brightness": {
+      "strong_cosine_not_higher_than_mild": true,
+      "strong_l2_not_lower_than_mild": true
+    },
+    "contrast": {
+      "strong_cosine_not_higher_than_mild": true,
+      "strong_l2_not_lower_than_mild": true
+    },
+    "gaussian_blur": {
+      "strong_cosine_not_higher_than_mild": true,
+      "strong_l2_not_lower_than_mild": true
+    },
+    "gaussian_noise": {
+      "strong_cosine_not_higher_than_mild": true,
+      "strong_l2_not_lower_than_mild": true
+    },
+    "jpeg": {
+      "strong_cosine_not_higher_than_mild": true,
+      "strong_l2_not_lower_than_mild": true
+    }
+  },
+  "all_severity_consistency_checks_pass": true,
+  "primary_metrics": [
+    "clean_corrupted_descriptor_cosine",
+    "descriptor_l2_drift",
+    "top1_identity_stability",
+    "positive_rank_drift",
+    "positive_rank_absolute_drift",
+    "confidence_margin_drift"
+  ],
+  "retrieval_accuracy_metrics_status": "DESCRIPTIVE_ONLY_BECAUSE_CLEAN_BASELINE_IS_NEAR_CHANCE",
+  "accuracy_degradation_primary_claim_allowed": false,
+  "deployment_rejection_threshold_claim_allowed": false,
+  "runtime_environment": "GOOGLE_COLAB_NOT_JETSON_ORIN_NANO",
+  "crs_status": "UNVERIFIED",
+  "wgs84_claim_allowed": false,
+  "meter_level_geodetic_error_claim_allowed": false,
+  "retrieval_is_verified_uav_pose": false,
+  "outputs": {
+    "descriptor_stability_csv": "/content/drive/MyDrive/mobilegeo_project/results/robustness_and_rejection/reports/vps_corruption_descriptor_stability.csv",
+    "scale_stability_csv": "/content/drive/MyDrive/mobilegeo_project/results/robustness_and_rejection/reports/vps_corruption_retrieval_stability_by_scale.csv",
+    "macro_stability_csv": "/content/drive/MyDrive/mobilegeo_project/results/robustness_and_rejection/reports/vps_corruption_macro_stability.csv",
+    "corrupted_embedding_root": "/content/drive/MyDrive/mobilegeo_project/results/robustness_and_rejection/embeddings"
+  }
+}

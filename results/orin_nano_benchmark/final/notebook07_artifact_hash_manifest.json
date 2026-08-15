@@ -1,0 +1,85 @@
+{
+  "created_at_utc": "2026-08-09T06:43:18.047124+00:00",
+  "notebook": "07_orin_nano_benchmark",
+  "status": "REFERENCE_HOST_PREPARATION_COMPLETE",
+  "reference_host_metadata": {
+    "machine_readable_gpu_recovered": false,
+    "machine_readable_gpu": null,
+    "console_reported_gpu": "Tesla T4",
+    "console_reported_compute_capability": "7.5",
+    "provenance": "USER_PROVIDED_NOTEBOOK07_CELL1_CONSOLE_OUTPUT"
+  },
+  "deployment_zip_sha256": "d62c1aff79890a45569ac5464ec8a91ba0b317f3eb45212d23b22eb3b5862a2f",
+  "artifacts": {
+    "hardware_protocol": {
+      "path": "/content/drive/MyDrive/mobilegeo_project/results/orin_nano_benchmark/protocol/notebook07_hardware_benchmark_protocol.json",
+      "bytes": 2791,
+      "sha256": "01aa224dbbca2b2bb40c026753eb093437b26caa99e9c600ecc12265ad7c9a68"
+    },
+    "hardware_audit": {
+      "path": "/content/drive/MyDrive/mobilegeo_project/results/orin_nano_benchmark/audit/notebook07_hardware_eligibility_audit.json",
+      "bytes": 1059,
+      "sha256": "4cbcff57e06c34dc557467383bbb37c02481c5c147ebc1f0de57a0678c8f0ad8"
+    },
+    "model_export_audit": {
+      "path": "/content/drive/MyDrive/mobilegeo_project/results/orin_nano_benchmark/audit/notebook07_model_export_validation.json",
+      "bytes": 2028,
+      "sha256": "b797503e81913381a4bd4d80242745a6461dff327f02dc4402fc23d3b1724a7b"
+    },
+    "package_audit": {
+      "path": "/content/drive/MyDrive/mobilegeo_project/results/orin_nano_benchmark/audit/notebook07_orin_package_audit.json",
+      "bytes": 1346,
+      "sha256": "ea760c1edd04b59942f5ebb6573acec151bf793d0d0e7c42ed1dc8a589748135"
+    },
+    "console_metadata_audit": {
+      "path": "/content/drive/MyDrive/mobilegeo_project/results/orin_nano_benchmark/audit/notebook07_reference_host_console_metadata_audit.json",
+      "bytes": 1047,
+      "sha256": "31d26afe248d9d74db288e3d3088dc8aca8224fcb932088902265d4ccf0ef7c1"
+    },
+    "deployment_model_manifest": {
+      "path": "/content/drive/MyDrive/mobilegeo_project/results/orin_nano_benchmark/orin_nano_package/deployment_model_manifest.json",
+      "bytes": 2020,
+      "sha256": "125a0e0455bf0da9385250809ae05020ce2cdf295a243282b10f46ff88f75e50"
+    },
+    "torchscript": {
+      "path": "/content/drive/MyDrive/mobilegeo_project/results/orin_nano_benchmark/orin_nano_package/AdvancedEdgeGeoLPN_LOCAL_REIMPLEMENTATION_torchscript.pt",
+      "bytes": 19763195,
+      "sha256": "b2de023d5aa71ef2013840b22945d1629b9739eb419feccd49b35c726004a02f"
+    },
+    "benchmark_script": {
+      "path": "/content/drive/MyDrive/mobilegeo_project/results/orin_nano_benchmark/orin_nano_package/benchmark_orin_nano.py",
+      "bytes": 12028,
+      "sha256": "9069f9337cdcf6ad2e183bf281368db9be73fefa5e2c74c01944cc262b824e65"
+    },
+    "environment_probe": {
+      "path": "/content/drive/MyDrive/mobilegeo_project/results/orin_nano_benchmark/orin_nano_package/probe_orin_environment.py",
+      "bytes": 2392,
+      "sha256": "b85b4426ce92c440d4c962e56a2240464934bfbe530e7b33e8628707124cf116"
+    },
+    "model_source": {
+      "path": "/content/drive/MyDrive/mobilegeo_project/results/orin_nano_benchmark/orin_nano_package/model_definition.py",
+      "bytes": 1113,
+      "sha256": "e8afe951443b1cdd1d7adcc7bc5c52e981c678840634174a5ac4ec1af253b7bc"
+    },
+    "readme": {
+      "path": "/content/drive/MyDrive/mobilegeo_project/results/orin_nano_benchmark/orin_nano_package/README.md",
+      "bytes": 1705,
+      "sha256": "146da8503a2a1df8952af943643a193530ec13d14cf5590b6a543538dd458baa"
+    },
+    "deployment_zip": {
+      "path": "/content/drive/MyDrive/mobilegeo_project/results/orin_nano_benchmark/final/orin_nano_deployment_benchmark_package.zip",
+      "bytes": 18310980,
+      "sha256": "d62c1aff79890a45569ac5464ec8a91ba0b317f3eb45212d23b22eb3b5862a2f"
+    },
+    "completion_manifest": {
+      "path": "/content/drive/MyDrive/mobilegeo_project/results/orin_nano_benchmark/final/notebook07_completion_manifest.json",
+      "bytes": 4486,
+      "sha256": "361814797226fed11136ade0ef531a6caf5a66f71afe8d6b65e396418c1f6d2d"
+    },
+    "final_report": {
+      "path": "/content/drive/MyDrive/mobilegeo_project/results/orin_nano_benchmark/final/notebook07_final_report.md",
+      "bytes": 2934,
+      "sha256": "ef000cf948c8f4e856d0333c1e0020fa91362f416d74e105a0cfe65f6323453b"
+    }
+  }
+}

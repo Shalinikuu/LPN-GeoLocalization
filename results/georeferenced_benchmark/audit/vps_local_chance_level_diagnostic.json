@@ -1,0 +1,36 @@
+{
+  "created_at_utc": "2026-08-08T20:28:44.604843+00:00",
+  "model": "AdvancedEdgeGeoLPN_LOCAL_REIMPLEMENTATION",
+  "provenance": "LOCAL_REIMPLEMENTATION",
+  "query_count_per_scale": 2331,
+  "random_chance": {
+    "R@1": 0.000429000429000429,
+    "R@5": 0.002145002145002145,
+    "R@10": 0.00429000429000429,
+    "expected_mAP_MRR": 0.0035742096906113295,
+    "expected_mean_rank": 1166.0,
+    "pairwise_positive_vs_random_negative": 0.5
+  },
+  "observed_macro": {
+    "R@1": 0.0005005005005004667,
+    "R@5": 0.0021092521092520586,
+    "R@10": 0.004182754182754133,
+    "mAP": 0.003937865287340834,
+    "mean_positive_rank": 1088.0505148005147,
+    "positive_beats_random_negative_probability": 0.5333207091019591,
+    "effect_size_vs_random_negative": 0.1006553332811257,
+    "normalized_rank_gain": 0.06690942935578124
+  },
+  "descriptor_diversity": {
+    "query_unique_rounded_5dp": 2331,
+    "gallery_unique_rounded_5dp": 27972,
+    "query_mean_dimension_std": 0.017470527440309525,
+    "gallery_mean_dimension_std": 0.01764630526304245,
+    "collapse_detected": false
+  },
+  "interpretation": "DESCRIPTORS_ARE_NONCOLLAPSED_BUT_ZERO_SHOT_CROSS_DOMAIN_RETRIEVAL_SIGNAL_IS_NEAR_CHANCE",
+  "important_reporting_note": "Near-chance VPS performance is a measured zero-shot cross-dataset result for the local reimplementation and must not be represented as an official MobileGeo benchmark result.",
+  "crs_status": "UNVERIFIED",
+  "meter_level_error_claim_allowed": false,
+  "retrieval_is_verified_uav_pose": false
+}

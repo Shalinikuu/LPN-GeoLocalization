@@ -1,0 +1,26 @@
+{
+  "created_at_utc": "2026-08-09T06:43:17.834322+00:00",
+  "notebook": "07_orin_nano_benchmark",
+  "issue": "REFERENCE_HOST_GPU_NOT_PRESERVED_IN_MACHINE_READABLE_CELL1_ARTIFACTS",
+  "machine_readable_historical_gpu_recovered": false,
+  "machine_readable_historical_gpu": null,
+  "console_reported_reference_host": {
+    "source": "USER_PROVIDED_NOTEBOOK07_CELL1_CONSOLE_OUTPUT",
+    "gpu": "Tesla T4",
+    "compute_capability": "7.5",
+    "machine": "x86_64",
+    "platform": "Linux-6.6.122+-x86_64-with-glibc2.35",
+    "cuda_available": true,
+    "jetson_platform_detected": false,
+    "orin_family_detected": false,
+    "orin_nano_identity_detected": false
+  },
+  "scientific_use": {
+    "console_gpu_used_for_performance_claim": false,
+    "console_gpu_used_for_orin_latency_claim": false,
+    "benchmark_values_modified": false,
+    "deployment_artifact_modified": false,
+    "actual_orin_nano_result_created": false
+  },
+  "resolution": "PRESERVE_MACHINE_READABLE_GPU_AS_UNRECOVERED_AND_STORE_CONSOLE_REPORTED_GPU_WITH_EXPLICIT_PROVENANCE"
+}

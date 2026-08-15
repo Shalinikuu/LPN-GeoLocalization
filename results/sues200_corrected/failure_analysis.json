@@ -1,0 +1,36 @@
+{
+  "model_name": "AdvancedEdgeGeoLPN_LOCAL_REIMPLEMENTATION",
+  "provenance_label": "LOCAL_REIMPLEMENTATION",
+  "benchmark_protocol": "PROJECT_DEFINED_LOCATION_DISJOINT_60_20_20",
+  "total_queries": 8000,
+  "top1_correct_queries": 7566,
+  "top1_failure_queries": 434,
+  "overall_recall_at_1_percent": 94.575,
+  "maximum_positive_rank": 6,
+  "correct_margin_statistics": {
+    "count": 7566,
+    "mean": 0.31191905116789326,
+    "median": 0.30816105,
+    "p05": 0.05571863025,
+    "p25": 0.2066234825,
+    "p75": 0.41899514,
+    "p95": 0.5754988525
+  },
+  "failure_margin_statistics": {
+    "count": 434,
+    "mean": 0.01650621372455069,
+    "median": 0.0,
+    "p05": 0.0,
+    "p25": 0.0,
+    "p75": 0.015005111625,
+    "p95": 0.09731443599999993
+  },
+  "worst_height": 150,
+  "files": {
+    "top1_failures": "/content/drive/MyDrive/mobilegeo_project/results/sues200_corrected/top1_failure_cases.csv",
+    "height_summary": "/content/drive/MyDrive/mobilegeo_project/results/sues200_corrected/failure_summary_by_height.csv",
+    "worst_locations": "/content/drive/MyDrive/mobilegeo_project/results/sues200_corrected/worst_test_locations.csv",
+    "margin_thresholds": "/content/drive/MyDrive/mobilegeo_project/results/sues200_corrected/margin_threshold_analysis.csv",
+    "rank_distribution": "/content/drive/MyDrive/mobilegeo_project/results/sues200_corrected/positive_rank_distribution.csv"
+  }
+}

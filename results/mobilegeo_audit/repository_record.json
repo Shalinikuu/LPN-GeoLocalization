@@ -1,0 +1,12 @@
+{
+  "audit_created_at": "2026-08-06T17:40:28.240810+00:00",
+  "repository_name": "MobileGeo",
+  "repository_url": "https://github.com/SkyEyeLoc/MobileGeo.git",
+  "local_path": "/content/drive/MyDrive/mobilegeo_project/repositories/MobileGeo",
+  "branch": "main",
+  "commit_hash": "e17eafc070b44116e91880c45e45d1c21fc36287",
+  "short_commit": "e17eafc",
+  "commit_date": "2025-11-10T09:59:08+08:00",
+  "commit_subject": "final",
+  "audit_status": "REPOSITORY_CLONED_NOT_YET_CLASSIFIED"
+}

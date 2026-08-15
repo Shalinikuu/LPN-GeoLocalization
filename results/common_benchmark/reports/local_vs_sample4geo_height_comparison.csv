@@ -1,0 +1,5 @@
+nominal_height,query_count_local,recall_at_1_percent_local,recall_at_5_percent_local,recall_at_10_percent_local,mean_average_precision_percent_local,mean_positive_rank_local,query_count_sample4geo,recall_at_1_percent_sample4geo,recall_at_5_percent_sample4geo,recall_at_10_percent_sample4geo,mean_average_precision_percent_sample4geo,mean_positive_rank_sample4geo,recall_at_1_difference_local_minus_sample4geo,map_difference_local_minus_sample4geo
+150,2000,93.35,99.95,100.0,96.19,1.1025,2000,78.55,96.5,99.1,86.60702852702853,1.5635,14.799999999999997,9.582971472971465
+200,2000,94.55,100.0,100.0,96.88916666666668,1.0825,2000,85.85000000000001,99.05,100.0,91.7463492063492,1.2515,8.699999999999989,5.142817460317488
+250,2000,95.45,100.0,100.0,97.32916666666668,1.0775,2000,88.35,99.45,100.0,93.54222222222222,1.176,7.1000000000000085,3.786944444444458
+300,2000,94.95,100.0,100.0,97.29333333333334,1.066,2000,90.85,99.95,100.0,95.2504761904762,1.104,4.1000000000000085,2.0428571428571303
