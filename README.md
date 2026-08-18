@@ -7,6 +7,8 @@ A research-oriented framework for **UAV/drone image geo-localization** using vis
 This project evaluates multiple visual geo-localization approaches under controlled and reproducible benchmark protocols, including location-disjoint evaluation, robustness analysis, temporal keyframe consensus, georeferenced evaluation, and deployment-oriented benchmarking.
 
 ---
+<img width="697" height="292" alt="image" src="https://github.com/user-attachments/assets/114151b1-720b-49bf-9c44-178dec97497e" />
+
 
 ## Overview
 
