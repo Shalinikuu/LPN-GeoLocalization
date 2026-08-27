@@ -1,6 +1,6 @@
 # LPN-GeoLocalization
 
-### UAV-to-Satellite Image Geo-Localization for GPS-Denied Environments
+### UAV-to-Satellite Image Geo-Localization for GPS-Denied Environmnts
 
 A research-oriented framework for **UAV/drone image geo-localization** using visual matching between aerial queries and satellite imagery.
 
